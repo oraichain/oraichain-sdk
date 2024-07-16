@@ -1,0 +1,75 @@
+{
+  "$schema": "../chain.schema.json",
+  "rpc": "https://rpc.cosmos.directory/noble",
+  "rest": "https://rest.cosmos.directory/noble",
+  "chainId": "noble-1",
+  "chainName": "Noble",
+  "networkType": "cosmos",
+  "bip44": { "coinType": 118 },
+  "coinType": 118,
+  "bech32Config": {
+    "bech32PrefixAccAddr": "noble",
+    "bech32PrefixAccPub": "noblepub",
+    "bech32PrefixValAddr": "noblevaloper",
+    "bech32PrefixValPub": "noblevaloperpub",
+    "bech32PrefixConsAddr": "noblevalcons",
+    "bech32PrefixConsPub": "noblevalconspub"
+  },
+  "features": [
+    "stargate",
+    "ibc-transfer",
+    "no-legacy-stdTx",
+    "ibc-go",
+    "cosmwasm"
+  ],
+  "currencies": [
+    {
+      "coinDenom": "USDC",
+      "coinMinimalDenom": "uusdc",
+      "coinDecimals": 6,
+      "coinGeckoId": "usd-coin",
+      "coinImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/noble/images/USDCoin.png",
+      "gasPriceStep": { "low": 0, "average": 0.025, "high": 0.03 },
+      "bridgeTo": ["Oraichain"]
+    },
+    {
+      "coinDenom": "STAKE",
+      "coinMinimalDenom": "ustake",
+      "coinDecimals": 6
+    }
+  ],
+  "feeCurrencies": [
+    {
+      "coinDenom": "USDC",
+      "coinMinimalDenom": "uusdc",
+      "coinDecimals": 6,
+      "coinGeckoId": "usd-coin",
+      "coinImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/noble/images/USDCoin.png",
+      "gasPriceStep": { "low": 0, "average": 0.025, "high": 0.03 }
+    },
+    {
+      "coinDenom": "ATOM",
+      "coinMinimalDenom": "ibc/EF48E6B1A1A19F47ECAEA62F5670C37C0580E86A9E88498B7E393EB6F49F33C0",
+      "coinDecimals": 6,
+      "coinGeckoId": "cosmos",
+      "coinImageUrl": "https://dhj8dql1kzq2v.cloudfront.net/white/atom.png",
+      "gasPriceStep": {
+        "low": 0.001,
+        "average": 0.001,
+        "high": 0.001
+      }
+    }
+  ],
+  "stakeCurrency": {
+    "coinDecimals": 6,
+    "coinDenom": "STAKE",
+    "coinMinimalDenom": "ustake",
+    "coinImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/noble/images/stake.png"
+  },
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/noble/images/stake.png",
+  "txExplorer": {
+    "name": "Mintscan",
+    "txUrl": "https://www.mintscan.io/noble/txs/{txHash}",
+    "accountUrl": "https://www.mintscan.io/noble/address/{address}"
+  }
+}

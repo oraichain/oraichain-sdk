@@ -1,0 +1,15 @@
+{
+  "name": "@oraichain/common",
+  "version": "1.0.0",
+  "main": "build/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "files": [
+    "build/"
+  ],
+  "devDependencies": {
+    "@keplr-wallet/types": "^0.12.111"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "$schema": "../chain.schema.json",
+  "rpc": "https://api.trongrid.io/jsonrpc",
+  "rest": "https://api.trongrid.io",
+  "chainId": "0x2b6653dc",
+  "networkType": "evm",
+  "chainName": "Tron Network",
+  "features": ["isEvm"],
+  "currencies": [
+    {
+      "coinDenom": "USDT",
+      "coinMinimalDenom": "trx20_usdt",
+      "contractAddress": "0xa614f803B6FD780986A42c78Ec9c7f77e6DeD13C",
+      "bridgeTo": ["Oraichain"],
+      "coinDecimals": 6,
+      "coinGeckoId": "tether",
+      "prefixToken": "trontrx-mainnet",
+      "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/825.png"
+    },
+    {
+      "coinDenom": "wTRX",
+      "coinMinimalDenom": "trx20_trx",
+      "contractAddress": "0x891cdb91d149f23B1a45D9c5Ca78a88d0cB44C18",
+      "bridgeTo": ["Oraichain"],
+      "coinDecimals": 6,
+      "coinGeckoId": "tron",
+      "prefixToken": "trontrx-mainnet",
+      "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/1958.png"
+    }
+  ],
+  "bip44": { "coinType": 195 },
+  "coinType": 195,
+  "txExplorer": {
+    "name": "Tronscan",
+    "txUrl": "https://tronscan.org/#/transaction/{txHash}",
+    "accountUrl": "https://tronscan.org/#/address/{address}"
+  },
+  "restConfig": {
+    "headers": {
+      "x-api-key": "e2e3f401-2137-409c-b821-bd8c29f2141c"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "tasksRunnerOptions": {
+    "default": {
+      "options": {}
+    }
+  },
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"],
+      "cache": true
+    },
+    "cli": {
+      "packageManager": "yarn"
+    },
+    "test": {
+      "cache": true
+    }
+  },
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "sharedGlobals": [],
+    "production": ["default"]
+  },
+  "cacheDirectory": "node_modules/.cache"
+}

@@ -1,0 +1,44 @@
+{
+  "$schema": "../chain.schema.json",
+  "rpc": "https://neutaro.rpc.orai.io",
+  "rest": "https://neutaro.lcd.orai.io",
+  "chainId": "Neutaro-1",
+  "chainName": "Neutaro",
+  "networkType": "cosmos",
+  "bip44": { "coinType": 118 },
+  "coinType": 118,
+  "bech32Config": {
+    "bech32PrefixAccAddr": "neutaro",
+    "bech32PrefixAccPub": "neutaropub",
+    "bech32PrefixValAddr": "neutarovaloper",
+    "bech32PrefixValPub": "neutarovaloperpub",
+    "bech32PrefixConsAddr": "neutarovalcons",
+    "bech32PrefixConsPub": "neutarovalconspub"
+  },
+  "stakeCurrency": {
+    "coinDenom": "ntmpi",
+    "coinMinimalDenom": "uneutaro",
+    "coinDecimals": 6,
+    "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/Neutaro/chain.png"
+  },
+  "feeCurrencies": [
+    {
+      "coinDenom": "ntmpi",
+      "coinMinimalDenom": "uneutaro",
+      "coinDecimals": 6,
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/Neutaro/chain.png",
+      "gasPriceStep": { "low": 0.01, "average": 0.025, "high": 0.03 }
+    }
+  ],
+  "currencies": [
+    {
+      "coinDenom": "NTMPI",
+      "coinMinimalDenom": "uneutaro",
+      "coinDecimals": 6,
+      "coinGeckoId": "neutaro",
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/Neutaro/chain.png",
+      "gasPriceStep": { "low": 0.01, "average": 0.025, "high": 0.03 },
+      "bridgeTo": ["Oraichain"]
+    }
+  ]
+}

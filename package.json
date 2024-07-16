@@ -1,0 +1,46 @@
+{
+  "name": "root",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "postinstall": "patch-package",
+    "test": "vitest run --silent=false --coverage --no-file-parallelism --no-isolate --pool=threads",
+    "clean": "nx reset && lerna clean --yes && lerna exec -- rimraf build/ dist/ cache/",
+    "build": "lerna run build --concurrency 1",
+    "build-tsc": "tsc -p",
+    "deploy": "yarn build && lerna publish",
+    "prepare": "husky install",
+    "build:docker": "lerna run build --concurrency 1",
+    "eslint": "eslint packages/*"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=18.18.0"
+  },
+  "devDependencies": {
+    "@cosmjs/encoding": "0.31.3",
+    "@eslint/js": "^9.7.0",
+    "@oraichain/cw-simulate": "^2.8.68",
+    "@types/eslint__js": "^8.42.3",
+    "@types/lodash": "^4.17.0",
+    "@types/node": "^20.11.30",
+    "@vitest/coverage-v8": "^2.0.3",
+    "cosmjs-types": "0.8.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "dotenv": "^16.4.5",
+    "eslint": "^9.7.0",
+    "lerna": "^8.1.6",
+    "nx": "^19.4.3",
+    "patch-package": "^8.0.0",
+    "rimraf": "^6.0.1",
+    "typedoc": "^0.26.4",
+    "typescript": "^5.5.3",
+    "typescript-eslint": "^7.16.1",
+    "typescript-json-schema": "^0.64.0",
+    "vitest": "^2.0.3"
+  },
+  "version": "1.0.1",
+  "packageManager": "yarn@4.3.1"
+}

@@ -1,0 +1,77 @@
+{
+  "$schema": "../chain.schema.json",
+  "rpc": "https://injective.rpc.orai.io/",
+  "rest": "https://injective.lcd.orai.io/",
+  "chainId": "injective-1",
+  "chainName": "Injective",
+  "networkType": "cosmos",
+  "bip44": { "coinType": 60 },
+  "coinType": 60,
+  "bech32Config": {
+    "bech32PrefixAccAddr": "inj",
+    "bech32PrefixAccPub": "injpub",
+    "bech32PrefixValAddr": "injvaloper",
+    "bech32PrefixValPub": "injvaloperpub",
+    "bech32PrefixConsAddr": "injvalcons",
+    "bech32PrefixConsPub": "injvalconspub"
+  },
+  "features": [
+    "stargate",
+    "no-legacy-stdTx",
+    "ibc-transfer",
+    "ibc-go",
+    "eth-key-sign",
+    "cosmwasm"
+  ],
+  "stakeCurrency": {
+    "coinDenom": "INJ",
+    "coinMinimalDenom": "inj",
+    "coinDecimals": 18,
+    "coinGeckoId": "injective-protocol",
+    "gasPriceStep": {
+      "low": 5000000000,
+      "average": 25000000000,
+      "high": 50000000000
+    }
+  },
+  "feeCurrencies": [
+    {
+      "coinDenom": "INJ",
+      "coinMinimalDenom": "inj",
+      "coinDecimals": 18,
+      "coinGeckoId": "injective-protocol",
+      "gasPriceStep": {
+        "low": 5000000000,
+        "average": 25000000000,
+        "high": 50000000000
+      }
+    }
+  ],
+  "currencies": [
+    {
+      "coinDenom": "INJ",
+      "coinMinimalDenom": "inj",
+      "coinDecimals": 18,
+      "coinGeckoId": "injective-protocol",
+      "gasPriceStep": {
+        "low": 5000000000,
+        "average": 25000000000,
+        "high": 50000000000
+      },
+      "bridgeTo": ["Oraichain"]
+    },
+    {
+      "coinDenom": "ORAI",
+      "coinMinimalDenom": "ibc/C20C0A822BD22B2CEF0D067400FCCFB6FAEEE9E91D360B4E0725BD522302D565",
+      "coinDecimals": 6,
+      "coinGeckoId": "oraichain-token",
+      "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/7533.png",
+      "bridgeTo": ["Oraichain"]
+    }
+  ],
+  "txExplorer": {
+    "name": "Injective Scan",
+    "txUrl": "https://explorer.injective.network/transaction/{txHash}"
+  },
+  "beta": true
+}

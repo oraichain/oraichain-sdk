@@ -1,0 +1,79 @@
+{
+  "chainId": "oraibtc-mainnet-1",
+  "chainName": "OraiBtc Bridge",
+  "rpc": "https://btc.rpc.orai.io",
+  "rest": "https://btc.lcd.orai.io",
+  "networkType": "cosmos",
+  "stakeCurrency": {
+    "coinDenom": "ORAIBTC",
+    "coinMinimalDenom": "uoraibtc",
+    "coinDecimals": 6,
+    "gasPriceStep": {
+      "low": 0,
+      "average": 0,
+      "high": 0
+    },
+    "coinImageUrl": "https://assets.coingecko.com/coins/images/1/small/bitcoin.png"
+  },
+  "bip44": {
+    "coinType": 118
+  },
+  "coinType": 118,
+  "bech32Config": {
+    "bech32PrefixAccAddr": "oraibtc",
+    "bech32PrefixAccPub": "oraibtcpub",
+    "bech32PrefixValAddr": "oraibtcvaloper",
+    "bech32PrefixValPub": "oraibtcvaloperpub",
+    "bech32PrefixConsAddr": "oraibtcvalcons",
+    "bech32PrefixConsPub": "oraibtcvalconspub"
+  },
+  "currencies": [
+    {
+      "coinDenom": "ORAIBTC",
+      "coinMinimalDenom": "uoraibtc",
+      "coinDecimals": 6,
+      "gasPriceStep": {
+        "low": 0,
+        "average": 0,
+        "high": 0
+      },
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/1/small/bitcoin.png"
+    },
+    {
+      "coinDenom": "oBTC",
+      "coinMinimalDenom": "usat",
+      "coinDecimals": 14,
+      "gasPriceStep": {
+        "low": 0,
+        "average": 0,
+        "high": 0
+      },
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/1/small/bitcoin.png"
+    }
+  ],
+  "feeCurrencies": [
+    {
+      "coinDenom": "ORAIBTC",
+      "coinMinimalDenom": "uoraibtc",
+      "coinDecimals": 6,
+      "gasPriceStep": {
+        "low": 0,
+        "average": 0,
+        "high": 0
+      },
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/1/small/bitcoin.png"
+    },
+    {
+      "coinDenom": "oBTC",
+      "coinMinimalDenom": "usat",
+      "coinDecimals": 14,
+      "gasPriceStep": {
+        "low": 0,
+        "average": 0,
+        "high": 0
+      },
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/1/small/bitcoin.png"
+    }
+  ],
+  "features": ["stargate", "ibc-transfer", "cosmwasm"]
+}

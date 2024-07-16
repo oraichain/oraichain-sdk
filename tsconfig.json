@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["ESNext", "dom"],
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "declaration": false,
+    "outDir": "dist",
+    "typeRoots": ["node_modules/@types"],
+    "allowJs": true,
+    "esModuleInterop": true
+  }
+}
