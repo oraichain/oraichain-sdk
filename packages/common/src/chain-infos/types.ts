@@ -30,19 +30,13 @@ export interface CustomChainInfo
     | "rest"
     | "bech32Config"
   > {
-  readonly chainId: string;
-  readonly chainName: string;
   readonly networkType: NetworkType;
-  readonly bip44: {
-    coinType: CoinType;
-  };
   readonly coinType: CoinType;
   readonly bech32Config?: Bech32Config;
   readonly rest?: string; // optional, rest api tron and lcd for cosmos
   readonly stakeCurrency?: Currency;
   readonly feeCurrencies?: FeeCurrency[];
   readonly currencies: BridgeAppCurrency[];
-  readonly hideInUI?: boolean;
   readonly txExplorer?: {
     readonly name: string;
     readonly txUrl: string;
