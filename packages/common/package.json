@@ -20,5 +20,8 @@
     "cosmjs-types": "^0.8.0",
     "ethers": "^5.5.1"
   },
+  "repository": {
+    "url": "https://github.com/oraichain/oraichain-sdk/tree/master/packages/common"
+  },
   "gitHead": "c7d5f9b2fa40988e37aba5929022c1d4451f6e82"
 }
