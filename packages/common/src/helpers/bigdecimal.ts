@@ -78,7 +78,7 @@ export class BigDecimal {
       ret += str.slice(0, -this._decimals);
     }
 
-    let denominator = str.slice(-this._decimals).replace(/0+$/, "");
+    const denominator = str.slice(-this._decimals).replace(/0+$/, "");
     if (denominator) {
       ret += "." + denominator;
     }

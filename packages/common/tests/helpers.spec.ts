@@ -1,8 +1,4 @@
-import { Coin } from "@cosmjs/amino";
-import { toBinary } from "@cosmjs/cosmwasm-stargate";
-import { StargateClient } from "@cosmjs/stargate";
 import { Event } from "@cosmjs/tendermint-rpc/build/tendermint37";
-import { AVERAGE_COSMOS_GAS_PRICE, ORAI } from "../src/constants";
 import {
   calculateTimeoutTimestamp,
   decodeProto,
@@ -27,8 +23,7 @@ import {
   ChainInfoReader,
   ChainInfoReaderImpl,
   TokenItems,
-  TokenItemsImpl,
-  TokenItemType
+  TokenItemsImpl
 } from "../src";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -202,7 +197,7 @@ describe("should helper functions in helper run exactly", () => {
   // TODO: add more tests for this func
   it("test-parseTxToMsgsAndEvents", async () => {
     // case 1: undefined input
-    const reuslt = parseTxToMsgsAndEvents(undefined as any);
+    const reuslt = parseTxToMsgsAndEvents(undefined);
     expect(reuslt).toEqual([]);
 
     // case 2: real tx with multiple msgs and multiple contract calls
@@ -214,7 +209,18 @@ describe("should helper functions in helper run exactly", () => {
       fs.readFileSync(path.join(__dirname, "indexed-tx-tx.json")).toString(),
       "base64"
     );
-    const data = parseTxToMsgsAndEvents({ rawLog, tx } as any);
+    const data = parseTxToMsgsAndEvents({
+      rawLog,
+      tx,
+      hash: "",
+      height: 0,
+      txIndex: 0,
+      code: 0,
+      events: [],
+      msgResponses: [],
+      gasUsed: 0,
+      gasWanted: 0
+    });
     expect(data.length).toEqual(2);
     expect(data[0].message).toMatchObject({
       sender: "orai16hv74w3eu3ek0muqpgp4fekhrqgpzl3hd3qeqk",
