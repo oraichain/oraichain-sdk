@@ -11,5 +11,13 @@
   ],
   "devDependencies": {
     "@keplr-wallet/types": "^0.12.111"
+  },
+  "dependencies": {
+    "@cosmjs/cosmwasm-stargate": "^0.31.3",
+    "@cosmjs/tendermint-rpc": "^0.31.3",
+    "axios-extensions": "3.1.6",
+    "bech32": "^1.1.4",
+    "cosmjs-types": "^0.8.0",
+    "ethers": "^5.5.1"
   }
 }
