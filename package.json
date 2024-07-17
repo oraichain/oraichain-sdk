@@ -1,6 +1,7 @@
 {
   "name": "root",
   "license": "MIT",
+  "private": "false",
   "type": "module",
   "scripts": {
     "postinstall": "patch-package",
@@ -9,7 +10,6 @@
     "build": "lerna run build --concurrency 1",
     "build-tsc": "tsc -p",
     "deploy": "yarn build && lerna publish",
-    "prepare": "husky install",
     "build:docker": "lerna run build --concurrency 1",
     "eslint": "eslint packages/*"
   },
