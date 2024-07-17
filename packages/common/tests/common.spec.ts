@@ -1,9 +1,9 @@
 import { expect, afterAll, beforeAll, describe, it } from "vitest";
 import { OraiCommon } from "../src/common";
-import { ChainInfoReaderImpl } from "../src/chain-infos/chain-info-reader";
-import { ChainInfosImpl } from "../src/chain-infos";
-import { TokenItemsImpl } from "../src/token-items";
+import { ChainInfosImpl } from "../src/";
+import { TokenItemsImpl } from "../src/";
 import { COSMOS_CHAIN_IDS } from "../src/constants/chain-ids";
+import { ChainInfoReaderImpl } from "./chain-reader-impl";
 
 describe("test common", () => {
   it("test-chain-info-reader", async () => {

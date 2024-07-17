@@ -1,23 +1,19 @@
+import { promises } from "fs";
 import path from "path";
-import { CustomChainInfo } from "./types";
-import { promises as fs } from "fs";
-import { fileURLToPath } from "url";
+import { CustomChainInfo } from "../src/chain-infos/types";
+import { ChainInfoReader } from "../src";
 
-export interface ChainInfoReader {
-  readChainInfos(): Promise<CustomChainInfo[]>;
-}
-
-export class ChainInfoReaderImpl {
+export class ChainInfoReaderImpl implements ChainInfoReader {
   constructor(
     private readonly directory: string = path.join(process.cwd(), "chains")
   ) {}
   async readChainInfos(): Promise<CustomChainInfo[]> {
-    const files = await fs.readdir(this.directory);
+    const files = await promises.readdir(this.directory);
     const jsonFiles = files.filter((file) => path.extname(file) === ".json");
 
     const readFilesPromises = jsonFiles.map(async (file) => {
       const filePath = path.join(this.directory, file);
-      const data = await fs.readFile(filePath, "utf-8");
+      const data = await promises.readFile(filePath, "utf-8");
       return JSON.parse(data);
     });
 

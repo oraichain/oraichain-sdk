@@ -1,7 +1,6 @@
 {
   "name": "root",
   "license": "MIT",
-  "private": "false",
   "type": "module",
   "scripts": {
     "postinstall": "patch-package",

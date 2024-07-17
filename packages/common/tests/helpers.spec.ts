@@ -15,28 +15,31 @@ import {
   validateNumber,
   validateTronAddress
 } from "../src";
-import fs from "fs";
+import fs, { promises } from "fs";
 import path from "path";
 import { expect, afterAll, beforeAll, describe, it } from "vitest";
-import { fileURLToPath } from "url";
-import {
-  ChainInfoReader,
-  ChainInfoReaderImpl,
-  TokenItems,
-  TokenItemsImpl
-} from "../src";
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+import { ChainInfoReader } from "../src";
+import { CustomChainInfo } from "../src/chain-infos/types";
+
+export class ChainInfoReaderImpl implements ChainInfoReader {
+  constructor(
+    private readonly directory: string = path.join(process.cwd(), "chains")
+  ) {}
+  async readChainInfos(): Promise<CustomChainInfo[]> {
+    const files = await promises.readdir(this.directory);
+    const jsonFiles = files.filter((file) => path.extname(file) === ".json");
+
+    const readFilesPromises = jsonFiles.map(async (file) => {
+      const filePath = path.join(this.directory, file);
+      const data = await promises.readFile(filePath, "utf-8");
+      return JSON.parse(data);
+    });
+
+    return Promise.all(readFilesPromises);
+  }
+}
 
 describe("should helper functions in helper run exactly", () => {
-  let reader: ChainInfoReader;
-  let tokenItems: TokenItems;
-
-  beforeAll(async () => {
-    reader = new ChainInfoReaderImpl();
-    tokenItems = await TokenItemsImpl.create(reader);
-  });
-
   it.each<[string, boolean]>([
     ["0x", false],
     ["orai1g4h64yjt0fvzv5v2j8tyfnpe5kmnetejvfgs7g", false],

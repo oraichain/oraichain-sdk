@@ -54,3 +54,7 @@ export interface ChainInfos {
   evmChains: CustomChainInfo[];
   cosmosChains: CustomChainInfo[];
 }
+
+export interface ChainInfoReader {
+  readChainInfos(): Promise<CustomChainInfo[]>;
+}

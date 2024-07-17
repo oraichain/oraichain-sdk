@@ -1,12 +1,8 @@
 import { flatten, uniqBy } from "lodash";
-import { CustomChainInfo } from "../chain-infos";
+import { ChainInfoReader, CustomChainInfo } from "../chain-infos";
 import { COSMOS_CHAIN_IDS } from "../constants/chain-ids";
 import { IBC_DENOMS } from "../constants/denoms";
 import { TokenItemType } from "./types";
-import {
-  ChainInfoReader,
-  ChainInfoReaderImpl
-} from "../chain-infos/chain-info-reader";
 import { NETWORK_TYPES } from "../constants/network";
 
 export interface TokenItems {

@@ -1,14 +1,12 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "lib": ["ESNext", "dom"],
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "skipLibCheck": true,
+    "target": "ES2020",
+    "lib": ["ES2020", "dom"],
+    "module": "Node16",
     "sourceMap": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "declaration": false,
+    "declaration": true,
     "outDir": "dist",
     "typeRoots": ["node_modules/@types"],
     "allowJs": true,
