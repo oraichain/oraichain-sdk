@@ -2,10 +2,10 @@ import {
   FeeCurrency,
   ChainInfo,
   Bech32Config,
-  Currency,
+  Currency
 } from "@keplr-wallet/types";
+import { NetworkType, CoinType } from "../constants/network";
 
-export type NetworkType = "cosmos" | "evm" | "bsc" | "tron" | "bitcoin";
 export type BridgeAppCurrency = FeeCurrency & {
   readonly bridgeTo?: string[];
   readonly coinGeckoId?: string;
@@ -14,8 +14,6 @@ export type BridgeAppCurrency = FeeCurrency & {
   readonly contractAddress?: string;
   readonly prefixToken?: string;
 };
-
-export type CoinType = 0 | 118 | 60 | 195; // 0 for bitcoin, 118 for cosmos, 60 for evm, 195 for tron??
 
 /**
  * A list of Cosmos chain infos. If we need to add / remove any chains, just directly update this variable.
@@ -38,7 +36,7 @@ export interface CustomChainInfo
   readonly bip44: {
     coinType: CoinType;
   };
-  readonly coinType: CoinType,
+  readonly coinType: CoinType;
   readonly bech32Config?: Bech32Config;
   readonly rest?: string; // optional, rest api tron and lcd for cosmos
   readonly stakeCurrency?: Currency;
@@ -50,4 +48,9 @@ export interface CustomChainInfo
     readonly txUrl: string;
     readonly accountUrl?: string;
   };
+}
+
+export interface ChainInfos {
+  evmChains: CustomChainInfo[];
+  cosmosChains: CustomChainInfo[];
 }
