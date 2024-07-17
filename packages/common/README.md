@@ -250,5 +250,5 @@ A sample `Oraichain.json` includes the following information.
 ### Convert type to json schema
 
 ```bash
-yarn typescript-json-schema packages/common/src/chain-infos/chain-info-types.ts CustomChainInfo --out packages/common/src/chain-infos/chain.schema.json --required --esModuleInterop true --ignoreErrors
+yarn typescript-json-schema packages/common/src/chain-infos/types.ts CustomChainInfo --out chain.schema.json --required --esModuleInterop true --ignoreErrors
 ```

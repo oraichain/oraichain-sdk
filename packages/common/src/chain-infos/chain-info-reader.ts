@@ -2,8 +2,6 @@ import path from "path";
 import { CustomChainInfo } from "./types";
 import { promises as fs } from "fs";
 import { fileURLToPath } from "url";
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 export interface ChainInfoReader {
   readChainInfos(): Promise<CustomChainInfo[]>;
@@ -11,7 +9,7 @@ export interface ChainInfoReader {
 
 export class ChainInfoReaderImpl {
   constructor(
-    private readonly directory: string = path.join(__dirname, "chains")
+    private readonly directory: string = path.join(process.cwd(), "chains")
   ) {}
   async readChainInfos(): Promise<CustomChainInfo[]> {
     const files = await fs.readdir(this.directory);
