@@ -19,5 +19,6 @@
     "bech32": "^1.1.4",
     "cosmjs-types": "^0.8.0",
     "ethers": "^5.5.1"
-  }
+  },
+  "gitHead": "c7d5f9b2fa40988e37aba5929022c1d4451f6e82"
 }
