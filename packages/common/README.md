@@ -197,6 +197,25 @@ import { ChainInfoReader, OraiCommon } from "@oraichain/common";
 
 The package works on browser by default using the provided ESM build.
 
+```ts
+// declare a new global field
+interface Window {
+  ...;
+  common: OraiCommon;
+}
+
+// initialization when init app
+window.common = await OraiCommon.initializeFromGit();
+
+// access to inner attributes like cosmos chains, token items on browser
+const cosmosInfos = window.common.chainInfos.chainInfos.filter(
+    (chainInfo) =>
+      (chainInfo.networkType === 'cosmos' || chainInfo.bip44.coinType === 118) &&
+      // TODO: ignore oraibtc
+      chainInfo.chainId !== ('oraibtc-mainnet-1' as string)
+  );
+```
+
 ## API
 
 ### Docs
