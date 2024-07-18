@@ -29,6 +29,9 @@ For interacting with Oraichain via other non-custodial wallets like Keplr, Ledge
 <a href="https://www.keplr.app/">
   <img width="30px" src="https://raw.githubusercontent.com/cosmology-tech/cosmos-kit/main/public/images/logos/wallets/keplr.svg" />
 </a>
+<a href="https://metamask.io/">
+  <img width="30px" src="https://raw.githubusercontent.com/oraichain/oraichain-sdk/master/public/images/logos/wallets/metamask.png" />
+</a>
 <a href="https://www.ledger.com/">
   <img width="30px" src="https://raw.githubusercontent.com/cosmology-tech/cosmos-kit/main/public/images/logos/wallets/ledger.png" />
 </a>
