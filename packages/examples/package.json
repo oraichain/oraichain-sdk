@@ -1,5 +1,5 @@
 {
-  "name": "@oraichain/common",
+  "name": "@oraichain/examples",
   "version": "1.0.1",
   "main": "build/index.js",
   "license": "MIT",
@@ -9,22 +9,18 @@
   "files": [
     "build/"
   ],
-  "devDependencies": {
-    "@keplr-wallet/types": "^0.12.111",
-    "@types/lodash": "^4"
-  },
   "dependencies": {
     "@cosmjs/cosmwasm-stargate": "^0.31.3",
+    "@cosmjs/proto-signing": "^0.31.3",
+    "@cosmjs/stargate": "^0.31.3",
     "@cosmjs/tendermint-rpc": "^0.31.3",
-    "axios": "0.21.4",
-    "axios-extensions": "3.1.6",
+    "@oraichain/common": "workspace:^",
     "bech32": "^1.1.4",
     "cosmjs-types": "^0.8.0",
-    "ethers": "^5.5.1",
-    "lodash": "^4.17.21"
+    "dotenv": "^16.4.5"
   },
   "repository": {
-    "url": "https://github.com/oraichain/oraichain-sdk/tree/master/packages/common"
+    "url": "https://github.com/oraichain/oraichain-sdk/tree/master/packages/examples"
   },
   "gitHead": "c7d5f9b2fa40988e37aba5929022c1d4451f6e82"
 }

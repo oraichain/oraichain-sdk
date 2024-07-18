@@ -1,5 +1,8 @@
 import Axios from "axios";
-import { throttleAdapterEnhancer, retryAdapterEnhancer } from "axios-extensions";
+import {
+  throttleAdapterEnhancer,
+  retryAdapterEnhancer
+} from "axios-extensions";
 
 export async function getAxios(baseUrl?: string) {
   const AXIOS_TIMEOUT = 10000;
