@@ -8,3 +8,4 @@ export * from "./network";
 export * from "./time";
 export * from "./tokens";
 export * from "./util-contracts";
+export * from "./chain-registry";

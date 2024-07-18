@@ -45,6 +45,7 @@ export interface CustomChainInfo
 }
 
 export interface ChainInfos {
+  chainInfos: CustomChainInfo[];
   evmChains: CustomChainInfo[];
   cosmosChains: CustomChainInfo[];
 }

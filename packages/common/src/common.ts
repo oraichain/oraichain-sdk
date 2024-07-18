@@ -1,4 +1,11 @@
-import { ChainInfos, ChainInfosImpl } from "./chain-infos";
+import {
+  ChainInfoReader,
+  ChainInfoReaderFromBackend,
+  ChainInfoReaderFromGit,
+  ChainInfos,
+  ChainInfosImpl,
+  CustomChainInfo
+} from "./chain-infos";
 import { TokenItems, TokenItemsImpl } from "./token-items";
 
 export class OraiCommon {
@@ -6,6 +13,27 @@ export class OraiCommon {
     private _chainInfos?: ChainInfos,
     private _tokenItems?: TokenItems
   ) {}
+
+  static async initializeFromBackend() {
+    const customChainInfos =
+      await new ChainInfoReaderFromBackend().readChainInfos();
+    const common = new OraiCommon(
+      new ChainInfosImpl(customChainInfos),
+      new TokenItemsImpl(customChainInfos)
+    );
+    return common;
+  }
+
+  static async initializeFromGit(accessToken: string = "") {
+    const customChainInfos = await new ChainInfoReaderFromGit(
+      accessToken
+    ).readChainInfos();
+    const common = new OraiCommon(
+      new ChainInfosImpl(customChainInfos),
+      new TokenItemsImpl(customChainInfos)
+    );
+    return common;
+  }
 
   withChainInfos(chainInfos: ChainInfos) {
     this._chainInfos = chainInfos;

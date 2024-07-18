@@ -1,7 +1,7 @@
 import { ChainInfos, CustomChainInfo, ChainInfoReader } from "./types";
 
 export class ChainInfosImpl implements ChainInfos {
-  private constructor(public readonly chainInfos: CustomChainInfo[]) {}
+  constructor(public readonly chainInfos: CustomChainInfo[]) {}
 
   static async create(chainInfoReader: ChainInfoReader) {
     const chainInfos = await chainInfoReader.readChainInfos();

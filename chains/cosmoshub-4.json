@@ -1,7 +1,7 @@
 {
   "$schema": "../chain.schema.json",
-  "rpc": "https://cosmos-rpc.publicnode.com:443",
-  "rest": "https://cosmos-rest.publicnode.com",
+  "rpc": "https://rpc-cosmos.oraidex.io",
+  "rest": "https://lcd-cosmos.oraidex.io",
   "chainId": "cosmoshub-4",
   "chainName": "Cosmos Hub",
   "networkType": "cosmos",

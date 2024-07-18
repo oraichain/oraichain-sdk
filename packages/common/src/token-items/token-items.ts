@@ -6,6 +6,7 @@ import { TokenItemType } from "./types";
 import { NETWORK_TYPES } from "../constants/network";
 
 export interface TokenItems {
+  chainInfos: CustomChainInfo[];
   otherChainTokens: TokenItemType[];
   oraichainTokens: TokenItemType[];
   tokens: TokenItemType[];

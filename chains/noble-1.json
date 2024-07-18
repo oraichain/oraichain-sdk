@@ -1,7 +1,7 @@
 {
   "$schema": "../chain.schema.json",
-  "rpc": "https://rpc.cosmos.directory/noble",
-  "rest": "https://rest.cosmos.directory/noble",
+  "rpc": "https://noble.rpc.orai.io",
+  "rest": "https://noble.lcd.orai.io",
   "chainId": "noble-1",
   "chainName": "Noble",
   "networkType": "cosmos",
