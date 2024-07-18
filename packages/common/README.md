@@ -15,6 +15,12 @@ To obtain the latest version, simply require the project using `npm`:
 npm install @oraichain/common
 ```
 
+yarn:
+
+```sh
+yarn add @oraichain/common
+```
+
 ## Quickstart
 
 ### import / require
@@ -27,7 +33,7 @@ import { OraiCommon } from "@oraichain/common";
 
 ### Initialization
 
-The `OraiCommon` class can be initialized via three ways:
+The `OraiCommon` class can be initialized via several ways:
 
 #### 1. via Github API
 
