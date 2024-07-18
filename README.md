@@ -24,7 +24,7 @@ For interacting with Oraichain via other non-custodial wallets like Keplr, Ledge
 
 <p align="center" width="100%">
 <a href="https://www.owallet.dev/">
-  <img width="30px" src="https://raw.githubusercontent.com/oraichain/oraichain-sdk/main/public/images/logos/wallets/owallet.svg" />
+  <img width="30px" src="https://raw.githubusercontent.com/oraichain/oraichain-sdk/master/public/images/logos/wallets/owallet.svg" />
 </a>
 <a href="https://www.keplr.app/">
   <img width="30px" src="https://raw.githubusercontent.com/cosmology-tech/cosmos-kit/main/public/images/logos/wallets/keplr.svg" />
