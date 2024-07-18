@@ -14,9 +14,7 @@ export class OraiCommon {
     private _tokenItems?: TokenItems
   ) {}
 
-  static async initializeFromBackend() {
-    const customChainInfos =
-      await new ChainInfoReaderFromBackend().readChainInfos();
+  static initializeFromCustomChainInfos(customChainInfos: CustomChainInfo[]) {
     const common = new OraiCommon(
       new ChainInfosImpl(customChainInfos),
       new TokenItemsImpl(customChainInfos)
@@ -24,15 +22,19 @@ export class OraiCommon {
     return common;
   }
 
+  static async initializeFromChainInfoReader(reader: ChainInfoReader) {
+    const customChainInfos = await reader.readChainInfos();
+    return OraiCommon.initializeFromCustomChainInfos(customChainInfos);
+  }
+
+  static async initializeFromBackend() {
+    const reader = new ChainInfoReaderFromBackend();
+    return OraiCommon.initializeFromChainInfoReader(reader);
+  }
+
   static async initializeFromGit(accessToken: string = "") {
-    const customChainInfos = await new ChainInfoReaderFromGit(
-      accessToken
-    ).readChainInfos();
-    const common = new OraiCommon(
-      new ChainInfosImpl(customChainInfos),
-      new TokenItemsImpl(customChainInfos)
-    );
-    return common;
+    const reader = new ChainInfoReaderFromGit(accessToken);
+    return OraiCommon.initializeFromChainInfoReader(reader);
   }
 
   withChainInfos(chainInfos: ChainInfos) {
