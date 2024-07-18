@@ -23,6 +23,9 @@ OWallet is a non-custodial wallet, a universal gateway to Web3 in single native 
 For interacting with Oraichain via other non-custodial wallets like Keplr, Ledger, Metamask, TrustWallet, or dApps, please refer to [this documentaion](https://)
 
 <p align="center" width="100%">
+<a href="https://www.owallet.dev/">
+  <img width="30px" src="https://raw.githubusercontent.com/oraichain/oraichain-sdk/main/public/images/logos/wallets/owallet.svg" />
+</a>
 <a href="https://www.keplr.app/">
   <img width="30px" src="https://raw.githubusercontent.com/cosmology-tech/cosmos-kit/main/public/images/logos/wallets/keplr.svg" />
 </a>
