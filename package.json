@@ -9,8 +9,7 @@
     "build": "lerna run build --concurrency 1",
     "build-tsc": "tsc -p",
     "deploy": "yarn build && lerna publish",
-    "build:docker": "lerna run build --concurrency 1",
-    "eslint": "eslint packages/* --ignore-pattern packages/*/build packages/*/tests"
+    "build:docker": "lerna run build --concurrency 1"
   },
   "workspaces": [
     "packages/*"
@@ -29,7 +28,6 @@
     "cosmjs-types": "0.8.0",
     "cz-conventional-changelog": "^3.3.0",
     "dotenv": "^16.4.5",
-    "eslint": "^9.7.0",
     "lerna": "^8.1.6",
     "nx": "^19.4.3",
     "patch-package": "^8.0.0",
