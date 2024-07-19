@@ -46,11 +46,30 @@ import { OraiCommon } from "@oraichain/common";
 })();
 ```
 
-`initializeFromGit()` will fetch all the chain infos registered in our [chain-registry](https://github.com/oraichain/oraichain-sdk/blob/master/chains) using Github API and initializes the necessary dependency classes before returning our main `OraiCommon` class.
+`initializeFromGit()` will fetch all the chain infos registered on our [chain-registry](https://github.com/oraichain/oraichain-sdk/blob/master/chains) using Github API and initializes the necessary dependency classes before returning our main `OraiCommon` class.
 
 Note that if you don't have an access token, the rate limit for using this method will be according to the [Github docs](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api?apiVersion=2022-11-28#primary-rate-limit-for-unauthenticated-users).
 
-#### 2. via Oraichain Labs's backend API
+#### 2. via Github rawusercontent
+
+```ts
+import { OraiCommon } from "@oraichain/common";
+
+(async () => {
+  const common = await OraiCommon.initializeFromGitRaw({
+    chainIds: ["Oraichain", "osmosis-1", "0x01"]
+  });
+  expect(common.chainInfos).not.undefined;
+  expect(common.chainInfos?.chainInfos.length).toEqual(3);
+  expect(common.chainInfos?.cosmosChains.length).toEqual(2);
+  expect(common.tokenItems?.evmTokens.length).toBeGreaterThan(0);
+})();
+```
+
+`initializeFromGitRaw()` takes a list of chainIds as arguments fetch their chain infos registered
+on our [chain-registry](https://github.com/oraichain/oraichain-sdk/blob/master/chains) using Github rawusercontent and initializes the necessary dependency classes before returning our main `OraiCommon` class.
+
+#### 3. via Oraichain Labs's backend API
 
 ```ts
 import { OraiCommon } from "@oraichain/common";
@@ -60,11 +79,11 @@ import { OraiCommon } from "@oraichain/common";
 })();
 ```
 
-`initializeFromBackend()` will fetch all the chain infos registered in our [chain-registry](https://github.com/oraichain/oraichain-sdk/blob/master/chains) using a backend service and initializes the necessary dependency classes before returning our main `OraiCommon` class.
+`initializeFromBackend()` will fetch all the chain infos registered on our [chain-registry](https://github.com/oraichain/oraichain-sdk/blob/master/chains) using a backend service and initializes the necessary dependency classes before returning our main `OraiCommon` class.
 
 This method is preferred, as there's no rate limit.
 
-#### 3. via a custom chain info reader (private / custom chains)
+#### 4. via a custom chain info reader (private / custom chains)
 
 You can create a custom `ChainInfoReader` that retrieves your custom chain infos and use that to initialize the `OraiCommon` class:
 
