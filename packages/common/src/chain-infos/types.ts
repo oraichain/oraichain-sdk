@@ -5,7 +5,7 @@ import {
   Currency
 } from "@keplr-wallet/types";
 import { NetworkType, CoinType } from "../constants/network";
-import { NetworkChainId } from "src/constants";
+import { NetworkChainId } from "../constants";
 
 export type BridgeAppCurrency = FeeCurrency & {
   readonly bridgeTo?: string[];
