@@ -23,7 +23,7 @@ export class ChainInfoReaderFromGit implements ChainInfoReader {
   constructor(private readonly accessToken: string = "") {}
 
   async readChainInfos() {
-    let options = {
+    const options = {
       method: "GET",
       headers: {
         Accept: "application/json"

@@ -10,7 +10,7 @@
     "build-tsc": "tsc -p",
     "deploy": "yarn build && lerna publish",
     "build:docker": "lerna run build --concurrency 1",
-    "eslint": "eslint packages/*"
+    "eslint": "eslint packages/* --ignore-pattern packages/*/build packages/*/tests"
   },
   "workspaces": [
     "packages/*"
