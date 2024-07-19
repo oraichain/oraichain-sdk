@@ -1,6 +1,6 @@
 import { expect, afterAll, beforeAll, describe, it } from "vitest";
 import { OraiCommon } from "../src/common";
-import { ChainInfosImpl } from "../src/";
+import { ChainInfoReaderFromGitRaw, ChainInfosImpl } from "../src/";
 import { TokenItemsImpl } from "../src/";
 import { COSMOS_CHAIN_IDS } from "../src/constants/chain-ids";
 import { ChainInfoReaderImpl } from "./chain-reader-impl";
@@ -48,5 +48,15 @@ describe("test common", () => {
 
     expect(common.chainInfos).not.undefined;
     expect(common.tokenItems).not.undefined;
+  });
+
+  it("test-common-getters-github-raw", async () => {
+    const common = await OraiCommon.initializeFromGitRaw({
+      chainIds: ["Oraichain", "osmosis-1", "0x01"]
+    });
+    expect(common.chainInfos).not.undefined;
+    expect(common.chainInfos?.chainInfos.length).toEqual(3);
+    expect(common.chainInfos?.cosmosChains.length).toEqual(2);
+    expect(common.tokenItems?.evmTokens.length).toBeGreaterThan(0);
   });
 });

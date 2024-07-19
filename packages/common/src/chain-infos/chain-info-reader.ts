@@ -1,9 +1,14 @@
 import { fetchRetry } from "../helpers";
 import {
   CHAIN_REGISTRY_BACKEND_ENDPOINTS,
-  CHAIN_REGISTRY_GITHUB_API_ENDPOINTS
+  CHAIN_REGISTRY_GITHUB_API_ENDPOINTS,
+  CHAIN_REGISTRY_GITHUB_RAWCONTENT_ENDPOINTS
 } from "../constants";
-import { ChainInfoReader, CustomChainInfo } from "./types";
+import {
+  ChainInfoReader,
+  ChainInfoReaderFromGitRawOptions,
+  CustomChainInfo
+} from "./types";
 
 export class ChainInfoReaderFromBackend implements ChainInfoReader {
   async readChainInfos() {
@@ -52,5 +57,47 @@ export class ChainInfoReaderFromGit implements ChainInfoReader {
       responses.map((data) => data.json())
     );
     return chains;
+  }
+}
+
+/**
+ * @summary This class fetches chain infos from our github master branch raw content.
+ */
+export class ChainInfoReaderFromGitRaw implements ChainInfoReader {
+  protected urls: string[] = [];
+  constructor(
+    protected options: ChainInfoReaderFromGitRawOptions = {
+      chainIds: [],
+      baseUrl: CHAIN_REGISTRY_GITHUB_RAWCONTENT_ENDPOINTS.BASE_URL
+    }
+  ) {
+    if (!this.options.baseUrl)
+      this.options.baseUrl =
+        CHAIN_REGISTRY_GITHUB_RAWCONTENT_ENDPOINTS.BASE_URL;
+    this.generateUrls();
+  }
+
+  private generateUrls() {
+    const { chainIds, baseUrl } = this.options;
+
+    const chainUrls = chainIds.map((id) => {
+      return `${baseUrl}/chains/${id}.json`;
+    });
+    console.log(chainUrls);
+
+    this.urls = [...new Set([...chainUrls, ...(this.urls || [])])];
+  }
+
+  async readChainInfos() {
+    const chainInfos: CustomChainInfo[] = await this.fetchUrls();
+    return chainInfos;
+  }
+
+  async fetchUrls() {
+    return Promise.all(this.urls.map((url) => this.fetch(url)));
+  }
+
+  async fetch(url: string) {
+    return fetchRetry(url).then((data) => data.json());
   }
 }

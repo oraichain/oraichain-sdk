@@ -5,6 +5,7 @@ import {
   Currency
 } from "@keplr-wallet/types";
 import { NetworkType, CoinType } from "../constants/network";
+import { NetworkChainId } from "src/constants";
 
 export type BridgeAppCurrency = FeeCurrency & {
   readonly bridgeTo?: string[];
@@ -52,4 +53,9 @@ export interface ChainInfos {
 
 export interface ChainInfoReader {
   readChainInfos(): Promise<CustomChainInfo[]>;
+}
+
+export interface ChainInfoReaderFromGitRawOptions {
+  chainIds: NetworkChainId[];
+  baseUrl?: string;
 }

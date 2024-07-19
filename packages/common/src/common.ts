@@ -2,6 +2,8 @@ import {
   ChainInfoReader,
   ChainInfoReaderFromBackend,
   ChainInfoReaderFromGit,
+  ChainInfoReaderFromGitRaw,
+  ChainInfoReaderFromGitRawOptions,
   ChainInfos,
   ChainInfosImpl,
   CustomChainInfo
@@ -34,6 +36,13 @@ export class OraiCommon {
 
   static async initializeFromGit(accessToken: string = "") {
     const reader = new ChainInfoReaderFromGit(accessToken);
+    return OraiCommon.initializeFromChainInfoReader(reader);
+  }
+
+  static async initializeFromGitRaw(
+    options?: ChainInfoReaderFromGitRawOptions
+  ) {
+    const reader = new ChainInfoReaderFromGitRaw(options);
     return OraiCommon.initializeFromChainInfoReader(reader);
   }
 
