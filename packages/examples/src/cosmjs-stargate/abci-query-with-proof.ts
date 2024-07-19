@@ -19,10 +19,6 @@ const encodeNamespaces = (namespaces: Uint8Array[]): Uint8Array => {
   const tmClient = await Tendermint37Client.connect("https://rpc.orai.io");
   const queryClient = new QueryClient(tmClient as any);
   const contract = fromBech32(ORAI_TOKEN_CONTRACTS.USDC);
-  const key = encodeNamespaces([Buffer.from("token_info")]);
-  const finalKey = Buffer.concat([key, Buffer.from("token_info")]);
-  console.log(finalKey.length);
-  console.log(finalKey);
   const result = await queryClient.queryRawProof(
     "wasm",
     Uint8Array.from([3, ...contract.data, ...Buffer.from("token_info")])
