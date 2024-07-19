@@ -3,18 +3,6 @@ import { QueryClient } from "@cosmjs/stargate";
 import { Tendermint37Client } from "@cosmjs/tendermint-rpc";
 import { ORAI_TOKEN_CONTRACTS } from "@oraichain/common";
 
-const encodeNamespaces = (namespaces: Uint8Array[]): Uint8Array => {
-  const ret = [];
-  for (const ns of namespaces) {
-    const lengthBuf = Buffer.allocUnsafe(2);
-    console.log(ns.byteLength);
-    lengthBuf.writeUInt16BE(ns.byteLength);
-    ret.push(lengthBuf);
-    ret.push(ns);
-  }
-  return Buffer.concat(ret);
-};
-
 (async () => {
   const tmClient = await Tendermint37Client.connect("https://rpc.orai.io");
   const queryClient = new QueryClient(tmClient as any);
