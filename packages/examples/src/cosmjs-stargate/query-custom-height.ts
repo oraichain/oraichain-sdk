@@ -37,7 +37,8 @@ import { setTimeout } from "timers/promises";
   const { amount: distrBalanceTenBeforeAgain } =
     await stargateClientTenHeightBefore.getBalance(address, ORAI);
   assert(distrBalanceTenBeforeAgain === distrBalanceTenBefore);
-  assert(distrBalanceTenBeforeAgain === distrBalance);
+  assert(distrBalanceTenBeforeAgain !== distrBalance);
+  assert(distrBalanceTenBeforeAgain !== distrBalanceFiveBefore);
   console.log(
     distrBalance,
     distrBalanceTenBefore,
