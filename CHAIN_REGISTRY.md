@@ -1,6 +1,6 @@
 # Chain registry
 
-This package contains a number of cosmos-sdk, evm and bitcoin based chains. Each chain info is represented as a json file with chain id as the filename. The chain info contains data that makes it easy to start running or interacting with a node.
+This repo contains a number of cosmos-sdk, evm and bitcoin based chains. Each chain info is represented as a json file with chain id as the filename. The chain info contains data that makes it easy to start running or interacting with a node.
 
 Schema files containing the recommended metadata structure can be found in the `*.schema.json` files. Schemas are still undergoing revision as user needs are surfaced. Optional fields may be added beyond what is contained in the schema files.
 
@@ -9,6 +9,31 @@ Schema files containing the recommended metadata structure can be found in the `
 We accept pull requests to add a new chain or IBC infos.
 
 When creating Pull Requests, please provide a title that clearly describes the change, rather than using the default commit title. Titles like "Add chain" are too vague and make it hard to navigate the backlog of Pull Requests. Include specific details such as the affected Chain Name, API types, or Provider. For example, use "Add Oraichain chain info" instead.
+
+Please carefully read and follow the guidelines below. Any contribution is more than welcome!
+
+# Requirements and Preparation
+
+This section provides the essential information needed to register a chain with the OWallet. Keep in mind that submitting a request doesn't ensure integration or updates; the Oraichain Labs team will conduct a basic verification to check for security issues or missing details.
+
+If approved, you will see your chain on OWallet.
+
+## Chain Registration Directory Structure
+
+Here’s an overview of the structure of the directory. Please provide the information and files complying with the requirements.
+
+```
+.
+├── chains                         # Mainnet
+│     ├── cosmoshub-4.json         # Chains (Each file should be named `{chain-id}.json')
+│     ├── osmosis-1.json
+│     └── ...
+└── images                         # Collection of image assets
+      ├── cosmoshub-4              # Image assets of Comos Hub (Each directory should be named `{chain-id}`.)
+      │     └── chain.png          # Cosmos Hub Logo(png, 256x256px)
+      ├── osmosis-1                # Image assets of Osmosis
+      └── ...
+```
 
 ## Sample
 
@@ -246,6 +271,8 @@ A sample `Oraichain.json` includes the following information.
   ]
 }
 ```
+
+<!-- TODO: add requirement details & notes similarly to keplr-chain-registry -->
 
 ### Convert type to json schema
 
