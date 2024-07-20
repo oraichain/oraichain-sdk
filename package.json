@@ -18,9 +18,15 @@
     "node": ">=18.18.0"
   },
   "devDependencies": {
-    "@cosmjs/encoding": "0.31.3",
+    "@cosmjs/amino": "^0.31.3",
+    "@cosmjs/cosmwasm-stargate": "^0.31.3",
+    "@cosmjs/crypto": "^0.31.3",
+    "@cosmjs/encoding": "^0.31.3",
+    "@cosmjs/proto-signing": "^0.31.3",
+    "@cosmjs/stargate": "^0.31.3",
+    "@cosmjs/tendermint-rpc": "^0.31.3",
     "@eslint/js": "^9.7.0",
-    "@oraichain/cw-simulate": "^2.8.68",
+    "@oraichain/cw-simulate": "^2.8.87",
     "@types/eslint__js": "^8.42.3",
     "@types/lodash": "^4.17.0",
     "@types/node": "^20.11.30",

@@ -1,0 +1,108 @@
+diff --git a/node_modules/@cosmjs/stargate/build/modules/bank/queries.js b/node_modules/@cosmjs/stargate/build/modules/bank/queries.js
+index af6f830..161bbf2 100644
+--- a/node_modules/@cosmjs/stargate/build/modules/bank/queries.js
++++ b/node_modules/@cosmjs/stargate/build/modules/bank/queries.js
+@@ -5,8 +5,8 @@ exports.setupBankExtension = void 0;
+ const utils_1 = require("@cosmjs/utils");
+ const query_1 = require("cosmjs-types/cosmos/bank/v1beta1/query");
+ const queryclient_1 = require("../../queryclient");
+-function setupBankExtension(base) {
+-    const rpc = (0, queryclient_1.createProtobufRpcClient)(base);
++function setupBankExtension(base, desiredHeight) {
++    const rpc = (0, queryclient_1.createProtobufRpcClient)(base, desiredHeight);
+     // Use this service to get easy typed access to query methods
+     // This cannot be used for proof verification
+     const queryService = new query_1.QueryClientImpl(rpc);
+diff --git a/node_modules/@cosmjs/stargate/build/queryclient/queryclient.js b/node_modules/@cosmjs/stargate/build/queryclient/queryclient.js
+index ebf0c7c..afa645f 100644
+--- a/node_modules/@cosmjs/stargate/build/queryclient/queryclient.js
++++ b/node_modules/@cosmjs/stargate/build/queryclient/queryclient.js
+@@ -32,6 +32,24 @@ class QueryClient {
+         }
+         return client;
+     }
++
++    static withExtensionsWithHeight(tmClient, height, ...extensionSetups) {
++        const client = new QueryClient(tmClient, height);
++        const extensions = extensionSetups.map((setupExtension) => setupExtension(client, height));
++        for (const extension of extensions) {
++            (0, utils_1.assert)((0, utils_1.isNonNullObject)(extension), `Extension must be a non-null object`);
++            for (const [moduleKey, moduleValue] of Object.entries(extension)) {
++                (0, utils_1.assert)((0, utils_1.isNonNullObject)(moduleValue), `Module must be a non-null object. Found type ${typeof moduleValue} for module "${moduleKey}".`);
++                const current = client[moduleKey] || {};
++                client[moduleKey] = {
++                    ...current,
++                    ...moduleValue,
++                };
++            }
++        }
++        return client;
++    }
++
+     constructor(tmClient) {
+         this.tmClient = tmClient;
+     }
+diff --git a/node_modules/@cosmjs/stargate/build/queryclient/utils.d.ts b/node_modules/@cosmjs/stargate/build/queryclient/utils.d.ts
+index 5317078..75d149e 100644
+--- a/node_modules/@cosmjs/stargate/build/queryclient/utils.d.ts
++++ b/node_modules/@cosmjs/stargate/build/queryclient/utils.d.ts
+@@ -19,7 +19,7 @@ export declare function createPagination(paginationKey?: Uint8Array): PageReques
+ export interface ProtobufRpcClient {
+     request(service: string, method: string, data: Uint8Array): Promise<Uint8Array>;
+ }
+-export declare function createProtobufRpcClient(base: QueryClient): ProtobufRpcClient;
++export declare function createProtobufRpcClient(base: QueryClient, height?: number): ProtobufRpcClient;
+ /**
+  * Takes a uint64 value as string, number, Long or Uint64 and returns an unsigned Long instance
+  * of it.
+diff --git a/node_modules/@cosmjs/stargate/build/queryclient/utils.js b/node_modules/@cosmjs/stargate/build/queryclient/utils.js
+index 6f4ecaa..7816bad 100644
+--- a/node_modules/@cosmjs/stargate/build/queryclient/utils.js
++++ b/node_modules/@cosmjs/stargate/build/queryclient/utils.js
+@@ -28,11 +28,11 @@ function createPagination(paginationKey) {
+     return paginationKey ? pagination_1.PageRequest.fromPartial({ key: paginationKey }) : undefined;
+ }
+ exports.createPagination = createPagination;
+-function createProtobufRpcClient(base) {
++function createProtobufRpcClient(base, height = undefined) {
+     return {
+         request: async (service, method, data) => {
+             const path = `/${service}/${method}`;
+-            const response = await base.queryAbci(path, data, undefined);
++            const response = await base.queryAbci(path, data, height);
+             return response.value;
+         },
+     };
+diff --git a/node_modules/@cosmjs/stargate/build/stargateclient.d.ts b/node_modules/@cosmjs/stargate/build/stargateclient.d.ts
+index 0cd6feb..b5fc618 100644
+--- a/node_modules/@cosmjs/stargate/build/stargateclient.d.ts
++++ b/node_modules/@cosmjs/stargate/build/stargateclient.d.ts
+@@ -137,6 +137,7 @@ export interface PrivateStargateClient {
+ }
+ export interface StargateClientOptions {
+     readonly accountParser?: AccountParser;
++    readonly desiredHeight?: number;
+ }
+ export declare class StargateClient {
+     private readonly tmClient;
+diff --git a/node_modules/@cosmjs/stargate/build/stargateclient.js b/node_modules/@cosmjs/stargate/build/stargateclient.js
+index 3268b13..68d3eda 100644
+--- a/node_modules/@cosmjs/stargate/build/stargateclient.js
++++ b/node_modules/@cosmjs/stargate/build/stargateclient.js
+@@ -91,7 +91,7 @@ class StargateClient {
+     constructor(tmClient, options) {
+         if (tmClient) {
+             this.tmClient = tmClient;
+-            this.queryClient = queryclient_1.QueryClient.withExtensions(tmClient, modules_1.setupAuthExtension, modules_1.setupBankExtension, modules_1.setupStakingExtension, modules_1.setupTxExtension);
++            this.queryClient = queryclient_1.QueryClient.withExtensionsWithHeight(tmClient, options.desiredHeight, modules_1.setupAuthExtension, modules_1.setupBankExtension, modules_1.setupStakingExtension, modules_1.setupTxExtension);
+         }
+         const { accountParser = accounts_1.accountFromAny } = options;
+         this.accountParser = accountParser;
+@@ -299,6 +299,7 @@ class StargateClient {
+         return results.txs.map((tx) => {
+             const txMsgData = abci_1.TxMsgData.decode(tx.result.data ?? new Uint8Array());
+             return {
++                ...tx,
+                 height: tx.height,
+                 txIndex: tx.index,
+                 hash: (0, encoding_1.toHex)(tx.hash).toUpperCase(),
