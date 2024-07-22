@@ -272,9 +272,46 @@ A sample `Oraichain.json` includes the following information.
 }
 ```
 
-<!-- TODO: add requirement details & notes similarly to keplr-chain-registry -->
+## Requirement Details (based on [keplr-chain-registry](https://github.com/chainapsis/keplr-chain-registry))
 
-### Convert type to json schema
+- chainId: chainId in a form of {identifier}-{version} (ex. cosmoshub-4)
+- chainName: the name of the chain that will be displayed on the wallet
+- chainSymbolImageUrl: Image URL of the chain.
+  - https://dhj8dql1kzq2v.cloudfront.net/white/atom.png
+  - Please modify the chain-identifier and file-name from the link above and upload it.
+- rpc: URL of RPC endpoint of the chain
+- rest (optional): URL of REST/API endpoint of the chain. Not all chains have REST endpoints.
+- networkType: "cosmos" | "evm" | "bsc" | "tron" | "bitcoin". If your chain is not in the list, you can add your network type [here](./packages/common//src/constants/network.ts)
+- bip44: BIP-44 coin type (118 for Cosmos-based chains, 60 for EVM based chains, 0 for Bitcoin, and 195 for Tron)
+- bech32Config (optional): prefix used at the beginning of the address. Optional since OWallet support other types of chains like EVM, Bitcoin which may not have bech32 addresses.
+- currencies: the list of the supported currencies on your chain.
+- feeCurrencies (optional): the list of the tokens that are accepted by the validators for fees.
+- stakeCurrency (optional): the staking token of the chain. Remove this item if your chain does not support native staking (e.g. your chain uses replicated security) or does not have a staking token. _(This is for Cosmos-based chains only)_
+- coinGeckoId (optional): the active API ID for OWallet to get the price from CoinGecko
+- features: any other features that are additionally supported by the chain
+  - cosmwasm: supports CosmWasm smart contracts
+  - eth-address-gen: supports EVM account generation
+  - eth-key-sign: supports EVM signatures,
+  - stargate:,
+  - ibc-transfer:
+  - no-legacy-stdTx
+- txExplorer (optional): Your explorer information so OWallet and other dApps can link transaction results to.
+
+## NOTE:
+
+- please check if the chain information file is in JSON format.
+- RPC
+  - Please check if the RPC node is not currently experiencing any issues/errors.
+  - Please double-check if your chainId matches the RPC node’s chainId.
+  - Check if websocket connection is open.
+- REST
+  - Please check if the REST node is not currently experiencing any issues/errors.
+  - Please double-check if your chainId matches the REST node’s chainId.
+- Please provide the CoinGecko ID only if the price for the token is available on CoinGecko.
+
+## For maintainers
+
+If you update the chain info type, please run the following command to re-generate a new chain schema that applies to all chains:
 
 ```bash
 yarn typescript-json-schema packages/common/src/chain-infos/types.ts CustomChainInfo --out chain.schema.json --required --esModuleInterop true --ignoreErrors

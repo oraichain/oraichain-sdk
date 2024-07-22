@@ -241,15 +241,15 @@ const cosmosInfos = window.common.chainInfos.chainInfos.filter(
   );
 ```
 
-## API
+<!-- ## API
 
-### Docs
+### Docs -->
 
 <!-- Generated TypeDoc API [Documentation](./docs/README.md) -->
 
-## Helpers
+<!-- ## Helpers
 
-Helper docs
+Helper docs -->
 
 ## License
 
