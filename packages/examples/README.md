@@ -85,6 +85,69 @@ dotenv.config();
 })();
 ```
 
+You can interact with cosmwasm smart contract. 
+
+In this example, after creating new `SigningCosmWasmClient`, we query USDC CW20 contract state by executing `queryContractSmart` method with query message `{token_info: {}}`.
+
+## Custom query height
+
+```ts
+import { StargateClient } from "@cosmjs/stargate";
+import { ORAI } from "@oraichain/common";
+import { assert } from "console";
+import { setTimeout } from "timers/promises";
+
+(async () => {
+  const rpc = "https://rpc.orai.io";
+  const { account: distributionAccount } = await fetch(
+    "https://lcd.orai.io/cosmos/auth/v1beta1/module_accounts/distribution"
+  ).then((data) => data.json());
+
+  const { address } = distributionAccount.base_account;
+  const stargateClient = await StargateClient.connect(rpc);
+  const latestHeight = await stargateClient.getHeight();
+  const { amount: distrBalance } = await stargateClient.getBalance(
+    address,
+    ORAI
+  );
+  const stargateClientTenHeightBefore = await StargateClient.connect(rpc, {
+    desiredHeight: latestHeight - 10
+  });
+  const stargateClientDesiredFiveHeightBefore = await StargateClient.connect(
+    rpc,
+    {
+      desiredHeight: latestHeight - 5
+    }
+  );
+
+  // query balance of distribution module at latest, 10 and 5 heights before that
+  const { amount: distrBalanceTenBefore } =
+    await stargateClientTenHeightBefore.getBalance(address, ORAI);
+  const { amount: distrBalanceFiveBefore } =
+    await stargateClientDesiredFiveHeightBefore.getBalance(address, ORAI);
+
+  // after several blocks, the balances 10 heights before should stay the same, proving that we can query states at a specific height
+  await setTimeout(2000);
+  const { amount: distrBalanceTenBeforeAgain } =
+    await stargateClientTenHeightBefore.getBalance(address, ORAI);
+  assert(distrBalanceTenBeforeAgain === distrBalanceTenBefore);
+  assert(distrBalanceTenBeforeAgain !== distrBalance);
+  assert(distrBalanceTenBeforeAgain !== distrBalanceFiveBefore);
+  console.log(
+    distrBalance,
+    distrBalanceTenBefore,
+    distrBalanceTenBeforeAgain,
+    distrBalanceFiveBefore
+  );
+})();
+```
+
+You can query blockchain states at specific block height. 
+
+In the example above, we create three `StargateClient` with current height, 5 height before and 10 height before. After that, we get balance of an address with these `StargateClient` by executing `getBalance` method.
+
+After several blocks, the result of `getBalance` with 10 height before stay the same, indicate that we can query states of blockchain at specific height.
+
 ## (Advanced) ABCI Query with Proof
 
 ```ts
@@ -127,6 +190,74 @@ Here, the `QueryClient` just wraps it with the method `queryRawProof` for furthe
 The key here is to understand the `queryKey` works. In Cosmos SDK stores, a state is usually prefixed with /module-name/key-prefix/data
 
 Here, the module name is `wasm`, the key prefix is `3`, which is querying the contract state, the remaining is the concat of the query values.
+
+## (Advanced) ABCI Query with desired height
+```ts
+import { StargateClient } from "@cosmjs/stargate";
+import { Tendermint37Client } from "@cosmjs/tendermint-rpc/build/tendermint37/tendermint37client";
+import { ORAI } from "@oraichain/common";
+import { assert } from "console";
+import {
+  QuerySupplyOfRequest,
+  QuerySupplyOfResponse
+} from "cosmjs-types/cosmos/bank/v1beta1/query";
+import { setTimeout } from "timers/promises";
+
+(async () => {
+  const rpc = "https://rpc.orai.io";
+  const tmClient = await Tendermint37Client.connect(rpc);
+  const stargateClient = await StargateClient.connect(rpc);
+  const latestHeight = await stargateClient.getHeight();
+
+  const path = `/cosmos.bank.v1beta1.Query/SupplyOf`;
+  const data = QuerySupplyOfRequest.encode({ denom: ORAI }).finish();
+  const latestOraiSupply = await tmClient.abciQuery({
+    path: path,
+    data,
+    prove: false,
+    height: latestHeight
+  });
+  const oraiSupplyFiveHeightBefore = await tmClient.abciQuery({
+    path: path,
+    data,
+    prove: false,
+    height: latestHeight - 5
+  });
+  await setTimeout(2000);
+  const oraiSupplyFiveHeightBeforeAgain = await tmClient.abciQuery({
+    path: path,
+    data,
+    prove: false,
+    height: latestHeight - 5
+  });
+  assert(
+    QuerySupplyOfResponse.decode(oraiSupplyFiveHeightBefore.value).amount
+      .amount ===
+      QuerySupplyOfResponse.decode(oraiSupplyFiveHeightBeforeAgain.value).amount
+        .amount
+  );
+  assert(
+    QuerySupplyOfResponse.decode(latestOraiSupply.value).amount.amount !==
+      QuerySupplyOfResponse.decode(oraiSupplyFiveHeightBeforeAgain.value).amount
+        .amount
+  );
+  console.log(
+    QuerySupplyOfResponse.decode(latestOraiSupply.value).amount.amount,
+    QuerySupplyOfResponse.decode(oraiSupplyFiveHeightBefore.value).amount
+      .amount,
+    QuerySupplyOfResponse.decode(oraiSupplyFiveHeightBeforeAgain.value).amount
+      .amount
+  );
+})();
+```
+
+You can query blockchain states by using `abciQuery` method with block height you desired. 
+
+In the example above, we query supply of Orai token at the current height and 5 height before. 
+
+To query blockchain states with `abciQuery`, you need pass params includes `path` (in this example is `/cosmos.bank.v1beta1.Query/SupplyOf`), `data` (in the example here data is `{denom: ORAI}`being encoded), `height` and `prove` (option).
+
+After several blocks, the result when query supply of Orai with 5 height before still stay the same, indicate that we can query blockchain states at specific block height with `abciQuery` method.
 
 ## License
 
