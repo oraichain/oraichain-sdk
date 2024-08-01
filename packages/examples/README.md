@@ -259,6 +259,14 @@ To query blockchain states with `abciQuery`, you need pass params includes `path
 
 After several blocks, the result when query supply of Orai with 5 height before still stay the same, indicate that we can query blockchain states at specific block height with `abciQuery` method.
 
+## Listen for transactions of smart contract or address
+
+You can query transactions of a smart contract or an address using cosmos-sync sdk or subql. 
+
+Please visit [here](https://github.com/oraichain/cosmos-sync/packages/examples/README.md) for more details about querying transactions with cosmos-sync sdk.
+
+Please visit [here](https://github.com/oraichain/cosmos-subql-starter/tree/dev/Oraichain/tx-history/EXAMPLES.md) for more details about querying transactions with subql.
+
 ## License
 
 [GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html)
