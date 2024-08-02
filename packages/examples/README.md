@@ -144,6 +144,8 @@ import { setTimeout } from "timers/promises";
 
 You can query blockchain states at specific block height. 
 
+To query blockchain state with custom block height, we use patches with cosmjs and cosmwasm-stargate. You can view the details [here](../../patches/@cosmjs+stargate+0.31.3.patch).
+
 In the example above, we create three `StargateClient` with current height, 5 height before and 10 height before. After that, we get balance of an address with these `StargateClient` by executing `getBalance` method.
 
 After several blocks, the result of `getBalance` with 10 height before stay the same, indicate that we can query states of blockchain at specific height.
