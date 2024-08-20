@@ -8,6 +8,7 @@ export const KWT = "oraie";
 export const MILKY = "milky";
 export const STABLE_DENOM = "usdt";
 export const TRON_DENOM = "trx";
+export const TON_NATIVE = "ton";
 
 export const IBC_DENOMS = {
   ATOM: "ibc/A2E2EEC9057A4A1C2C0A6A4C78B0239118DF5F278830F50B4A6BDD7A66506B78",
