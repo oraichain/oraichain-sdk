@@ -2,7 +2,7 @@ export const EVM_CHAIN_IDS = {
   ETH: "0x01",
   BSC: "0x38",
   KAWAII_EVM: "0x1ae6",
-  TRON: "0x2b6653dc",
+  TRON: "0x2b6653dc"
 } as const;
 
 // cosmos chainId
@@ -13,7 +13,12 @@ export const COSMOS_CHAIN_IDS = {
   COSMOSHUB: "cosmoshub-4",
   INJECTVE: "injective-1",
   KAWAII_COSMOS: "kawaii_6886-1",
-  NOBLE: "noble-1",
+  NOBLE: "noble-1"
+} as const;
+
+export const TON_CHAIN_ID = {
+  TON_MAINNET: "ton",
+  TON_TESTNET: "ton_testnet"
 } as const;
 
 export const EVM_CHAIN_IDS_DECIMAL = {
@@ -67,9 +72,11 @@ export const EVM_CHAIN_IDS_DECIMAL = {
   kcc: 321,
   kawaiiverse: 6886,
   etherlite: 111,
-  tron: 728126428,
+  tron: 728126428
 };
 
 export type EvmChainId = (typeof EVM_CHAIN_IDS)[keyof typeof EVM_CHAIN_IDS];
-export type CosmosChainId = (typeof COSMOS_CHAIN_IDS)[keyof typeof COSMOS_CHAIN_IDS];
-export type NetworkChainId = CosmosChainId | EvmChainId;
+export type CosmosChainId =
+  (typeof COSMOS_CHAIN_IDS)[keyof typeof COSMOS_CHAIN_IDS];
+export type TonChainId = (typeof TON_CHAIN_ID)[keyof typeof TON_CHAIN_ID];
+export type NetworkChainId = CosmosChainId | EvmChainId | TonChainId;

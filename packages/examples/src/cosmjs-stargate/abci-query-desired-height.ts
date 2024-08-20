@@ -1,6 +1,6 @@
 import { StargateClient } from "@cosmjs/stargate";
 import { Tendermint37Client } from "@cosmjs/tendermint-rpc/build/tendermint37/tendermint37client";
-import { ORAI } from "@oraichain/common";
+import { ORAI, OraiCommon } from "@oraichain/common";
 import { assert } from "console";
 import {
   QuerySupplyOfRequest,
@@ -9,7 +9,9 @@ import {
 import { setTimeout } from "timers/promises";
 
 (async () => {
-  const rpc = "https://rpc.orai.io";
+  const rpc = (
+    await OraiCommon.initializeFromGitRaw({ chainIds: ["Oraichain"] })
+  ).chainInfos.cosmosChains[0].rpc;
   const tmClient = await Tendermint37Client.connect(rpc);
   const stargateClient = await StargateClient.connect(rpc);
   const latestHeight = await stargateClient.getHeight();

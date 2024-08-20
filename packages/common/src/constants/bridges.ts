@@ -1,3 +1,6 @@
+import { TonChainId } from "./chain-ids";
+
+// EVM bridge constants
 export const ORAI_BRIDGE_UDENOM = "uoraib";
 export const ORAI_BRIDGE_EVM_FEE = "1";
 export const ORAI_BRIDGE_CHAIN_FEE = "1";
@@ -5,14 +8,14 @@ export const ORAI_BRIDGE_CHAIN_FEE = "1";
 export const BRIDGE_DENOM_PREFIX = {
   BSC: "oraib",
   ETH: "eth-mainnet",
-  TRON: "trontrx-mainnet",
+  TRON: "trontrx-mainnet"
 };
 
 export const BRIDGE_PROXY_CONTRACTS = {
   "0x38": "0x9a0A02B296240D2620E339cCDE386Ff612f07Be5",
   "0x01": "0x9a0A02B296240D2620E339cCDE386Ff612f07Be5",
   // tron format TLXrPtQor6xxF2HeQtmKJUUkVNjJZVsgTM
-  "0x2b6653dc": "0x73Ddc880916021EFC4754Cb42B53db6EAB1f9D64",
+  "0x2b6653dc": "0x73Ddc880916021EFC4754Cb42B53db6EAB1f9D64"
 };
 
 export const IBC_WASM_CONTRACT =
@@ -21,3 +24,20 @@ export const IBC_WASM_CONTRACT_TEST =
   "orai1jtt8c2lz8emh8s708y0aeduh32xef2rxyg8y78lyvxn806cu7q0sjtxsnv";
 
 export type BridgeDenomPrefix = keyof typeof BRIDGE_DENOM_PREFIX;
+
+// TON bridge constants
+export type TonConfig = {
+  wasmBridgeAddress?: string;
+  tonBridgeAddress?: string;
+  tonCenterUrl?: string;
+};
+
+export const DEFAULT_TON_CONFIG: Record<TonChainId, TonConfig> = {
+  ton: {
+    wasmBridgeAddress:
+      "orai159l8l9c5ckhqpuwdfgs9p4v599nqt3cjlfahalmtrhfuncnec2ms5mz60e",
+    tonBridgeAddress: "EQC-aFP0rJXwTgKZQJPbPfTSpBFc8wxOgKHWD9cPvOl_DnaY",
+    tonCenterUrl: "https://toncenter.orai.io/jsonRPC"
+  },
+  ton_testnet: {}
+};
