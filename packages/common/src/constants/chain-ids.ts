@@ -13,7 +13,8 @@ export const COSMOS_CHAIN_IDS = {
   COSMOSHUB: "cosmoshub-4",
   INJECTVE: "injective-1",
   KAWAII_COSMOS: "kawaii_6886-1",
-  NOBLE: "noble-1"
+  NOBLE: "noble-1",
+  NEUTARO: "Neutaro-1"
 } as const;
 
 export const TON_CHAIN_ID = {
