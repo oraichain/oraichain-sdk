@@ -35,7 +35,7 @@ export class ChainInfoReaderFromGit implements ChainInfoReader {
       }
     };
     if (this.accessToken) {
-      options.headers["Authorization"] = "Bearer <YOUR-TOKEN>";
+      options.headers["Authorization"] = `Bearer ${this.accessToken}`;
       options.headers["X-GitHub-Api-Version"] = "2022-11-28";
     }
     const response = await (
