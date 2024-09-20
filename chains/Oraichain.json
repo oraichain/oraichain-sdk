@@ -35,13 +35,7 @@
     "bech32PrefixConsAddr": "oraivalcons",
     "bech32PrefixConsPub": "oraivalconspub"
   },
-  "features": [
-    "stargate",
-    "ibc-transfer",
-    "cosmwasm",
-    "wasmd_0.24+",
-    "no-legacy-stdTx"
-  ],
+  "features": ["stargate", "ibc-transfer", "cosmwasm", "wasmd_0.24+", "no-legacy-stdTx"],
   "txExplorer": {
     "name": "Oraiscan",
     "txUrl": "https://scan.orai.io/txs/{txHash}",
@@ -234,6 +228,22 @@
       "coinGeckoId": "the-open-network",
       "bridgeTo": ["ton"],
       "coinImageUrl": "https://assets.coingecko.com/coins/images/17980/standard/ton_symbol.png?1696517498"
+    },
+    {
+      "coinDenom": "PEPE",
+      "coinGeckoId": "pepe",
+      "coinMinimalDenom": "factory/orai1wuvhex9xqs3r539mvc6mtm7n20fcj3qr2m0y9khx6n5vtlngfzes3k0rq9/pepe",
+      "bridgeTo": ["0x38", "0x01"],
+      "coinDecimals": 18,
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/29850/standard/pepe-token.jpeg?1696528776"
+    },
+    {
+      "coinDenom": "CAT",
+      "coinGeckoId": "simon-s-cat",
+      "coinMinimalDenom": "factory/orai1wuvhex9xqs3r539mvc6mtm7n20fcj3qr2m0y9khx6n5vtlngfzes3k0rq9/cat",
+      "coinDecimals": 18,
+      "bridgeTo": ["0x38"],
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/39765/standard/Simon's_Cat_Logo.png?1724017505"
     }
   ]
 }
