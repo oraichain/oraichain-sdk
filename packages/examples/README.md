@@ -89,6 +89,8 @@ You can interact with cosmwasm smart contract.
 
 In this example, after creating new `SigningCosmWasmClient`, we query USDC CW20 contract state by executing `queryContractSmart` method with query message `{token_info: {}}`.
 
+> For more awesome scripts, please visit our [CosmWasm Tools](https://github.com/oraichain/cosmwasm-tools)
+
 ## Custom query height
 
 ```ts
