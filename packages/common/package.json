@@ -10,12 +10,12 @@
     "build/"
   ],
   "devDependencies": {
-    "@keplr-wallet/types": "0.12.28",
     "@types/lodash": "^4"
   },
   "dependencies": {
     "@cosmjs/cosmwasm-stargate": "0.31.3",
     "@cosmjs/tendermint-rpc": "^0.31.3",
+    "@keplr-wallet/types": "0.12.141",
     "axios": "0.21.4",
     "axios-extensions": "3.1.6",
     "bech32": "^1.1.4",

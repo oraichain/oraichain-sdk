@@ -1025,12 +1025,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@keplr-wallet/types@npm:0.12.28":
-  version: 0.12.28
-  resolution: "@keplr-wallet/types@npm:0.12.28"
+"@keplr-wallet/types@npm:0.12.141":
+  version: 0.12.141
+  resolution: "@keplr-wallet/types@npm:0.12.141"
   dependencies:
     long: "npm:^4.0.0"
-  checksum: 10c0/a541088e55ee0a57ac0e5a9c56e8b788d6325f438fcb4f0a478ba4ce76e336660774d8373a2c3dc6b53e4c6d7b5d91be3128102f340728c71a25448d35245980
+  peerDependencies:
+    starknet: ^6
+  checksum: 10c0/31647f14c4f96b57d74cdb80ab3e6187a4086ca97fca7d82139c5448e380919c8a9cc97724c06b6bd14252cab7f8b8bdf3ab546f9156dc8b52deaacf22c49320
   languageName: node
   linkType: hard
 
@@ -1623,7 +1625,7 @@ __metadata:
   dependencies:
     "@cosmjs/cosmwasm-stargate": "npm:0.31.3"
     "@cosmjs/tendermint-rpc": "npm:^0.31.3"
-    "@keplr-wallet/types": "npm:0.12.28"
+    "@keplr-wallet/types": "npm:0.12.141"
     "@types/lodash": "npm:^4"
     axios: "npm:0.21.4"
     axios-extensions: "npm:3.1.6"
