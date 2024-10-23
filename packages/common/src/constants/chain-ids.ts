@@ -22,6 +22,10 @@ export const TON_CHAIN_ID = {
   TON_TESTNET: "ton_testnet"
 } as const;
 
+export const BITCOIN_CHAIN_ID = {
+  BITCOIN_MAINNET: "bitcoin"
+} as const;
+
 export const EVM_CHAIN_IDS_DECIMAL = {
   mainnet: 1,
   ropsten: 3,
@@ -80,4 +84,10 @@ export type EvmChainId = (typeof EVM_CHAIN_IDS)[keyof typeof EVM_CHAIN_IDS];
 export type CosmosChainId =
   (typeof COSMOS_CHAIN_IDS)[keyof typeof COSMOS_CHAIN_IDS];
 export type TonChainId = (typeof TON_CHAIN_ID)[keyof typeof TON_CHAIN_ID];
-export type NetworkChainId = CosmosChainId | EvmChainId | TonChainId;
+export type BitcoinChainId =
+  (typeof BITCOIN_CHAIN_ID)[keyof typeof BITCOIN_CHAIN_ID];
+export type NetworkChainId =
+  | CosmosChainId
+  | EvmChainId
+  | TonChainId
+  | BitcoinChainId;

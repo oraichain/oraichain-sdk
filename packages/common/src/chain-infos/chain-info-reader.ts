@@ -9,14 +9,19 @@ import {
   ChainInfoReaderFromGitRawOptions,
   CustomChainInfo
 } from "./types";
+import path from "path";
 
 export class ChainInfoReaderFromBackend implements ChainInfoReader {
   async readChainInfos() {
-    const { chains } = (await (
+    const chains = (await (
       await fetchRetry(
-        `${CHAIN_REGISTRY_BACKEND_ENDPOINTS.BASE_URL}${CHAIN_REGISTRY_BACKEND_ENDPOINTS.CHAIN_INFOS}`
+        CHAIN_REGISTRY_BACKEND_ENDPOINTS.BASE_URL +
+          path.join(
+            CHAIN_REGISTRY_BACKEND_ENDPOINTS.BASE_ENDPOINT,
+            CHAIN_REGISTRY_BACKEND_ENDPOINTS.CHAIN_INFOS
+          )
       )
-    ).json()) as { chains: CustomChainInfo[] };
+    ).json()) as CustomChainInfo[];
     return chains;
   }
 }
@@ -83,7 +88,6 @@ export class ChainInfoReaderFromGitRaw implements ChainInfoReader {
     const chainUrls = chainIds.map((id) => {
       return `${baseUrl}/chains/${id}.json`;
     });
-    console.log(chainUrls);
 
     this.urls = [...new Set([...chainUrls, ...(this.urls || [])])];
   }

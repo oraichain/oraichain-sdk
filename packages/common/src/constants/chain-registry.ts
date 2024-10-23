@@ -1,6 +1,7 @@
 export const CHAIN_REGISTRY_BACKEND_ENDPOINTS = {
   // FIXME: setup a basic backend & URL for fetching & storing all chain infos
   BASE_URL: "https://",
+  BASE_ENDPOINT: "/api/v1",
   CHAIN_INFOS: "/chains"
 } as const;
 
