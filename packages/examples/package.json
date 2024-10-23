@@ -1,6 +1,6 @@
 {
   "name": "@oraichain/examples",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "main": "build/index.js",
   "license": "MIT",
   "scripts": {
@@ -14,7 +14,7 @@
     "@cosmjs/proto-signing": "^0.31.3",
     "@cosmjs/stargate": "^0.31.3",
     "@cosmjs/tendermint-rpc": "^0.31.3",
-    "@oraichain/common": "^1.0.7",
+    "@oraichain/common": "^1.0.8",
     "bech32": "^1.1.4",
     "cosmjs-types": "^0.8.0",
     "dotenv": "^16.4.5"
