@@ -6,7 +6,6 @@ import { TokenItemType } from "./types";
 import { NETWORK_TYPES } from "../constants/network";
 
 export interface TokenItems {
-  chainInfos: CustomChainInfo[];
   otherChainTokens: TokenItemType[];
   oraichainTokens: TokenItemType[];
   tokens: TokenItemType[];
@@ -21,7 +20,7 @@ export interface TokenItems {
 }
 
 export class TokenItemsImpl implements TokenItems {
-  constructor(public readonly chainInfos: CustomChainInfo[]) {}
+  constructor(private readonly chainInfos: CustomChainInfo[]) {}
 
   static async create(chainInfoReader: ChainInfoReader) {
     const chainInfos = await chainInfoReader.readChainInfos();
