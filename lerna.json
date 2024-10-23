@@ -1,7 +1,7 @@
 {
   "$schema": "node_modules/lerna/schemas/lerna-schema.json",
   "npmClient": "yarn",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "command": {
     "publish": {
       "registry": "https://registry.npmjs.org/"
