@@ -1,921 +1,818 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "definitions": {
-        "BIP44": {
-            "properties": {
-                "coinType": {
-                    "type": "number"
-                }
-            },
-            "required": [
-                "coinType"
-            ],
-            "type": "object"
-        },
-        "Bech32Config": {
-            "properties": {
-                "bech32PrefixAccAddr": {
-                    "type": "string"
-                },
-                "bech32PrefixAccPub": {
-                    "type": "string"
-                },
-                "bech32PrefixConsAddr": {
-                    "type": "string"
-                },
-                "bech32PrefixConsPub": {
-                    "type": "string"
-                },
-                "bech32PrefixValAddr": {
-                    "type": "string"
-                },
-                "bech32PrefixValPub": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "bech32PrefixAccAddr",
-                "bech32PrefixAccPub",
-                "bech32PrefixConsAddr",
-                "bech32PrefixConsPub",
-                "bech32PrefixValAddr",
-                "bech32PrefixValPub"
-            ],
-            "type": "object"
-        },
-        "BridgeAppCurrency": {
-            "anyOf": [
-                {
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/Currency"
-                        },
-                        {
-                            "properties": {
-                                "gasPriceStep": {
-                                    "description": "This is used to set the fee of the transaction.\nIf this field is empty, it just use the default gas price step (low: 0.01, average: 0.025, high: 0.04).",
-                                    "properties": {
-                                        "average": {
-                                            "type": "number"
-                                        },
-                                        "high": {
-                                            "type": "number"
-                                        },
-                                        "low": {
-                                            "type": "number"
-                                        }
-                                    },
-                                    "required": [
-                                        "average",
-                                        "high",
-                                        "low"
-                                    ],
-                                    "type": "object"
-                                }
-                            },
-                            "type": "object"
-                        },
-                        {
-                            "properties": {
-                                "bridgeNetworkIdentifier": {
-                                    "type": "string"
-                                },
-                                "bridgeTo": {
-                                    "items": {
-                                        "type": "string"
-                                    },
-                                    "type": "array"
-                                },
-                                "coinDecimals": {
-                                    "enum": [
-                                        18,
-                                        6,
-                                        9, 
-                                        8
-                                    ],
-                                    "type": "number"
-                                },
-                                "coinGeckoId": {
-                                    "type": "string"
-                                },
-                                "contractAddress": {
-                                    "type": "string"
-                                },
-                                "prefixToken": {
-                                    "type": "string"
-                                }
-                            },
-                            "required": [
-                                "coinDecimals"
-                            ],
-                            "type": "object"
-                        }
-                    ]
-                },
-                {
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/CW20Currency"
-                        },
-                        {
-                            "properties": {
-                                "gasPriceStep": {
-                                    "description": "This is used to set the fee of the transaction.\nIf this field is empty, it just use the default gas price step (low: 0.01, average: 0.025, high: 0.04).",
-                                    "properties": {
-                                        "average": {
-                                            "type": "number"
-                                        },
-                                        "high": {
-                                            "type": "number"
-                                        },
-                                        "low": {
-                                            "type": "number"
-                                        }
-                                    },
-                                    "required": [
-                                        "average",
-                                        "high",
-                                        "low"
-                                    ],
-                                    "type": "object"
-                                }
-                            },
-                            "type": "object"
-                        },
-                        {
-                            "properties": {
-                                "bridgeNetworkIdentifier": {
-                                    "type": "string"
-                                },
-                                "bridgeTo": {
-                                    "items": {
-                                        "type": "string"
-                                    },
-                                    "type": "array"
-                                },
-                                "coinDecimals": {
-                                    "enum": [
-                                        18,
-                                        6,
-                                        8
-                                    ],
-                                    "type": "number"
-                                },
-                                "coinGeckoId": {
-                                    "type": "string"
-                                },
-                                "contractAddress": {
-                                    "type": "string"
-                                },
-                                "prefixToken": {
-                                    "type": "string"
-                                }
-                            },
-                            "required": [
-                                "coinDecimals"
-                            ],
-                            "type": "object"
-                        }
-                    ]
-                },
-                {
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/Secret20Currency"
-                        },
-                        {
-                            "properties": {
-                                "gasPriceStep": {
-                                    "description": "This is used to set the fee of the transaction.\nIf this field is empty, it just use the default gas price step (low: 0.01, average: 0.025, high: 0.04).",
-                                    "properties": {
-                                        "average": {
-                                            "type": "number"
-                                        },
-                                        "high": {
-                                            "type": "number"
-                                        },
-                                        "low": {
-                                            "type": "number"
-                                        }
-                                    },
-                                    "required": [
-                                        "average",
-                                        "high",
-                                        "low"
-                                    ],
-                                    "type": "object"
-                                }
-                            },
-                            "type": "object"
-                        },
-                        {
-                            "properties": {
-                                "bridgeNetworkIdentifier": {
-                                    "type": "string"
-                                },
-                                "bridgeTo": {
-                                    "items": {
-                                        "type": "string"
-                                    },
-                                    "type": "array"
-                                },
-                                "coinDecimals": {
-                                    "enum": [
-                                        18,
-                                        6,
-                                        8
-                                    ],
-                                    "type": "number"
-                                },
-                                "coinGeckoId": {
-                                    "type": "string"
-                                },
-                                "contractAddress": {
-                                    "type": "string"
-                                },
-                                "prefixToken": {
-                                    "type": "string"
-                                }
-                            },
-                            "required": [
-                                "coinDecimals"
-                            ],
-                            "type": "object"
-                        }
-                    ]
-                },
-                {
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/IBCCurrency"
-                        },
-                        {
-                            "properties": {
-                                "gasPriceStep": {
-                                    "description": "This is used to set the fee of the transaction.\nIf this field is empty, it just use the default gas price step (low: 0.01, average: 0.025, high: 0.04).",
-                                    "properties": {
-                                        "average": {
-                                            "type": "number"
-                                        },
-                                        "high": {
-                                            "type": "number"
-                                        },
-                                        "low": {
-                                            "type": "number"
-                                        }
-                                    },
-                                    "required": [
-                                        "average",
-                                        "high",
-                                        "low"
-                                    ],
-                                    "type": "object"
-                                }
-                            },
-                            "type": "object"
-                        },
-                        {
-                            "properties": {
-                                "bridgeNetworkIdentifier": {
-                                    "type": "string"
-                                },
-                                "bridgeTo": {
-                                    "items": {
-                                        "type": "string"
-                                    },
-                                    "type": "array"
-                                },
-                                "coinDecimals": {
-                                    "enum": [
-                                        18,
-                                        6,
-                                        8
-                                    ],
-                                    "type": "number"
-                                },
-                                "coinGeckoId": {
-                                    "type": "string"
-                                },
-                                "contractAddress": {
-                                    "type": "string"
-                                },
-                                "prefixToken": {
-                                    "type": "string"
-                                }
-                            },
-                            "required": [
-                                "coinDecimals"
-                            ],
-                            "type": "object"
-                        }
-                    ]
-                },
-                {
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/ERC20Currency"
-                        },
-                        {
-                            "properties": {
-                                "gasPriceStep": {
-                                    "description": "This is used to set the fee of the transaction.\nIf this field is empty, it just use the default gas price step (low: 0.01, average: 0.025, high: 0.04).",
-                                    "properties": {
-                                        "average": {
-                                            "type": "number"
-                                        },
-                                        "high": {
-                                            "type": "number"
-                                        },
-                                        "low": {
-                                            "type": "number"
-                                        }
-                                    },
-                                    "required": [
-                                        "average",
-                                        "high",
-                                        "low"
-                                    ],
-                                    "type": "object"
-                                }
-                            },
-                            "type": "object"
-                        },
-                        {
-                            "properties": {
-                                "bridgeNetworkIdentifier": {
-                                    "type": "string"
-                                },
-                                "bridgeTo": {
-                                    "items": {
-                                        "type": "string"
-                                    },
-                                    "type": "array"
-                                },
-                                "coinDecimals": {
-                                    "enum": [
-                                        18,
-                                        6,
-                                        8
-                                    ],
-                                    "type": "number"
-                                },
-                                "coinGeckoId": {
-                                    "type": "string"
-                                },
-                                "contractAddress": {
-                                    "type": "string"
-                                },
-                                "prefixToken": {
-                                    "type": "string"
-                                }
-                            },
-                            "required": [
-                                "coinDecimals"
-                            ],
-                            "type": "object"
-                        }
-                    ]
-                }
-            ]
-        },
-        "CW20Currency": {
-            "description": "The currency that is supported on the cosmwasm.\nThis should be the CW-20 that confirms the standard.\nAnd, in this case, `coinMinimalDenom` must start with the type and contract address of currency such as \"cw20:coral1vv6hruqu...3sfhwh:ukeplr\".",
-            "properties": {
-                "coinDecimals": {
-                    "type": "number"
-                },
-                "coinDenom": {
-                    "type": "string"
-                },
-                "coinGeckoId": {
-                    "description": "This is used to fetch asset's fiat value from coingecko.\nYou can get id from https://api.coingecko.com/api/v3/coins/list.",
-                    "type": "string"
-                },
-                "coinImageUrl": {
-                    "type": "string"
-                },
-                "coinMinimalDenom": {
-                    "type": "string"
-                },
-                "contractAddress": {
-                    "type": "string"
-                },
-                "type": {
-                    "const": "cw20",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "coinDecimals",
-                "coinDenom",
-                "coinMinimalDenom",
-                "contractAddress",
-                "type"
-            ],
-            "type": "object"
-        },
-        "CoinType": {
-            "enum": [
-                0,
-                118,
-                195,
-                60
-            ],
-            "type": "number"
-        },
-        "Currency": {
-            "description": "The currency that is supported on the chain natively.",
-            "properties": {
-                "coinDecimals": {
-                    "type": "number"
-                },
-                "coinDenom": {
-                    "type": "string"
-                },
-                "coinGeckoId": {
-                    "description": "This is used to fetch asset's fiat value from coingecko.\nYou can get id from https://api.coingecko.com/api/v3/coins/list.",
-                    "type": "string"
-                },
-                "coinImageUrl": {
-                    "type": "string"
-                },
-                "coinMinimalDenom": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "coinDecimals",
-                "coinDenom",
-                "coinMinimalDenom"
-            ],
-            "type": "object"
-        },
-        "ERC20Currency": {
-            "description": "The currency that is supported on the EVM.",
-            "properties": {
-                "coinDecimals": {
-                    "type": "number"
-                },
-                "coinDenom": {
-                    "type": "string"
-                },
-                "coinGeckoId": {
-                    "description": "This is used to fetch asset's fiat value from coingecko.\nYou can get id from https://api.coingecko.com/api/v3/coins/list.",
-                    "type": "string"
-                },
-                "coinImageUrl": {
-                    "type": "string"
-                },
-                "coinMinimalDenom": {
-                    "type": "string"
-                },
-                "contractAddress": {
-                    "type": "string"
-                },
-                "type": {
-                    "const": "erc20",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "coinDecimals",
-                "coinDenom",
-                "coinMinimalDenom",
-                "contractAddress",
-                "type"
-            ],
-            "type": "object"
-        },
-        "EVMInfo": {
-            "properties": {
-                "chainId": {
-                    "type": "number"
-                },
-                "rpc": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "chainId",
-                "rpc"
-            ],
-            "type": "object"
-        },
-        "FeeCurrency": {
-            "anyOf": [
-                {
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/Currency"
-                        },
-                        {
-                            "properties": {
-                                "gasPriceStep": {
-                                    "description": "This is used to set the fee of the transaction.\nIf this field is empty, it just use the default gas price step (low: 0.01, average: 0.025, high: 0.04).",
-                                    "properties": {
-                                        "average": {
-                                            "type": "number"
-                                        },
-                                        "high": {
-                                            "type": "number"
-                                        },
-                                        "low": {
-                                            "type": "number"
-                                        }
-                                    },
-                                    "required": [
-                                        "average",
-                                        "high",
-                                        "low"
-                                    ],
-                                    "type": "object"
-                                }
-                            },
-                            "type": "object"
-                        }
-                    ]
-                },
-                {
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/CW20Currency"
-                        },
-                        {
-                            "properties": {
-                                "gasPriceStep": {
-                                    "description": "This is used to set the fee of the transaction.\nIf this field is empty, it just use the default gas price step (low: 0.01, average: 0.025, high: 0.04).",
-                                    "properties": {
-                                        "average": {
-                                            "type": "number"
-                                        },
-                                        "high": {
-                                            "type": "number"
-                                        },
-                                        "low": {
-                                            "type": "number"
-                                        }
-                                    },
-                                    "required": [
-                                        "average",
-                                        "high",
-                                        "low"
-                                    ],
-                                    "type": "object"
-                                }
-                            },
-                            "type": "object"
-                        }
-                    ]
-                },
-                {
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/Secret20Currency"
-                        },
-                        {
-                            "properties": {
-                                "gasPriceStep": {
-                                    "description": "This is used to set the fee of the transaction.\nIf this field is empty, it just use the default gas price step (low: 0.01, average: 0.025, high: 0.04).",
-                                    "properties": {
-                                        "average": {
-                                            "type": "number"
-                                        },
-                                        "high": {
-                                            "type": "number"
-                                        },
-                                        "low": {
-                                            "type": "number"
-                                        }
-                                    },
-                                    "required": [
-                                        "average",
-                                        "high",
-                                        "low"
-                                    ],
-                                    "type": "object"
-                                }
-                            },
-                            "type": "object"
-                        }
-                    ]
-                },
-                {
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/IBCCurrency"
-                        },
-                        {
-                            "properties": {
-                                "gasPriceStep": {
-                                    "description": "This is used to set the fee of the transaction.\nIf this field is empty, it just use the default gas price step (low: 0.01, average: 0.025, high: 0.04).",
-                                    "properties": {
-                                        "average": {
-                                            "type": "number"
-                                        },
-                                        "high": {
-                                            "type": "number"
-                                        },
-                                        "low": {
-                                            "type": "number"
-                                        }
-                                    },
-                                    "required": [
-                                        "average",
-                                        "high",
-                                        "low"
-                                    ],
-                                    "type": "object"
-                                }
-                            },
-                            "type": "object"
-                        }
-                    ]
-                },
-                {
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/ERC20Currency"
-                        },
-                        {
-                            "properties": {
-                                "gasPriceStep": {
-                                    "description": "This is used to set the fee of the transaction.\nIf this field is empty, it just use the default gas price step (low: 0.01, average: 0.025, high: 0.04).",
-                                    "properties": {
-                                        "average": {
-                                            "type": "number"
-                                        },
-                                        "high": {
-                                            "type": "number"
-                                        },
-                                        "low": {
-                                            "type": "number"
-                                        }
-                                    },
-                                    "required": [
-                                        "average",
-                                        "high",
-                                        "low"
-                                    ],
-                                    "type": "object"
-                                }
-                            },
-                            "type": "object"
-                        }
-                    ]
-                }
-            ]
-        },
-        "IBCCurrency": {
-            "description": "IBCCurrency is the currency that is sent from the other chain via IBC.\nThis will be handled as similar to the native currency.\nBut, this has more information abounr IBC channel and paths.",
-            "properties": {
-                "coinDecimals": {
-                    "type": "number"
-                },
-                "coinDenom": {
-                    "type": "string"
-                },
-                "coinGeckoId": {
-                    "description": "This is used to fetch asset's fiat value from coingecko.\nYou can get id from https://api.coingecko.com/api/v3/coins/list.",
-                    "type": "string"
-                },
-                "coinImageUrl": {
-                    "type": "string"
-                },
-                "coinMinimalDenom": {
-                    "type": "string"
-                },
-                "originChainId": {
-                    "description": "The chain id that the currency is from.\nIf that chain is unknown, this will be undefined.",
-                    "type": "string"
-                },
-                "originCurrency": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/definitions/Currency"
-                        },
-                        {
-                            "$ref": "#/definitions/CW20Currency"
-                        },
-                        {
-                            "$ref": "#/definitions/Secret20Currency"
-                        }
-                    ]
-                },
-                "paths": {
-                    "items": {
-                        "properties": {
-                            "channelId": {
-                                "type": "string"
-                            },
-                            "clientChainId": {
-                                "type": "string"
-                            },
-                            "counterpartyChannelId": {
-                                "type": "string"
-                            },
-                            "counterpartyPortId": {
-                                "type": "string"
-                            },
-                            "portId": {
-                                "type": "string"
-                            }
-                        },
-                        "required": [
-                            "channelId",
-                            "portId"
-                        ],
-                        "type": "object"
-                    },
-                    "type": "array"
-                }
-            },
-            "required": [
-                "coinDecimals",
-                "coinDenom",
-                "coinMinimalDenom",
-                "originChainId",
-                "originCurrency",
-                "paths"
-            ],
-            "type": "object"
-        },
-        "NetworkType": {
-            "enum": [
-                "bitcoin",
-                "bsc",
-                "cosmos",
-                "evm",
-                "tron"
-            ],
-            "type": "string"
-        },
-        "Secret20Currency": {
-            "properties": {
-                "coinDecimals": {
-                    "type": "number"
-                },
-                "coinDenom": {
-                    "type": "string"
-                },
-                "coinGeckoId": {
-                    "description": "This is used to fetch asset's fiat value from coingecko.\nYou can get id from https://api.coingecko.com/api/v3/coins/list.",
-                    "type": "string"
-                },
-                "coinImageUrl": {
-                    "type": "string"
-                },
-                "coinMinimalDenom": {
-                    "type": "string"
-                },
-                "contractAddress": {
-                    "type": "string"
-                },
-                "type": {
-                    "const": "secret20",
-                    "type": "string"
-                },
-                "viewingKey": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "coinDecimals",
-                "coinDenom",
-                "coinMinimalDenom",
-                "contractAddress",
-                "type",
-                "viewingKey"
-            ],
-            "type": "object"
-        }
-    },
-    "description": "A list of Cosmos chain infos. If we need to add / remove any chains, just directly update this variable.\nsome chain is already in wallet so we override some attributes as optional",
-    "properties": {
-        "alternativeBIP44s": {
-            "items": {
-                "$ref": "#/definitions/BIP44"
-            },
-            "type": "array"
-        },
-        "bech32Config": {
-            "$ref": "#/definitions/Bech32Config"
-        },
-        "beta": {
-            "description": "Shows whether the blockchain is in production phase or beta phase.\nMajor features such as staking and sending are supported on staging blockchains, but without guarantee.\nIf the blockchain is in an early stage, please set it as beta.",
-            "type": "boolean"
-        },
-        "bip44": {
-            "properties": {
-                "coinType": {
-                    "$ref": "#/definitions/CoinType"
-                }
-            },
-            "required": [
-                "coinType"
-            ],
-            "type": "object"
-        },
-        "chainId": {
-            "type": "string"
-        },
-        "chainName": {
-            "type": "string"
-        },
-        "chainSymbolImageUrl": {
-            "type": "string"
-        },
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "BIP44": {
+      "properties": {
         "coinType": {
-            "$ref": "#/definitions/CoinType"
+          "type": "number"
+        }
+      },
+      "required": ["coinType"],
+      "type": "object"
+    },
+    "Bech32Config": {
+      "properties": {
+        "bech32PrefixAccAddr": {
+          "type": "string"
         },
-        "currencies": {
-            "items": {
-                "$ref": "#/definitions/BridgeAppCurrency"
+        "bech32PrefixAccPub": {
+          "type": "string"
+        },
+        "bech32PrefixConsAddr": {
+          "type": "string"
+        },
+        "bech32PrefixConsPub": {
+          "type": "string"
+        },
+        "bech32PrefixValAddr": {
+          "type": "string"
+        },
+        "bech32PrefixValPub": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "bech32PrefixAccAddr",
+        "bech32PrefixAccPub",
+        "bech32PrefixConsAddr",
+        "bech32PrefixConsPub",
+        "bech32PrefixValAddr",
+        "bech32PrefixValPub"
+      ],
+      "type": "object"
+    },
+    "BridgeAppCurrency": {
+      "anyOf": [
+        {
+          "allOf": [
+            {
+              "$ref": "#/definitions/Currency"
             },
-            "type": "array"
-        },
-        "evm": {
-            "$ref": "#/definitions/EVMInfo"
-        },
-        "features": {
-            "description": "Indicate the features supported by this chain. Ex) cosmwasm, secretwasm ...",
-            "items": {
-                "type": "string"
-            },
-            "type": "array"
-        },
-        "feeCurrencies": {
-            "items": {
-                "$ref": "#/definitions/FeeCurrency"
-            },
-            "type": "array"
-        },
-        "hideInUI": {
-            "type": "boolean"
-        },
-        "networkType": {
-            "$ref": "#/definitions/NetworkType"
-        },
-        "nodeProvider": {
-            "properties": {
-                "email": {
-                    "type": "string"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "website": {
-                    "type": "string"
+            {
+              "properties": {
+                "gasPriceStep": {
+                  "description": "This is used to set the fee of the transaction.\nIf this field is empty, it just use the default gas price step (low: 0.01, average: 0.025, high: 0.04).",
+                  "properties": {
+                    "average": {
+                      "type": "number"
+                    },
+                    "high": {
+                      "type": "number"
+                    },
+                    "low": {
+                      "type": "number"
+                    }
+                  },
+                  "required": ["average", "high", "low"],
+                  "type": "object"
                 }
+              },
+              "type": "object"
             },
-            "required": [
-                "email",
-                "name"
-            ],
-            "type": "object"
+            {
+              "properties": {
+                "bridgeNetworkIdentifier": {
+                  "type": "string"
+                },
+                "bridgeTo": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "coinDecimals": {
+                  "enum": [18, 6, 9, 8, 14],
+                  "type": "number"
+                },
+                "coinGeckoId": {
+                  "type": "string"
+                },
+                "contractAddress": {
+                  "type": "string"
+                },
+                "prefixToken": {
+                  "type": "string"
+                }
+              },
+              "required": ["coinDecimals"],
+              "type": "object"
+            }
+          ]
         },
-        "rest": {
-            "type": "string"
+        {
+          "allOf": [
+            {
+              "$ref": "#/definitions/CW20Currency"
+            },
+            {
+              "properties": {
+                "gasPriceStep": {
+                  "description": "This is used to set the fee of the transaction.\nIf this field is empty, it just use the default gas price step (low: 0.01, average: 0.025, high: 0.04).",
+                  "properties": {
+                    "average": {
+                      "type": "number"
+                    },
+                    "high": {
+                      "type": "number"
+                    },
+                    "low": {
+                      "type": "number"
+                    }
+                  },
+                  "required": ["average", "high", "low"],
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            {
+              "properties": {
+                "bridgeNetworkIdentifier": {
+                  "type": "string"
+                },
+                "bridgeTo": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "coinDecimals": {
+                  "enum": [18, 6, 8, 14],
+                  "type": "number"
+                },
+                "coinGeckoId": {
+                  "type": "string"
+                },
+                "contractAddress": {
+                  "type": "string"
+                },
+                "prefixToken": {
+                  "type": "string"
+                }
+              },
+              "required": ["coinDecimals"],
+              "type": "object"
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/definitions/Secret20Currency"
+            },
+            {
+              "properties": {
+                "gasPriceStep": {
+                  "description": "This is used to set the fee of the transaction.\nIf this field is empty, it just use the default gas price step (low: 0.01, average: 0.025, high: 0.04).",
+                  "properties": {
+                    "average": {
+                      "type": "number"
+                    },
+                    "high": {
+                      "type": "number"
+                    },
+                    "low": {
+                      "type": "number"
+                    }
+                  },
+                  "required": ["average", "high", "low"],
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            {
+              "properties": {
+                "bridgeNetworkIdentifier": {
+                  "type": "string"
+                },
+                "bridgeTo": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "coinDecimals": {
+                  "enum": [18, 6, 8, 14],
+                  "type": "number"
+                },
+                "coinGeckoId": {
+                  "type": "string"
+                },
+                "contractAddress": {
+                  "type": "string"
+                },
+                "prefixToken": {
+                  "type": "string"
+                }
+              },
+              "required": ["coinDecimals"],
+              "type": "object"
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/definitions/IBCCurrency"
+            },
+            {
+              "properties": {
+                "gasPriceStep": {
+                  "description": "This is used to set the fee of the transaction.\nIf this field is empty, it just use the default gas price step (low: 0.01, average: 0.025, high: 0.04).",
+                  "properties": {
+                    "average": {
+                      "type": "number"
+                    },
+                    "high": {
+                      "type": "number"
+                    },
+                    "low": {
+                      "type": "number"
+                    }
+                  },
+                  "required": ["average", "high", "low"],
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            {
+              "properties": {
+                "bridgeNetworkIdentifier": {
+                  "type": "string"
+                },
+                "bridgeTo": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "coinDecimals": {
+                  "enum": [18, 6, 8, 14],
+                  "type": "number"
+                },
+                "coinGeckoId": {
+                  "type": "string"
+                },
+                "contractAddress": {
+                  "type": "string"
+                },
+                "prefixToken": {
+                  "type": "string"
+                }
+              },
+              "required": ["coinDecimals"],
+              "type": "object"
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/definitions/ERC20Currency"
+            },
+            {
+              "properties": {
+                "gasPriceStep": {
+                  "description": "This is used to set the fee of the transaction.\nIf this field is empty, it just use the default gas price step (low: 0.01, average: 0.025, high: 0.04).",
+                  "properties": {
+                    "average": {
+                      "type": "number"
+                    },
+                    "high": {
+                      "type": "number"
+                    },
+                    "low": {
+                      "type": "number"
+                    }
+                  },
+                  "required": ["average", "high", "low"],
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            {
+              "properties": {
+                "bridgeNetworkIdentifier": {
+                  "type": "string"
+                },
+                "bridgeTo": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "coinDecimals": {
+                  "enum": [18, 6, 8, 14],
+                  "type": "number"
+                },
+                "coinGeckoId": {
+                  "type": "string"
+                },
+                "contractAddress": {
+                  "type": "string"
+                },
+                "prefixToken": {
+                  "type": "string"
+                }
+              },
+              "required": ["coinDecimals"],
+              "type": "object"
+            }
+          ]
+        }
+      ]
+    },
+    "CW20Currency": {
+      "description": "The currency that is supported on the cosmwasm.\nThis should be the CW-20 that confirms the standard.\nAnd, in this case, `coinMinimalDenom` must start with the type and contract address of currency such as \"cw20:coral1vv6hruqu...3sfhwh:ukeplr\".",
+      "properties": {
+        "coinDecimals": {
+          "type": "number"
+        },
+        "coinDenom": {
+          "type": "string"
+        },
+        "coinGeckoId": {
+          "description": "This is used to fetch asset's fiat value from coingecko.\nYou can get id from https://api.coingecko.com/api/v3/coins/list.",
+          "type": "string"
+        },
+        "coinImageUrl": {
+          "type": "string"
+        },
+        "coinMinimalDenom": {
+          "type": "string"
+        },
+        "contractAddress": {
+          "type": "string"
+        },
+        "type": {
+          "const": "cw20",
+          "type": "string"
+        }
+      },
+      "required": [
+        "coinDecimals",
+        "coinDenom",
+        "coinMinimalDenom",
+        "contractAddress",
+        "type"
+      ],
+      "type": "object"
+    },
+    "CoinType": {
+      "enum": [0, 118, 195, 60],
+      "type": "number"
+    },
+    "Currency": {
+      "description": "The currency that is supported on the chain natively.",
+      "properties": {
+        "coinDecimals": {
+          "type": "number"
+        },
+        "coinDenom": {
+          "type": "string"
+        },
+        "coinGeckoId": {
+          "description": "This is used to fetch asset's fiat value from coingecko.\nYou can get id from https://api.coingecko.com/api/v3/coins/list.",
+          "type": "string"
+        },
+        "coinImageUrl": {
+          "type": "string"
+        },
+        "coinMinimalDenom": {
+          "type": "string"
+        }
+      },
+      "required": ["coinDecimals", "coinDenom", "coinMinimalDenom"],
+      "type": "object"
+    },
+    "ERC20Currency": {
+      "description": "The currency that is supported on the EVM.",
+      "properties": {
+        "coinDecimals": {
+          "type": "number"
+        },
+        "coinDenom": {
+          "type": "string"
+        },
+        "coinGeckoId": {
+          "description": "This is used to fetch asset's fiat value from coingecko.\nYou can get id from https://api.coingecko.com/api/v3/coins/list.",
+          "type": "string"
+        },
+        "coinImageUrl": {
+          "type": "string"
+        },
+        "coinMinimalDenom": {
+          "type": "string"
+        },
+        "contractAddress": {
+          "type": "string"
+        },
+        "type": {
+          "const": "erc20",
+          "type": "string"
+        }
+      },
+      "required": [
+        "coinDecimals",
+        "coinDenom",
+        "coinMinimalDenom",
+        "contractAddress",
+        "type"
+      ],
+      "type": "object"
+    },
+    "EVMInfo": {
+      "properties": {
+        "chainId": {
+          "type": "number"
         },
         "rpc": {
-            "type": "string"
-        },
-        "stakeCurrency": {
-            "$ref": "#/definitions/Currency"
-        },
-        "txExplorer": {
-            "properties": {
-                "accountUrl": {
-                    "type": "string"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "txUrl": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "name",
-                "txUrl"
-            ],
-            "type": "object"
-        },
-        "walletUrl": {
-            "type": "string"
-        },
-        "walletUrlForStaking": {
-            "type": "string"
+          "type": "string"
         }
+      },
+      "required": ["chainId", "rpc"],
+      "type": "object"
     },
-    "required": [
-        "bip44",
-        "chainId",
-        "chainName",
-        "coinType",
-        "currencies",
-        "networkType",
-        "rpc"
-    ],
-    "type": "object"
+    "FeeCurrency": {
+      "anyOf": [
+        {
+          "allOf": [
+            {
+              "$ref": "#/definitions/Currency"
+            },
+            {
+              "properties": {
+                "gasPriceStep": {
+                  "description": "This is used to set the fee of the transaction.\nIf this field is empty, it just use the default gas price step (low: 0.01, average: 0.025, high: 0.04).",
+                  "properties": {
+                    "average": {
+                      "type": "number"
+                    },
+                    "high": {
+                      "type": "number"
+                    },
+                    "low": {
+                      "type": "number"
+                    }
+                  },
+                  "required": ["average", "high", "low"],
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/definitions/CW20Currency"
+            },
+            {
+              "properties": {
+                "gasPriceStep": {
+                  "description": "This is used to set the fee of the transaction.\nIf this field is empty, it just use the default gas price step (low: 0.01, average: 0.025, high: 0.04).",
+                  "properties": {
+                    "average": {
+                      "type": "number"
+                    },
+                    "high": {
+                      "type": "number"
+                    },
+                    "low": {
+                      "type": "number"
+                    }
+                  },
+                  "required": ["average", "high", "low"],
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/definitions/Secret20Currency"
+            },
+            {
+              "properties": {
+                "gasPriceStep": {
+                  "description": "This is used to set the fee of the transaction.\nIf this field is empty, it just use the default gas price step (low: 0.01, average: 0.025, high: 0.04).",
+                  "properties": {
+                    "average": {
+                      "type": "number"
+                    },
+                    "high": {
+                      "type": "number"
+                    },
+                    "low": {
+                      "type": "number"
+                    }
+                  },
+                  "required": ["average", "high", "low"],
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/definitions/IBCCurrency"
+            },
+            {
+              "properties": {
+                "gasPriceStep": {
+                  "description": "This is used to set the fee of the transaction.\nIf this field is empty, it just use the default gas price step (low: 0.01, average: 0.025, high: 0.04).",
+                  "properties": {
+                    "average": {
+                      "type": "number"
+                    },
+                    "high": {
+                      "type": "number"
+                    },
+                    "low": {
+                      "type": "number"
+                    }
+                  },
+                  "required": ["average", "high", "low"],
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/definitions/ERC20Currency"
+            },
+            {
+              "properties": {
+                "gasPriceStep": {
+                  "description": "This is used to set the fee of the transaction.\nIf this field is empty, it just use the default gas price step (low: 0.01, average: 0.025, high: 0.04).",
+                  "properties": {
+                    "average": {
+                      "type": "number"
+                    },
+                    "high": {
+                      "type": "number"
+                    },
+                    "low": {
+                      "type": "number"
+                    }
+                  },
+                  "required": ["average", "high", "low"],
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            }
+          ]
+        }
+      ]
+    },
+    "IBCCurrency": {
+      "description": "IBCCurrency is the currency that is sent from the other chain via IBC.\nThis will be handled as similar to the native currency.\nBut, this has more information abounr IBC channel and paths.",
+      "properties": {
+        "coinDecimals": {
+          "type": "number"
+        },
+        "coinDenom": {
+          "type": "string"
+        },
+        "coinGeckoId": {
+          "description": "This is used to fetch asset's fiat value from coingecko.\nYou can get id from https://api.coingecko.com/api/v3/coins/list.",
+          "type": "string"
+        },
+        "coinImageUrl": {
+          "type": "string"
+        },
+        "coinMinimalDenom": {
+          "type": "string"
+        },
+        "originChainId": {
+          "description": "The chain id that the currency is from.\nIf that chain is unknown, this will be undefined.",
+          "type": "string"
+        },
+        "originCurrency": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Currency"
+            },
+            {
+              "$ref": "#/definitions/CW20Currency"
+            },
+            {
+              "$ref": "#/definitions/Secret20Currency"
+            }
+          ]
+        },
+        "paths": {
+          "items": {
+            "properties": {
+              "channelId": {
+                "type": "string"
+              },
+              "clientChainId": {
+                "type": "string"
+              },
+              "counterpartyChannelId": {
+                "type": "string"
+              },
+              "counterpartyPortId": {
+                "type": "string"
+              },
+              "portId": {
+                "type": "string"
+              }
+            },
+            "required": ["channelId", "portId"],
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "coinDecimals",
+        "coinDenom",
+        "coinMinimalDenom",
+        "originChainId",
+        "originCurrency",
+        "paths"
+      ],
+      "type": "object"
+    },
+    "NetworkType": {
+      "enum": ["bitcoin", "bsc", "cosmos", "evm", "tron"],
+      "type": "string"
+    },
+    "Secret20Currency": {
+      "properties": {
+        "coinDecimals": {
+          "type": "number"
+        },
+        "coinDenom": {
+          "type": "string"
+        },
+        "coinGeckoId": {
+          "description": "This is used to fetch asset's fiat value from coingecko.\nYou can get id from https://api.coingecko.com/api/v3/coins/list.",
+          "type": "string"
+        },
+        "coinImageUrl": {
+          "type": "string"
+        },
+        "coinMinimalDenom": {
+          "type": "string"
+        },
+        "contractAddress": {
+          "type": "string"
+        },
+        "type": {
+          "const": "secret20",
+          "type": "string"
+        },
+        "viewingKey": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "coinDecimals",
+        "coinDenom",
+        "coinMinimalDenom",
+        "contractAddress",
+        "type",
+        "viewingKey"
+      ],
+      "type": "object"
+    }
+  },
+  "description": "A list of Cosmos chain infos. If we need to add / remove any chains, just directly update this variable.\nsome chain is already in wallet so we override some attributes as optional",
+  "properties": {
+    "alternativeBIP44s": {
+      "items": {
+        "$ref": "#/definitions/BIP44"
+      },
+      "type": "array"
+    },
+    "bech32Config": {
+      "$ref": "#/definitions/Bech32Config"
+    },
+    "beta": {
+      "description": "Shows whether the blockchain is in production phase or beta phase.\nMajor features such as staking and sending are supported on staging blockchains, but without guarantee.\nIf the blockchain is in an early stage, please set it as beta.",
+      "type": "boolean"
+    },
+    "bip44": {
+      "properties": {
+        "coinType": {
+          "$ref": "#/definitions/CoinType"
+        }
+      },
+      "required": ["coinType"],
+      "type": "object"
+    },
+    "chainId": {
+      "type": "string"
+    },
+    "chainName": {
+      "type": "string"
+    },
+    "chainSymbolImageUrl": {
+      "type": "string"
+    },
+    "coinType": {
+      "$ref": "#/definitions/CoinType"
+    },
+    "currencies": {
+      "items": {
+        "$ref": "#/definitions/BridgeAppCurrency"
+      },
+      "type": "array"
+    },
+    "evm": {
+      "$ref": "#/definitions/EVMInfo"
+    },
+    "features": {
+      "description": "Indicate the features supported by this chain. Ex) cosmwasm, secretwasm ...",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "feeCurrencies": {
+      "items": {
+        "$ref": "#/definitions/FeeCurrency"
+      },
+      "type": "array"
+    },
+    "hideInUI": {
+      "type": "boolean"
+    },
+    "networkType": {
+      "$ref": "#/definitions/NetworkType"
+    },
+    "nodeProvider": {
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "website": {
+          "type": "string"
+        }
+      },
+      "required": ["email", "name"],
+      "type": "object"
+    },
+    "rest": {
+      "type": "string"
+    },
+    "rpc": {
+      "type": "string"
+    },
+    "stakeCurrency": {
+      "$ref": "#/definitions/Currency"
+    },
+    "txExplorer": {
+      "properties": {
+        "accountUrl": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "txUrl": {
+          "type": "string"
+        }
+      },
+      "required": ["name", "txUrl"],
+      "type": "object"
+    },
+    "walletUrl": {
+      "type": "string"
+    },
+    "walletUrlForStaking": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "bip44",
+    "chainId",
+    "chainName",
+    "coinType",
+    "currencies",
+    "networkType",
+    "rpc"
+  ],
+  "type": "object"
 }
-

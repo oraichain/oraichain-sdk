@@ -209,12 +209,19 @@
       "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png"
     },
     {
-      "coinDenom": "BTC",
+      "coinDenom": "BTC.legacy",
       "coinGeckoId": "bitcoin",
       "coinMinimalDenom": "usat",
       "type": "cw20",
       "contractAddress": "orai10g6frpysmdgw5tdqke47als6f97aqmr8s3cljsvjce4n5enjftcqtamzsd",
       "coinDecimals": 6,
+      "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"
+    },
+    {
+      "coinDenom": "BTC",
+      "coinMinimalDenom": "factory/orai1wuvhex9xqs3r539mvc6mtm7n20fcj3qr2m0y9khx6n5vtlngfzes3k0rq9/obtc",
+      "coinDecimals": 14,
+      "coinGeckoId": "bitcoin",
       "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"
     },
     {
