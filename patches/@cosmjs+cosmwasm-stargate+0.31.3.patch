@@ -1,5 +1,5 @@
 diff --git a/node_modules/@cosmjs/cosmwasm-stargate/build/cosmwasmclient.d.ts b/node_modules/@cosmjs/cosmwasm-stargate/build/cosmwasmclient.d.ts
-index 3aebdc5..a56a68e 100644
+index 3aebdc5..7fa6509 100644
 --- a/node_modules/@cosmjs/cosmwasm-stargate/build/cosmwasmclient.d.ts
 +++ b/node_modules/@cosmjs/cosmwasm-stargate/build/cosmwasmclient.d.ts
 @@ -1,5 +1,6 @@
@@ -22,7 +22,7 @@ index 3aebdc5..a56a68e 100644
       * Promise is rejected for invalid response format.
       */
      queryContractSmart(address: string, queryMsg: JsonObject): Promise<JsonObject>;
-+    queryContractSmart(address: string, paginationKey: Uint8Array): Promise<QueryAllContractStateResponse>;
++    getAllContractState(address: string, paginationKey: Uint8Array): Promise<QueryAllContractStateResponse>;
      private txsQuery;
  }
 diff --git a/node_modules/@cosmjs/cosmwasm-stargate/build/cosmwasmclient.js b/node_modules/@cosmjs/cosmwasm-stargate/build/cosmwasmclient.js
