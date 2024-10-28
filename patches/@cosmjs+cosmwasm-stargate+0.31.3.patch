@@ -1,45 +1,87 @@
 diff --git a/node_modules/@cosmjs/cosmwasm-stargate/build/cosmwasmclient.d.ts b/node_modules/@cosmjs/cosmwasm-stargate/build/cosmwasmclient.d.ts
-index 3aebdc5..d5cbeec 100644
+index 3aebdc5..a56a68e 100644
 --- a/node_modules/@cosmjs/cosmwasm-stargate/build/cosmwasmclient.d.ts
 +++ b/node_modules/@cosmjs/cosmwasm-stargate/build/cosmwasmclient.d.ts
-@@ -56,6 +56,7 @@ export declare class CosmWasmClient {
+@@ -1,5 +1,6 @@
+ import { Account, AuthExtension, BankExtension, Block, Coin, DeliverTxResponse, IndexedTx, QueryClient, SearchTxQuery, SequenceResponse, TxExtension } from "@cosmjs/stargate";
+ import { HttpEndpoint, TendermintClient } from "@cosmjs/tendermint-rpc";
++import { QueryAllContractStateResponse } from "cosmjs-types/cosmwasm/wasm/v1/query";
+ import { JsonObject, WasmExtension } from "./modules";
+ export interface Code {
+     readonly id: number;
+@@ -49,7 +50,7 @@ export declare class CosmWasmClient {
+      * This uses auto-detection to decide between a Tendermint 0.37 and 0.34 client.
+      * To set the Tendermint client explicitly, use `create`.
       */
-     static create(tmClient: TendermintClient): Promise<CosmWasmClient>;
-     protected constructor(tmClient: TendermintClient | undefined);
-+    public setQueryClientWithHeight(height?: number): void;
-     protected getTmClient(): TendermintClient | undefined;
-     protected forceGetTmClient(): TendermintClient;
-     protected getQueryClient(): (QueryClient & AuthExtension & BankExtension & TxExtension & WasmExtension) | undefined;
+-    static connect(endpoint: string | HttpEndpoint): Promise<CosmWasmClient>;
++    static connect(endpoint: string | HttpEndpoint, desiredHeight?: number): Promise<CosmWasmClient>;
+     /**
+      * Creates an instance from a manually created Tendermint client.
+      * Use this to use `Tendermint37Client` instead of `Tendermint34Client`.
+@@ -136,5 +137,6 @@ export declare class CosmWasmClient {
+      * Promise is rejected for invalid response format.
+      */
+     queryContractSmart(address: string, queryMsg: JsonObject): Promise<JsonObject>;
++    queryContractSmart(address: string, paginationKey: Uint8Array): Promise<QueryAllContractStateResponse>;
+     private txsQuery;
+ }
 diff --git a/node_modules/@cosmjs/cosmwasm-stargate/build/cosmwasmclient.js b/node_modules/@cosmjs/cosmwasm-stargate/build/cosmwasmclient.js
-index 8f6305b..90cedba 100644
+index 8f6305b..093a700 100644
 --- a/node_modules/@cosmjs/cosmwasm-stargate/build/cosmwasmclient.js
 +++ b/node_modules/@cosmjs/cosmwasm-stargate/build/cosmwasmclient.js
-@@ -46,6 +46,13 @@ class CosmWasmClient {
-             this.queryClient = stargate_1.QueryClient.withExtensions(tmClient, stargate_1.setupAuthExtension, stargate_1.setupBankExtension, modules_1.setupWasmExtension, stargate_1.setupTxExtension);
+@@ -17,18 +17,18 @@ class CosmWasmClient {
+      * This uses auto-detection to decide between a Tendermint 0.37 and 0.34 client.
+      * To set the Tendermint client explicitly, use `create`.
+      */
+-    static async connect(endpoint) {
++    static async connect(endpoint, desiredHeight) {
+         // Tendermint/CometBFT 0.34/0.37 auto-detection. Starting with 0.37 we seem to get reliable versions again 🎉
+         // Using 0.34 as the fallback.
+         let tmClient;
+-        const tm37Client = await tendermint_rpc_1.Tendermint37Client.connect(endpoint);
++        const tm37Client = await tendermint_rpc_1.Tendermint37Client.connect(endpoint, desiredHeight);
+         const version = (await tm37Client.status()).nodeInfo.version;
+         if (version.startsWith("0.37.")) {
+             tmClient = tm37Client;
+         }
+         else {
+             tm37Client.disconnect();
+-            tmClient = await tendermint_rpc_1.Tendermint34Client.connect(endpoint);
++            tmClient = await tendermint_rpc_1.Tendermint34Client.connect(endpoint, desiredHeight);
+         }
+         return CosmWasmClient.create(tmClient);
+     }
+@@ -351,6 +351,33 @@ class CosmWasmClient {
+             }
          }
      }
 +
-+    setQueryClientWithHeight(height = undefined) {
-+        if (this.tmClient) {
-+            this.queryClient = stargate_1.QueryClient.withExtensionsWithHeight(this.tmClient, height, stargate_1.setupAuthExtension, stargate_1.setupBankExtension, modules_1.setupWasmExtension, stargate_1.setupTxExtension);
++    /**
++     * Makes a smart query on the contract, returns the parsed JSON document.
++     *
++     * Promise is rejected when contract does not exist.
++     * Promise is rejected for invalid query format.
++     * Promise is rejected for invalid response format.
++     */
++    async getAllContractState(address, paginationKey) {
++        try {
++            return await this.forceGetQueryClient().wasm.getAllContractState(address, paginationKey);
++        }
++        catch (error) {
++            if (error instanceof Error) {
++                if (error.message.startsWith("not found: contract")) {
++                    throw new Error(`No contract found at address "${address}"`);
++                }
++                else {
++                    throw error;
++                }
++            }
++            else {
++                throw error;
++            }
 +        }
 +    }
 +
-     getTmClient() {
-         return this.tmClient;
-     }
-diff --git a/node_modules/@cosmjs/cosmwasm-stargate/build/modules/wasm/queries.js b/node_modules/@cosmjs/cosmwasm-stargate/build/modules/wasm/queries.js
-index c060369..41029c3 100644
---- a/node_modules/@cosmjs/cosmwasm-stargate/build/modules/wasm/queries.js
-+++ b/node_modules/@cosmjs/cosmwasm-stargate/build/modules/wasm/queries.js
-@@ -8,8 +8,8 @@ const encoding_1 = require("@cosmjs/encoding");
- const stargate_1 = require("@cosmjs/stargate");
- const query_1 = require("cosmjs-types/cosmwasm/wasm/v1/query");
- const long_1 = __importDefault(require("long"));
--function setupWasmExtension(base) {
--    const rpc = (0, stargate_1.createProtobufRpcClient)(base);
-+function setupWasmExtension(base, height) {
-+    const rpc = (0, stargate_1.createProtobufRpcClient)(base, height);
-     // Use this service to get easy typed access to query methods
-     // This cannot be used for proof verification
-     const queryService = new query_1.QueryClientImpl(rpc);
+     async txsQuery(query) {
+         const results = await this.forceGetTmClient().txSearchAll({ query: query });
+         return results.txs.map((tx) => {

@@ -1,0 +1,134 @@
+diff --git a/node_modules/@cosmjs/tendermint-rpc/build/tendermint34/tendermint34client.d.ts b/node_modules/@cosmjs/tendermint-rpc/build/tendermint34/tendermint34client.d.ts
+index 533ef38..925fcf6 100644
+--- a/node_modules/@cosmjs/tendermint-rpc/build/tendermint34/tendermint34client.d.ts
++++ b/node_modules/@cosmjs/tendermint-rpc/build/tendermint34/tendermint34client.d.ts
+@@ -8,11 +8,11 @@ export declare class Tendermint34Client {
+      *
+      * Uses HTTP when the URL schema is http or https. Uses WebSockets otherwise.
+      */
+-    static connect(endpoint: string | HttpEndpoint): Promise<Tendermint34Client>;
++    static connect(endpoint: string | HttpEndpoint, desiredHeight?: number): Promise<Tendermint34Client>;
+     /**
+      * Creates a new Tendermint client given an RPC client.
+      */
+-    static create(rpcClient: RpcClient): Promise<Tendermint34Client>;
++    static create(rpcClient: RpcClient, desiredHeight?: number): Promise<Tendermint34Client>;
+     private static detectVersion;
+     private readonly client;
+     private readonly p;
+@@ -86,4 +86,5 @@ export declare class Tendermint34Client {
+     validatorsAll(height?: number): Promise<responses.ValidatorsResponse>;
+     private doCall;
+     private subscribe;
++    public desiredHeight: number;
+ }
+diff --git a/node_modules/@cosmjs/tendermint-rpc/build/tendermint34/tendermint34client.js b/node_modules/@cosmjs/tendermint-rpc/build/tendermint34/tendermint34client.js
+index f822f39..3ab5384 100644
+--- a/node_modules/@cosmjs/tendermint-rpc/build/tendermint34/tendermint34client.js
++++ b/node_modules/@cosmjs/tendermint-rpc/build/tendermint34/tendermint34client.js
+@@ -34,7 +34,7 @@ class Tendermint34Client {
+      *
+      * Uses HTTP when the URL schema is http or https. Uses WebSockets otherwise.
+      */
+-    static async connect(endpoint) {
++    static async connect(endpoint, desiredHeight) {
+         let rpcClient;
+         if (typeof endpoint === "object") {
+             rpcClient = new rpcclients_1.HttpClient(endpoint);
+@@ -48,13 +48,13 @@ class Tendermint34Client {
+         // while did not help. Thus we query the version as a way to say "hi" to the backend,
+         // even in cases where we don't use the result.
+         const _version = await this.detectVersion(rpcClient);
+-        return Tendermint34Client.create(rpcClient);
++        return Tendermint34Client.create(rpcClient, desiredHeight);
+     }
+     /**
+      * Creates a new Tendermint client given an RPC client.
+      */
+-    static async create(rpcClient) {
+-        return new Tendermint34Client(rpcClient);
++    static async create(rpcClient, desiredHeight) {
++        return new Tendermint34Client(rpcClient, desiredHeight);
+     }
+     static async detectVersion(client) {
+         const req = (0, jsonrpc_1.createJsonRpcRequest)(requests.Method.Status);
+@@ -72,10 +72,11 @@ class Tendermint34Client {
+     /**
+      * Use `Tendermint34Client.connect` or `Tendermint34Client.create` to create an instance.
+      */
+-    constructor(client) {
++    constructor(client, desiredHeight) {
+         this.client = client;
+         this.p = adaptor_1.adaptor34.params;
+         this.r = adaptor_1.adaptor34.responses;
++        this.desiredHeight = desiredHeight;
+     }
+     disconnect() {
+         this.client.disconnect();
+diff --git a/node_modules/@cosmjs/tendermint-rpc/build/tendermint37/tendermint37client.d.ts b/node_modules/@cosmjs/tendermint-rpc/build/tendermint37/tendermint37client.d.ts
+index 3752168..c9b8043 100644
+--- a/node_modules/@cosmjs/tendermint-rpc/build/tendermint37/tendermint37client.d.ts
++++ b/node_modules/@cosmjs/tendermint-rpc/build/tendermint37/tendermint37client.d.ts
+@@ -8,11 +8,11 @@ export declare class Tendermint37Client {
+      *
+      * Uses HTTP when the URL schema is http or https. Uses WebSockets otherwise.
+      */
+-    static connect(endpoint: string | HttpEndpoint): Promise<Tendermint37Client>;
++    static connect(endpoint: string | HttpEndpoint, desiredHeight?: number): Promise<Tendermint37Client>;
+     /**
+      * Creates a new Tendermint client given an RPC client.
+      */
+-    static create(rpcClient: RpcClient): Promise<Tendermint37Client>;
++    static create(rpcClient: RpcClient, desiredHeight?: number): Promise<Tendermint37Client>;
+     private static detectVersion;
+     private readonly client;
+     private readonly p;
+@@ -86,4 +86,5 @@ export declare class Tendermint37Client {
+     validatorsAll(height?: number): Promise<responses.ValidatorsResponse>;
+     private doCall;
+     private subscribe;
++    public desiredHeight: number;
+ }
+diff --git a/node_modules/@cosmjs/tendermint-rpc/build/tendermint37/tendermint37client.js b/node_modules/@cosmjs/tendermint-rpc/build/tendermint37/tendermint37client.js
+index 8f78cc6..892c417 100644
+--- a/node_modules/@cosmjs/tendermint-rpc/build/tendermint37/tendermint37client.js
++++ b/node_modules/@cosmjs/tendermint-rpc/build/tendermint37/tendermint37client.js
+@@ -34,7 +34,7 @@ class Tendermint37Client {
+      *
+      * Uses HTTP when the URL schema is http or https. Uses WebSockets otherwise.
+      */
+-    static async connect(endpoint) {
++    static async connect(endpoint, desiredHeight) {
+         let rpcClient;
+         if (typeof endpoint === "object") {
+             rpcClient = new rpcclients_1.HttpClient(endpoint);
+@@ -48,13 +48,13 @@ class Tendermint37Client {
+         // while did not help. Thus we query the version as a way to say "hi" to the backend,
+         // even in cases where we don't use the result.
+         const _version = await this.detectVersion(rpcClient);
+-        return Tendermint37Client.create(rpcClient);
++        return Tendermint37Client.create(rpcClient, desiredHeight);
+     }
+     /**
+      * Creates a new Tendermint client given an RPC client.
+      */
+-    static async create(rpcClient) {
+-        return new Tendermint37Client(rpcClient);
++    static async create(rpcClient, desiredHeight) {
++        return new Tendermint37Client(rpcClient, desiredHeight);
+     }
+     static async detectVersion(client) {
+         const req = (0, jsonrpc_1.createJsonRpcRequest)(requests.Method.Status);
+@@ -72,10 +72,11 @@ class Tendermint37Client {
+     /**
+      * Use `Tendermint37Client.connect` or `Tendermint37Client.create` to create an instance.
+      */
+-    constructor(client) {
++    constructor(client, desiredHeight) {
+         this.client = client;
+         this.p = adaptor_1.adaptor37.params;
+         this.r = adaptor_1.adaptor37.responses;
++        this.desiredHeight = desiredHeight
+     }
+     disconnect() {
+         this.client.disconnect();

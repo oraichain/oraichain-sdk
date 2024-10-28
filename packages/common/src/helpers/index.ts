@@ -6,3 +6,4 @@ export * from "./convert-number";
 export * from "./cosmos-tx-parser";
 export * from "./ibc";
 export * from "./denom-check";
+export * from "./parallel-tx-search";
