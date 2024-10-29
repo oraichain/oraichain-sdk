@@ -4,8 +4,9 @@ import { buildQuery } from "@cosmjs/tendermint-rpc/build/tendermint37/requests";
 import { Tx } from "src/tx";
 
 export type SearchOptions = {
-  queryTags: QueryTag[];
-  offset?: number;
+  startHeight: number;
+  endHeight: number;
+  queryTags?: QueryTag[];
   limit?: number;
   maxThreadLevel?: number;
 };
@@ -16,9 +17,10 @@ export class TxSearch {
   constructor(public readonly client: StargateClient, options: SearchOptions) {
     // override with default options
     this.options = {
-      offset: options.offset ?? 1,
+      startHeight: options.startHeight ?? 1,
       limit: Math.min(5000, options.limit ?? 1000),
       maxThreadLevel: options.maxThreadLevel ?? 4,
+      queryTags: options.queryTags ?? [],
       ...options
     };
   }
@@ -31,11 +33,11 @@ export class TxSearch {
   }
 
   private calculateMaxSearchHeight(
-    offset: number,
+    startHeight: number,
     limit: number,
-    currentHeight: number
+    endHeight: number
   ): number {
-    return Math.min(offset + limit || 1, currentHeight);
+    return Math.min(startHeight + limit || 1, endHeight);
   }
 
   private buildTendermintQuery(
@@ -49,31 +51,30 @@ export class TxSearch {
     });
   }
 
-  private calculateOffsetParallel(threadId: number, offset: number) {
-    return threadId * this.options.limit + offset;
+  private calculateOffsetParallel(threadId: number, startHeight: number) {
+    return threadId * this.options.limit + startHeight;
   }
 
-  private calculateParallelLevel(offset: number, currentHeight: number) {
+  private calculateParallelLevel(startHeight: number, endHeight: number) {
     // if negative then default is 1. If larger than 4 then max is 4
     return Math.max(
       1,
       Math.min(
         this.options.maxThreadLevel,
-        Math.floor((currentHeight - offset) / this.options.limit)
+        Math.floor((endHeight - startHeight) / this.options.limit)
       )
     );
   }
 
   public txSearch = async () => {
     try {
-      const { limit, offset } = this.options;
-      let currentHeight = await this.client.getHeight();
-      if (currentHeight > offset) {
-        let parallelLevel = this.calculateParallelLevel(offset, currentHeight);
+      const { startHeight, endHeight } = this.options;
+      if (endHeight > startHeight) {
+        let parallelLevel = this.calculateParallelLevel(startHeight, endHeight);
         let threads = [];
         for (let i = 0; i < parallelLevel; i++) {
           threads.push(
-            this.queryTendermint(this.client, i, offset, currentHeight)
+            this.queryTendermint(this.client, i, startHeight, endHeight)
           );
         }
         const results: Tx[][] = await Promise.all(threads);
@@ -81,13 +82,7 @@ export class TxSearch {
         for (let result of results) {
           storedResults.push(...result);
         }
-        // calculate the next offset
-        this.options.offset = this.calculateMaxSearchHeight(
-          // parallel - 1 because its the final thread id which handles the highest offset possible assuming we have processed all height before it
-          this.calculateOffsetParallel(parallelLevel - 1, offset),
-          limit,
-          currentHeight
-        );
+        return storedResults;
       }
     } catch (error) {
       console.log("error query tendermint parallel: ", error);
@@ -98,15 +93,15 @@ export class TxSearch {
   private async queryTendermint(
     stargateClient: StargateClient,
     threadId: number,
-    offset: number,
-    currentHeight: number
+    startHeight: number,
+    endHeight: number
   ): Promise<Tx[]> {
     const { queryTags } = this.options;
-    const threadOffset = this.calculateOffsetParallel(threadId, offset);
+    const threadOffset = this.calculateOffsetParallel(threadId, startHeight);
     const newOffset = this.calculateMaxSearchHeight(
       threadOffset,
       this.options.limit,
-      currentHeight
+      endHeight
     );
     if (newOffset > threadOffset) {
       const query = this.buildTendermintQuery(
