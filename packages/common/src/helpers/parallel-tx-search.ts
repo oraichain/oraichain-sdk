@@ -25,7 +25,7 @@ export class TxSearch {
     };
   }
 
-  parseTxResponse(tx: IndexedTx): Tx {
+  private parseTxResponse(tx: IndexedTx): Tx {
     return {
       ...tx,
       timestamp: (tx as any).timestamp
@@ -66,7 +66,7 @@ export class TxSearch {
     );
   }
 
-  public txSearch = async () => {
+  public async txSearch() {
     try {
       const { startHeight, endHeight } = this.options;
       if (endHeight > startHeight) {
@@ -88,7 +88,7 @@ export class TxSearch {
       console.log("error query tendermint parallel: ", error);
       // this makes sure that the stream doesn't stop and keeps reading forever even when there's an error
     }
-  };
+  }
 
   private async queryTendermint(
     stargateClient: StargateClient,
