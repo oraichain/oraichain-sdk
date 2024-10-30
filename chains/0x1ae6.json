@@ -3,7 +3,7 @@
   "rpc": "https://endpoint1.kawaii.global",
   "chainId": "0x1ae6",
   "networkType": "evm",
-  "chainName": "Kawaiiverse EVM",
+  "chainName": "kawaiiverseevm",
   "bip44": { "coinType": 60 },
   "coinType": 60,
   "features": ["isEvm"],

@@ -3,7 +3,7 @@
   "rpc": "https://bsc-dataseed1.binance.org",
   "networkType": "evm",
   "chainId": "0x38",
-  "chainName": "BNB Chain",
+  "chainName": "bsc",
   "bip44": { "coinType": 60 },
   "coinType": 60,
   "features": ["isEvm"],

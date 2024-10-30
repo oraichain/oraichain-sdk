@@ -1,6 +1,6 @@
 {
   "chainId": "oraibtc-mainnet-1",
-  "chainName": "OraiBtc Bridge",
+  "chainName": "oraibtc",
   "rpc": "https://btc.rpc.orai.io",
   "rest": "https://btc.lcd.orai.io",
   "networkType": "cosmos",

@@ -3,7 +3,7 @@
   "rpc": "https://osmosis.rpc.orai.io/",
   "rest": "https://osmosis.lcd.orai.io/",
   "chainId": "osmosis-1",
-  "chainName": "Osmosis",
+  "chainName": "osmosis",
   "networkType": "cosmos",
   "bip44": { "coinType": 118 },
   "coinType": 118,

@@ -3,7 +3,7 @@
   "rpc": "https://bridge-v2.rpc.orai.io",
   "rest": "https://bridge-v2.lcd.orai.io",
   "chainId": "oraibridge-subnet-2",
-  "chainName": "OraiBridge",
+  "chainName": "oraibridge",
   "networkType": "cosmos",
   "bip44": { "coinType": 118 },
   "coinType": 118,

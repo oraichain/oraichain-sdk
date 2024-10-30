@@ -4,7 +4,7 @@
   "rest": "https://api.trongrid.io",
   "chainId": "0x2b6653dc",
   "networkType": "evm",
-  "chainName": "Tron Network",
+  "chainName": "tronnetwork",
   "features": ["isEvm"],
   "currencies": [
     {

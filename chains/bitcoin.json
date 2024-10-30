@@ -3,7 +3,7 @@
   "rpc": "https://rpc.ankr.com/btc",
   "rest": "https://blockstream.info/api",
   "chainId": "bitcoin",
-  "chainName": "Bitcoin",
+  "chainName": "bitcoin",
   "bip44": {
     "coinType": 0
   },

@@ -3,7 +3,7 @@
   "rpc": "https://rpc-cosmos.oraidex.io",
   "rest": "https://lcd-cosmos.oraidex.io",
   "chainId": "cosmoshub-4",
-  "chainName": "Cosmos Hub",
+  "chainName": "cosmos",
   "networkType": "cosmos",
   "bip44": { "coinType": 118 },
   "coinType": 118,

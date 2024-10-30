@@ -3,7 +3,7 @@
   "rpc": "https://noble-rpc.polkachu.com",
   "rest": "https://noble-api.polkachu.com",
   "chainId": "noble-1",
-  "chainName": "Noble",
+  "chainName": "noble",
   "networkType": "cosmos",
   "bip44": { "coinType": 118 },
   "coinType": 118,

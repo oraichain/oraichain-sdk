@@ -3,7 +3,7 @@
   "rpc": "https://neutaro.rpc.orai.io",
   "rest": "https://neutaro.lcd.orai.io",
   "chainId": "Neutaro-1",
-  "chainName": "Neutaro",
+  "chainName": "neutaro",
   "networkType": "cosmos",
   "bip44": { "coinType": 118 },
   "coinType": 118,
