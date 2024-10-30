@@ -1,0 +1,49 @@
+{
+  "$schema": "../ibc_data.schema.json",
+  "chain_1": {
+    "chain_name": "bsc",
+    "client_id": "07-tendermint-0",
+    "connection_id": "connection-1"
+  },
+  "chain_2": {
+    "chain_name": "oraichain",
+    "client_id": "07-tendermint-57",
+    "connection_id": "connection-38"
+  },
+  "channels": [
+    {
+      "chain_1": {
+        "channel_id": "channel-1",
+        "port_id": "transfer"
+      },
+      "chain_2": {
+        "channel_id": "channel-29",
+        "port_id": "wasm.orai195269awwnt5m6c843q6w7hp8rt0k7syfu9de4h0wz384slshuzps8y7ccm"
+      },
+      "ordering": "unordered",
+      "version": "ics20-1",
+      "tags": {
+        "status": "live",
+        "preferred": true,
+        "dex": "oraidex"
+      }
+    },
+    {
+      "chain_1": {
+        "channel_id": "channel-6",
+        "port_id": "transfer"
+      },
+      "chain_2": {
+        "channel_id": "channel-260",
+        "port_id": "wasm.orai1jtt8c2lz8emh8s708y0aeduh32xef2rxyg8y78lyvxn806cu7q0sjtxsnv"
+      },
+      "ordering": "unordered",
+      "version": "ics20-1",
+      "tags": {
+        "status": "live",
+        "preferred": true,
+        "dex": "oraidex"
+      }
+    }
+  ]
+}

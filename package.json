@@ -24,9 +24,11 @@
     "@cosmjs/encoding": "^0.31.3",
     "@cosmjs/proto-signing": "^0.31.3",
     "@cosmjs/stargate": "^0.31.3",
-    "@cosmjs/tendermint-rpc": "^0.31.3"
+    "@cosmjs/tendermint-rpc": "^0.31.3",
+    "chain-registry": "^1.69.14"
   },
   "devDependencies": {
+    "@chain-registry/types": "^0.50.1",
     "@eslint/js": "^9.7.0",
     "@oraichain/cw-simulate": "^2.8.87",
     "@types/eslint__js": "^8.42.3",

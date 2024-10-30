@@ -10,6 +10,8 @@ import {
   CustomChainInfo
 } from "./types";
 import path from "path";
+import { Chain, AssetList } from "@chain-registry/types";
+import { Currency, FeeCurrency } from "@keplr-wallet/types";
 
 export class ChainInfoReaderFromBackend implements ChainInfoReader {
   async readChainInfos() {
@@ -97,11 +99,83 @@ export class ChainInfoReaderFromGitRaw implements ChainInfoReader {
     return chainInfos;
   }
 
-  async fetchUrls() {
+  private async fetchUrls() {
     return Promise.all(this.urls.map((url) => this.fetch(url)));
   }
 
-  async fetch(url: string) {
+  private async fetch(url: string) {
     return fetchRetry(url).then((data) => data.json());
   }
+}
+
+export function chainRegistryChainToOraiCommon(
+  chains: Chain[],
+  assets: AssetList[]
+): CustomChainInfo[] {
+  return chains.map((chain) => {
+    const assetList = assets.find(
+      (asset) => asset.chain_name === chain.chain_name
+    );
+    const feeCurrencies = chain.fees?.fee_tokens.map((fee) => {
+      const asset = assetList?.assets.find((asset) => asset.base === fee.denom);
+      const displayDenom = asset?.display;
+      const exponentBase = asset?.denom_units.find(
+        (d) => d.denom === displayDenom
+      )?.exponent;
+      return {
+        coinDenom: asset?.display,
+        coinMinimalDenom: fee.denom,
+        coinDecimals: exponentBase,
+        coinGeckoId: asset?.coingecko_id,
+        coinImageUrl: asset?.logo_URIs?.png
+      } as FeeCurrency;
+    });
+    const stakingCurrencies = chain.staking?.staking_tokens.map((staking) => {
+      const asset = assetList?.assets.find(
+        (asset) => asset.base === staking.denom
+      );
+      const displayDenom = asset?.display;
+      const exponentBase = asset?.denom_units.find(
+        (d) => d.denom === displayDenom
+      )?.exponent;
+      return {
+        coinDenom: asset?.display,
+        coinMinimalDenom: staking.denom,
+        coinDecimals: exponentBase,
+        coinGeckoId: asset?.coingecko_id,
+        coinImageUrl: asset?.logo_URIs?.png
+      } as Currency;
+    });
+    return {
+      $schema: "../chain.schema.json",
+      rpc:
+        chain.apis?.rpc && chain.apis.rpc.length > 0
+          ? chain.apis?.rpc[0].address
+          : "",
+      rest:
+        chain.apis?.rest && chain.apis.rest.length > 0
+          ? chain.apis?.rest[0].address
+          : "",
+      chainId: chain.chain_id,
+      chainName: chain.chain_name,
+      bip44: {
+        coinType: chain.slip44
+      },
+      coinType: chain.slip44,
+      bech32Config: chain.bech32_config,
+      networkType: "cosmos", // should we hardcode this one?
+      currencies: [...(feeCurrencies ?? []), ...(stakingCurrencies ?? [])],
+      stakeCurrency: stakingCurrencies as any,
+      feeCurrencies: feeCurrencies,
+      features: ["stargate", "ibc-transfer", "no-legacy-stdTx", "ibc-go"],
+      txExplorer:
+        chain.explorers && chain.explorers.length > 0
+          ? {
+              name: chain.explorers[0].url,
+              txUrl: chain.explorers[0].tx_page,
+              accountUrl: chain.explorers[0].account_page
+            }
+          : undefined
+    } as CustomChainInfo;
+  });
 }

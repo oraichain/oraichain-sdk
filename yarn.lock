@@ -78,6 +78,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@chain-registry/types@npm:^0.50.1":
+  version: 0.50.1
+  resolution: "@chain-registry/types@npm:0.50.1"
+  checksum: 10c0/576478c5f16e2109620a66de7991f67b39ab2522b217125469c3788d6a4870ee059ae3f813819fbfd7ae7d7a0afb3f979df6afec2250c411750f05c127a2ff3e
+  languageName: node
+  linkType: hard
+
 "@commitlint/config-validator@npm:^19.0.3":
   version: 19.0.3
   resolution: "@commitlint/config-validator@npm:19.0.3"
@@ -1025,14 +1032,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@keplr-wallet/types@npm:0.12.141":
-  version: 0.12.141
-  resolution: "@keplr-wallet/types@npm:0.12.141"
+"@keplr-wallet/types@npm:0.12.143":
+  version: 0.12.143
+  resolution: "@keplr-wallet/types@npm:0.12.143"
   dependencies:
     long: "npm:^4.0.0"
   peerDependencies:
     starknet: ^6
-  checksum: 10c0/31647f14c4f96b57d74cdb80ab3e6187a4086ca97fca7d82139c5448e380919c8a9cc97724c06b6bd14252cab7f8b8bdf3ab546f9156dc8b52deaacf22c49320
+  checksum: 10c0/77bb68974ae1f8e763f244dae8c5e7e511cf559ca48f44fda030275dfcdf70eab4222f6fdaeac78f8671bda07f9f17870b25bc22c91c679925893195900f1a70
   languageName: node
   linkType: hard
 
@@ -1623,7 +1630,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@oraichain/common@workspace:packages/common"
   dependencies:
-    "@keplr-wallet/types": "npm:0.12.141"
+    "@keplr-wallet/types": "npm:0.12.143"
     "@types/lodash": "npm:^4"
     axios: "npm:0.21.4"
     axios-extensions: "npm:3.1.6"
@@ -2842,6 +2849,15 @@ __metadata:
     loupe: "npm:^3.1.0"
     pathval: "npm:^2.0.0"
   checksum: 10c0/e7f00e5881e3d5224f08fe63966ed6566bd9fdde175863c7c16dd5240416de9b34c4a0dd925f4fd64ad56256ca6507d32cf6131c49e1db65c62578eb31d4566c
+  languageName: node
+  linkType: hard
+
+"chain-registry@npm:^1.69.14":
+  version: 1.69.14
+  resolution: "chain-registry@npm:1.69.14"
+  dependencies:
+    "@chain-registry/types": "npm:^0.50.1"
+  checksum: 10c0/97a6704a57b464f5efa00aa7e2646385dff2a8c8b6859dfca6af88b2bb68dff629158b0a439ea6e7eaabb4fe04bdd1acabe32b3ffc7ee2f775724326a89e6cd8
   languageName: node
   linkType: hard
 
@@ -7469,6 +7485,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root@workspace:."
   dependencies:
+    "@chain-registry/types": "npm:^0.50.1"
     "@cosmjs/amino": "npm:^0.31.3"
     "@cosmjs/cosmwasm-stargate": "npm:^0.31.3"
     "@cosmjs/crypto": "npm:^0.31.3"
@@ -7482,6 +7499,7 @@ __metadata:
     "@types/lodash": "npm:^4.17.0"
     "@types/node": "npm:^20.11.30"
     "@vitest/coverage-v8": "npm:^2.0.3"
+    chain-registry: "npm:^1.69.14"
     cosmjs-types: "npm:0.8.0"
     cz-conventional-changelog: "npm:^3.3.0"
     dotenv: "npm:^16.4.5"
