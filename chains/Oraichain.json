@@ -262,7 +262,7 @@
     },
     {
       "coinDenom": "TEST_TOKEN",
-      "coinGeckoId": "test-token",
+      "coinGeckoId": "simon-s-cat",
       "coinMinimalDenom": "test-token-denom",
       "bridgeTo": ["test"],
       "coinDecimals": 6,
