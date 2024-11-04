@@ -8,7 +8,7 @@ import {
   ChainInfosImpl,
   CustomChainInfo
 } from "./chain-infos";
-import { SupportedChainInfo, SupportedChainInfoReader } from "./supported";
+import { SupportedChainInfo } from "./supported";
 import { TokenItems, TokenItemsImpl } from "./token-items";
 
 export class OraiCommon {
@@ -17,32 +17,17 @@ export class OraiCommon {
     private _tokenItems?: TokenItems
   ) {}
 
-  static initializeFromCustomChainInfos(
-    customChainInfos: CustomChainInfo[],
-    supportedChainInfo: SupportedChainInfo = null
-  ) {
+  static initializeFromCustomChainInfos(customChainInfos: CustomChainInfo[]) {
     const common = new OraiCommon(
       new ChainInfosImpl(customChainInfos),
-      new TokenItemsImpl(customChainInfos, supportedChainInfo)
+      new TokenItemsImpl(customChainInfos)
     );
     return common;
   }
 
-  static async initializeFromChainInfoReader(
-    reader: ChainInfoReader,
-    supportedReader: SupportedChainInfoReader = null
-  ) {
+  static async initializeFromChainInfoReader(reader: ChainInfoReader) {
     const customChainInfos = await reader.readChainInfos();
-
-    let supportedChainInfo: SupportedChainInfo;
-    if (supportedReader) {
-      supportedChainInfo = await supportedReader.readSupportedChainInfo();
-    }
-
-    return OraiCommon.initializeFromCustomChainInfos(
-      customChainInfos,
-      supportedChainInfo
-    );
+    return OraiCommon.initializeFromCustomChainInfos(customChainInfos);
   }
 
   static async initializeFromBackend() {
@@ -60,6 +45,15 @@ export class OraiCommon {
   ) {
     const reader = new ChainInfoReaderFromGitRaw(options);
     return OraiCommon.initializeFromChainInfoReader(reader);
+  }
+
+  static async initializeFromBackendWithFilters(
+    supportedChainInfo: SupportedChainInfo
+  ) {
+    const common = await this.initializeFromBackend();
+    const filteredTokenItems =
+      common.tokenItems.withSupportedChainInfo(supportedChainInfo);
+    return common.withTokenItems(filteredTokenItems);
   }
 
   withChainInfos(chainInfos: ChainInfos) {

@@ -19,13 +19,14 @@ export interface TokenItems {
   cw20TokenMap: { [k: string]: TokenItemType };
   evmTokens: TokenItemType[];
   kawaiiTokens: TokenItemType[];
+  withSupportedChainInfo: (supportedChainInfo: SupportedChainInfo) => this;
 }
 
 export class TokenItemsImpl implements TokenItems {
-  constructor(
-    private readonly chainInfos: CustomChainInfo[],
-    private readonly supportedChainInfo: SupportedChainInfo
-  ) {}
+  // a filter for DEX
+  private supportedChainInfo: SupportedChainInfo;
+
+  constructor(private readonly chainInfos: CustomChainInfo[]) {}
 
   static async create(
     chainInfoReader: ChainInfoReader,
@@ -38,8 +39,7 @@ export class TokenItemsImpl implements TokenItems {
       supportedChainInfo =
         await supportedChainInfoReader.readSupportedChainInfo();
     }
-    const tokenItems = new TokenItemsImpl(chainInfos, supportedChainInfo);
-
+    const tokenItems = new TokenItemsImpl(chainInfos);
     return tokenItems;
   }
 
@@ -171,5 +171,10 @@ export class TokenItemsImpl implements TokenItems {
       this.cosmosTokens.filter((token) => token.chainId === "kawaii_6886-1"),
       (c) => c.denom
     );
+  }
+
+  withSupportedChainInfo(supportedChainInfo: SupportedChainInfo) {
+    this.supportedChainInfo = supportedChainInfo;
+    return this;
   }
 }
