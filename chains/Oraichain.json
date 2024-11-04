@@ -262,8 +262,8 @@
     },
     {
       "coinDenom": "TEST_TOKEN",
-      "coinGeckoId": "oraidex",
-      "coinMinimalDenom": "orai1lus0f0rhx8s03gdllx2n6vhkmf0536dv57wfge",
+      "coinGeckoId": "simon-s-cat",
+      "coinMinimalDenom": "factory/orai1wuvhex9xqs3r539mvc6mtm7n20fcj3qr2m0y9khx6n5vtlngfzes3k0rq9/extCAT",
       "bridgeTo": ["test"],
       "coinDecimals": 6,
       "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/32195.png"
