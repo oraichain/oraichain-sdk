@@ -8,7 +8,7 @@ import {
   ChainInfosImpl,
   CustomChainInfo
 } from "./chain-infos";
-import { SupportedChainInfo } from "./supported";
+import { SupportedChainInfo, SupportedChainInfoReader } from "./supported";
 import { TokenItems, TokenItemsImpl } from "./token-items";
 
 export class OraiCommon {
@@ -47,10 +47,11 @@ export class OraiCommon {
     return OraiCommon.initializeFromChainInfoReader(reader);
   }
 
-  static async initializeFromBackendWithFilters(
-    supportedChainInfo: SupportedChainInfo
+  static async initializeFromBackendWithSupportedReader(
+    supportedReader: SupportedChainInfoReader
   ) {
     const common = await this.initializeFromBackend();
+    const supportedChainInfo = await supportedReader.readSupportedChainInfo();
     const filteredTokenItems =
       common.tokenItems.withSupportedChainInfo(supportedChainInfo);
     return common.withTokenItems(filteredTokenItems);
