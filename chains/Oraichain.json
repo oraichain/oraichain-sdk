@@ -35,13 +35,7 @@
     "bech32PrefixConsAddr": "oraivalcons",
     "bech32PrefixConsPub": "oraivalconspub"
   },
-  "features": [
-    "stargate",
-    "ibc-transfer",
-    "cosmwasm",
-    "wasmd_0.24+",
-    "no-legacy-stdTx"
-  ],
+  "features": ["stargate", "ibc-transfer", "cosmwasm", "wasmd_0.24+", "no-legacy-stdTx"],
   "txExplorer": {
     "name": "Oraiscan",
     "txUrl": "https://scan.orai.io/txs/{txHash}",
@@ -264,6 +258,14 @@
       "coinMinimalDenom": "factory/orai1wuvhex9xqs3r539mvc6mtm7n20fcj3qr2m0y9khx6n5vtlngfzes3k0rq9/HMSTR",
       "bridgeTo": ["ton"],
       "coinDecimals": 9,
+      "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/32195.png"
+    },
+    {
+      "coinDenom": "TEST_TOKEN",
+      "coinGeckoId": "test-token",
+      "coinMinimalDenom": "test-token-denom",
+      "bridgeTo": ["test"],
+      "coinDecimals": 6,
       "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/32195.png"
     }
   ]
