@@ -99,9 +99,9 @@ export class TokenItemsImpl implements TokenItems {
     if (!this.supportedChainInfo) return oraiTokens;
 
     return oraiTokens.filter((token) =>
-      Object.values(this.supportedChainInfo["oraichain"].coinDenoms).includes(
-        extractCosmosDenomOrCW20Address(token)
-      )
+      Object.values(
+        this.supportedChainInfo[COSMOS_CHAIN_IDS.ORAICHAIN].coinDenoms
+      ).includes(extractCosmosDenomOrCW20Address(token))
     );
   }
 
