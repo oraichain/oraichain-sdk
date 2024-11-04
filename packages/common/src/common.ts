@@ -8,6 +8,7 @@ import {
   ChainInfosImpl,
   CustomChainInfo
 } from "./chain-infos";
+import { SupportedChainInfo, SupportedChainInfoReader } from "./supported";
 import { TokenItems, TokenItemsImpl } from "./token-items";
 
 export class OraiCommon {
@@ -16,17 +17,32 @@ export class OraiCommon {
     private _tokenItems?: TokenItems
   ) {}
 
-  static initializeFromCustomChainInfos(customChainInfos: CustomChainInfo[]) {
+  static initializeFromCustomChainInfos(
+    customChainInfos: CustomChainInfo[],
+    supportedChainInfo: SupportedChainInfo = null
+  ) {
     const common = new OraiCommon(
       new ChainInfosImpl(customChainInfos),
-      new TokenItemsImpl(customChainInfos)
+      new TokenItemsImpl(customChainInfos, supportedChainInfo)
     );
     return common;
   }
 
-  static async initializeFromChainInfoReader(reader: ChainInfoReader) {
+  static async initializeFromChainInfoReader(
+    reader: ChainInfoReader,
+    supportedReader: SupportedChainInfoReader = null
+  ) {
     const customChainInfos = await reader.readChainInfos();
-    return OraiCommon.initializeFromCustomChainInfos(customChainInfos);
+
+    let supportedChainInfo: SupportedChainInfo;
+    if (supportedReader) {
+      supportedChainInfo = await supportedReader.readSupportedChainInfo();
+    }
+
+    return OraiCommon.initializeFromCustomChainInfos(
+      customChainInfos,
+      supportedChainInfo
+    );
   }
 
   static async initializeFromBackend() {

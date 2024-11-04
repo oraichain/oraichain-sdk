@@ -4,6 +4,8 @@ import { COSMOS_CHAIN_IDS } from "../constants/chain-ids";
 import { IBC_DENOMS } from "../constants/denoms";
 import { TokenItemType } from "./types";
 import { NETWORK_TYPES } from "../constants/network";
+import { SupportedChainInfo, SupportedChainInfoReader } from "../supported";
+import { extractCosmosDenomOrCW20Address, isNative } from "../helpers";
 
 export interface TokenItems {
   otherChainTokens: TokenItemType[];
@@ -20,11 +22,24 @@ export interface TokenItems {
 }
 
 export class TokenItemsImpl implements TokenItems {
-  constructor(private readonly chainInfos: CustomChainInfo[]) {}
+  constructor(
+    private readonly chainInfos: CustomChainInfo[],
+    private readonly supportedChainInfo: SupportedChainInfo
+  ) {}
 
-  static async create(chainInfoReader: ChainInfoReader) {
+  static async create(
+    chainInfoReader: ChainInfoReader,
+    supportedChainInfoReader: SupportedChainInfoReader = null
+  ) {
     const chainInfos = await chainInfoReader.readChainInfos();
-    const tokenItems = new TokenItemsImpl(chainInfos);
+
+    let supportedChainInfo: SupportedChainInfo;
+    if (supportedChainInfoReader) {
+      supportedChainInfo =
+        await supportedChainInfoReader.readSupportedChainInfo();
+    }
+    const tokenItems = new TokenItemsImpl(chainInfos, supportedChainInfo);
+
     return tokenItems;
   }
 
@@ -75,9 +90,17 @@ export class TokenItemsImpl implements TokenItems {
   }
 
   get oraichainTokens() {
-    return this.getTokensFromNetwork(
+    const oraiTokens = this.getTokensFromNetwork(
       this.chainInfos.find(
         (chain) => chain.chainId === COSMOS_CHAIN_IDS.ORAICHAIN
+      )
+    );
+
+    if (!this.supportedChainInfo) return oraiTokens;
+
+    return oraiTokens.filter((token) =>
+      Object.values(this.supportedChainInfo["oraichain"].coinDenoms).includes(
+        extractCosmosDenomOrCW20Address(token)
       )
     );
   }
