@@ -26,6 +26,19 @@ export class ChainInfoReaderFromBackend implements ChainInfoReader {
   }
 }
 
+export class ChainInfoReaderFromOraiCommon implements ChainInfoReader {
+  constructor(private readonly sourceUrl: string) {}
+
+  async readChainInfos() {
+    const chains = (await (
+      await fetchRetry(
+        this.sourceUrl
+      )
+    ).json()) as CustomChainInfo[];
+    return chains;
+  }
+}
+
 /**
  * @summary This class fetches chain infos from our github master branch directly. Beware that it has a rate limit of 60 requests / hour per IP
  */

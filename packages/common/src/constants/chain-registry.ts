@@ -13,3 +13,8 @@ export const CHAIN_REGISTRY_GITHUB_API_ENDPOINTS = {
 export const CHAIN_REGISTRY_GITHUB_RAWCONTENT_ENDPOINTS = {
   BASE_URL: "https://raw.githubusercontent.com/oraichain/oraichain-sdk/master"
 };
+
+export const ORAICHAIN_COMMON_GITHUB_API_ENDPOINTS = {
+  BASE_URL: "https://api.github.com",
+  SUPPORTED_INFO: "/repos/oraichain/oraichain-sdk/contents/supported/"
+}

@@ -1,0 +1,30 @@
+{
+  "oraichain": {
+    "coinDenoms": {
+      "AIRI": "orai10ldgzued6zjp0mkqwsv2mux3ml50l97c74x8sg",
+      "ATOM": "ibc/A2E2EEC9057A4A1C2C0A6A4C78B0239118DF5F278830F50B4A6BDD7A66506B78",
+      "BEP20 KWT": "ibc/4F7464EEE736CCFB6B444EB72DE60B3B43C0DD509FFA2B87E05D584467AAE8C8",
+      "BEP20 MILKY": "ibc/E12A2298AC40011C79F02F26C324BD54DF20F4B2904CB9028BFDEDCFAA89B906",
+      "BTC": "factory/orai1wuvhex9xqs3r539mvc6mtm7n20fcj3qr2m0y9khx6n5vtlngfzes3k0rq9/obtc",
+      "BTC (Legacy)": "orai10g6frpysmdgw5tdqke47als6f97aqmr8s3cljsvjce4n5enjftcqtamzsd",
+      "HMSTR": "factory/orai1wuvhex9xqs3r539mvc6mtm7n20fcj3qr2m0y9khx6n5vtlngfzes3k0rq9/HMSTR",
+      "IBC INJ": "ibc/49D820DFDE9F885D7081725A58202ABA2F465CAEE4AFBC683DFB79A8E013E83E",
+      "INJ": "orai19rtmkk6sn4tppvjmp5d5zj6gfsdykrl5rw2euu5gwur3luheuuusesqn49",
+      "KWT": "orai1nd4r053e3kgedgld2ymen8l9yrw8xpjyaal7j5",
+      "MILKY": "orai1gzvndtzceqwfymu2kqhta2jn6gmzxvzqwdgvjw",
+      "NTMPI": "ibc/576B1D63E401B6A9A071C78A1D1316D016EC9333D2FEB14AD503FAC4B8731CD1",
+      "OCH": "orai1hn8w33cqvysun2aujk5sv33tku4pgcxhhnsxmvnkfvdxagcx0p8qa4l98q",
+      "ORAI": "orai",
+      "ORAIX": "orai1lus0f0rhx8s03gdllx2n6vhkmf0536dv57wfge",
+      "OSMO": "ibc/9C4DCD21B48231D0BC2AC3D1B74A864746B37E4292694C93C617324250D002FC",
+      "PEPE": "factory/orai1wuvhex9xqs3r539mvc6mtm7n20fcj3qr2m0y9khx6n5vtlngfzes3k0rq9/extPEPE",
+      "TON": "factory/orai1wuvhex9xqs3r539mvc6mtm7n20fcj3qr2m0y9khx6n5vtlngfzes3k0rq9/ton",
+      "USDC": "orai15un8msx3n5zf9ahlxmfeqd2kwa5wm0nrpxer304m9nd5q6qq0g6sku5pdd",
+      "USDT": "orai12hzjxfh77wl572gdzct2fxv2arxcwh6gykc7qh",
+      "WETH": "orai1dqa52a7hxxuv8ghe7q5v0s36ra0cthea960q2cukznleqhk0wpnshfegez",
+      "scATOM": "orai19q4qak2g3cj2xc2y3060t0quzn3gfhzx08rjlrdd3vqxhjtat0cq668phq",
+      "scORAI": "orai1065qe48g7aemju045aeyprflytemx7kecxkf5m7u5h5mphd0qlcs47pclp",
+      "wTRX": "orai1c7tpjenafvgjtgm9aqwm7afnke6c56hpdms8jc6md40xs3ugd0es5encn0"
+    }
+  }
+}
