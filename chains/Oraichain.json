@@ -261,10 +261,10 @@
       "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/32195.png"
     },
     {
-      "coinDenom": "TEST_TOKEN",
-      "coinGeckoId": "simon-s-cat",
-      "coinMinimalDenom": "factory/orai1wuvhex9xqs3r539mvc6mtm7n20fcj3qr2m0y9khx6n5vtlngfzes3k0rq9/extCAT",
-      "bridgeTo": ["test"],
+      "coinDenom": "HTT",
+      "coinGeckoId": "tether",
+      "coinMinimalDenom": "orai1k5d5cgekt8kkzcrnxrx860wadvz5esjwtyv299g0ht75a92yfn6qvgu0ml",
+      "bridgeTo": ["0x38"],
       "coinDecimals": 6,
       "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/32195.png"
     }
