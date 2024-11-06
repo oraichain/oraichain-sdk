@@ -60,6 +60,7 @@ jobs:
         env:
           CI: false
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: send result via discord
         uses: appleboy/discord-action@master
         with:
