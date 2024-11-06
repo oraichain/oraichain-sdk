@@ -51,7 +51,7 @@ jobs:
       - name: Build
         run: yarn build
       - name: Authenticate with private NPM package
-        run: echo "//registry.npmjs.org/:npmAuthToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
 
       - name: Publish Oraichain Common
         id: publish-oraichain-common
