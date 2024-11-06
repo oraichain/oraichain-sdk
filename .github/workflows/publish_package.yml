@@ -53,6 +53,8 @@ jobs:
       - name: Authenticate with private NPM package
         run: echo "//registry.npmjs.org/:npmAuthToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
 
+      - name: Config registry
+        run: yarn config set registry https://registry.npmjs.org/
       - name: Publish Oraichain Common
         id: publish-oraichain-common
         continue-on-error: true
