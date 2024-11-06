@@ -4,11 +4,7 @@ import {
   CHAIN_REGISTRY_GITHUB_API_ENDPOINTS,
   CHAIN_REGISTRY_GITHUB_RAWCONTENT_ENDPOINTS
 } from "../constants";
-import {
-  ChainInfoReader,
-  ChainInfoReaderFromGitRawOptions,
-  CustomChainInfo
-} from "./types";
+import { ChainInfoReader, ChainInfoReaderFromGitRawOptions, CustomChainInfo } from "./types";
 import path from "path";
 
 export class ChainInfoReaderFromBackend implements ChainInfoReader {
@@ -30,11 +26,7 @@ export class ChainInfoReaderFromOraiCommon implements ChainInfoReader {
   constructor(private readonly sourceUrl: string) {}
 
   async readChainInfos() {
-    const chains = (await (
-      await fetchRetry(
-        this.sourceUrl
-      )
-    ).json()) as CustomChainInfo[];
+    const chains = (await (await fetchRetry(this.sourceUrl)).json()) as CustomChainInfo[];
     return chains;
   }
 }
@@ -57,23 +49,16 @@ export class ChainInfoReaderFromGit implements ChainInfoReader {
       options.headers["X-GitHub-Api-Version"] = "2022-11-28";
     }
     const response = await (
-      await fetchRetry(
-        `${CHAIN_REGISTRY_GITHUB_API_ENDPOINTS.BASE_URL}${CHAIN_REGISTRY_GITHUB_API_ENDPOINTS.CHAIN_INFOS}`,
-        options
-      )
+      await fetchRetry(CHAIN_REGISTRY_GITHUB_API_ENDPOINTS.CHAIN_INFOS, options)
     ).json();
 
     const responses = (
-      await Promise.allSettled(
-        response.map((chain) => fetchRetry(chain.download_url))
-      )
+      await Promise.allSettled(response.map((chain) => fetchRetry(chain.download_url)))
     )
       .filter((chain) => chain.status === "fulfilled")
       .map((chain) => chain.value);
 
-    const chains: CustomChainInfo[] = await Promise.all(
-      responses.map((data) => data.json())
-    );
+    const chains: CustomChainInfo[] = await Promise.all(responses.map((data) => data.json()));
     return chains;
   }
 }
@@ -90,8 +75,7 @@ export class ChainInfoReaderFromGitRaw implements ChainInfoReader {
     }
   ) {
     if (!this.options.baseUrl)
-      this.options.baseUrl =
-        CHAIN_REGISTRY_GITHUB_RAWCONTENT_ENDPOINTS.BASE_URL;
+      this.options.baseUrl = CHAIN_REGISTRY_GITHUB_RAWCONTENT_ENDPOINTS.BASE_URL;
     this.generateUrls();
   }
 

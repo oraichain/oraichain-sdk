@@ -5,9 +5,9 @@ export const CHAIN_REGISTRY_BACKEND_ENDPOINTS = {
   CHAIN_INFOS: "/chains"
 } as const;
 
+export const GITHUB_API_BASE_URL = "https://api.github.com";
 export const CHAIN_REGISTRY_GITHUB_API_ENDPOINTS = {
-  BASE_URL: "https://api.github.com",
-  CHAIN_INFOS: "/repos/oraichain/oraichain-sdk/contents/chains"
+  CHAIN_INFOS: GITHUB_API_BASE_URL + "/repos/oraichain/oraichain-sdk/contents/chains"
 };
 
 export const CHAIN_REGISTRY_GITHUB_RAWCONTENT_ENDPOINTS = {
@@ -15,6 +15,5 @@ export const CHAIN_REGISTRY_GITHUB_RAWCONTENT_ENDPOINTS = {
 };
 
 export const ORAICHAIN_COMMON_GITHUB_API_ENDPOINTS = {
-  BASE_URL: "https://api.github.com",
-  SUPPORTED_INFO: "/repos/oraichain/oraichain-sdk/contents/supported/"
-}
+  SUPPORTED_INFO: GITHUB_API_BASE_URL + "/repos/oraichain/oraichain-sdk/contents/supported/"
+};

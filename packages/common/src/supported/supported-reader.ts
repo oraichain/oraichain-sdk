@@ -2,15 +2,13 @@ import { fetchRetry } from "../helpers";
 import { SupportedChainInfo, SupportedChainInfoReader } from "./types";
 import { ORAICHAIN_COMMON_GITHUB_API_ENDPOINTS } from "../constants";
 
-export class SupportedChainInfoReaderFromGit
-  implements SupportedChainInfoReader
-{
-  constructor(
-    private readonly dex: string,
-    private readonly accessToken: string
-  ) {}
+export class SupportedChainInfoReaderFromGit implements SupportedChainInfoReader {
+  constructor(private readonly dex: string, private readonly accessToken: string) {}
 
-  async readSupportedChainInfo(): Promise<SupportedChainInfo> {
+  async readSupportedChainInfo(
+    // branch name
+    ref = "feat/read-from-orai-common-backend"
+  ): Promise<SupportedChainInfo> {
     const options = {
       method: "GET",
       headers: {
@@ -23,7 +21,7 @@ export class SupportedChainInfoReaderFromGit
     }
     const res = await (
       await fetchRetry(
-        `${ORAICHAIN_COMMON_GITHUB_API_ENDPOINTS.BASE_URL}${ORAICHAIN_COMMON_GITHUB_API_ENDPOINTS.SUPPORTED_INFO}${this.dex}.json?ref=feat/read-from-orai-common-backend`,
+        `${ORAICHAIN_COMMON_GITHUB_API_ENDPOINTS.SUPPORTED_INFO}${this.dex}.json?ref=${ref}`,
         options
       )
     ).json();
