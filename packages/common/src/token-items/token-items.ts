@@ -63,6 +63,10 @@ export class TokenItemsImpl implements TokenItems {
     });
   };
 
+  getSpecificChainTokens(chainId: string) {
+    return this.getTokensFromNetwork(this.chainInfos.find((chain) => chain.chainId === chainId));
+  }
+
   get otherChainTokens() {
     return flatten(
       this.chainInfos
