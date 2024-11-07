@@ -17,6 +17,7 @@ export interface TokenItems {
   cw20TokenMap: { [k: string]: TokenItemType };
   evmTokens: TokenItemType[];
   kawaiiTokens: TokenItemType[];
+  getSpecificChainTokens: (chainId: string) => TokenItemType[];
 }
 
 export class TokenItemsImpl implements TokenItems {

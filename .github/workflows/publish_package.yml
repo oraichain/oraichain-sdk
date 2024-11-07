@@ -61,10 +61,10 @@ jobs:
           CI: false
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      # - name: send result via discord
-      #   uses: appleboy/discord-action@master
-      #   with:
-      #     webhook_id: ${{ secrets.WEBHOOK_ID }}
-      #     webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
-      #     username: "GitBot"
-      #     message: "Repo oraichain-sdk has just published. @oraichain/common: ${{ steps.publish-oraichain-common.outcome }}. ${{ github.event.head_commit.author.name }}"
+      - name: send result via discord
+        uses: appleboy/discord-action@master
+        with:
+          webhook_id: ${{ secrets.WEBHOOK_ID }}
+          webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
+          username: "GitBot"
+          message: "Repo oraichain-sdk has just published. @oraichain/common: ${{ steps.publish-oraichain-common.outcome }}. ${{ github.event.head_commit.author.name }}"
