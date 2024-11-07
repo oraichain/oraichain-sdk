@@ -56,10 +56,11 @@ jobs:
       - name: Publish Oraichain Common
         id: publish-oraichain-common
         continue-on-error: true
-        run: yarn --cwd packages/common deploy
+        run: yarn deploy
         env:
           CI: false
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       # - name: send result via discord
       #   uses: appleboy/discord-action@master
       #   with:
