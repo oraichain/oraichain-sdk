@@ -4,8 +4,7 @@
   "main": "build/index.js",
   "license": "MIT",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "deploy": "yarn npm publish --access public"
+    "build": "tsc -p tsconfig.json"
   },
   "files": [
     "build/"

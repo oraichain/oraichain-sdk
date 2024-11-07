@@ -56,7 +56,7 @@ jobs:
       - name: Publish Oraichain Common
         id: publish-oraichain-common
         continue-on-error: true
-        run: yarn deploy
+        run: yarn deploy:ci
         env:
           CI: false
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -8,7 +8,8 @@
     "clean": "nx reset && lerna clean --yes && lerna exec -- rimraf build/ dist/ cache/",
     "build": "lerna run build --concurrency 1",
     "build-tsc": "tsc -p",
-    "deploy": "lerna publish from-package",
+    "deploy": "yarn build && lerna publish",
+    "deploy:ci": "lerna publish from-package --yes",
     "build:docker": "lerna run build --concurrency 1"
   },
   "workspaces": [
