@@ -59,7 +59,8 @@ export class TokenItemsImpl implements TokenItems {
         maxGas: (network.feeCurrencies?.[0].gasPriceStep?.high ?? 0) * 20000,
         gasPriceStep: currency.gasPriceStep,
         feeCurrencies: network.feeCurrencies,
-        evmDenoms
+        evmDenoms,
+        icon: currency.coinImageUrl
       };
     });
   };

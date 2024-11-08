@@ -22,4 +22,5 @@ export type TokenItemType = {
     readonly high: number;
   };
   feeCurrencies?: FeeCurrency[];
+  icon: string;
 };
