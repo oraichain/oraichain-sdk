@@ -259,6 +259,16 @@
       "bridgeTo": ["ton"],
       "coinDecimals": 9,
       "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/32195.png"
+    },
+    {
+      "coinDenom": "HTT",
+      "coinGeckoId": "tether",
+      "coinMinimalDenom": "cw20:orai1k5d5cgekt8kkzcrnxrx860wadvz5esjwtyv299g0ht75a92yfn6qvgu0ml:OCH",
+      "type": "cw20",
+      "contractAddress": "orai1k5d5cgekt8kkzcrnxrx860wadvz5esjwtyv299g0ht75a92yfn6qvgu0ml",
+      "bridgeTo": ["0x01"],
+      "coinDecimals": 6,
+      "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/32195.png"
     }
   ]
 }
