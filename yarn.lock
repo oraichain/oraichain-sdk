@@ -1772,7 +1772,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@oraichain/common@npm:^1.1.1, @oraichain/common@workspace:packages/common":
+"@oraichain/common@npm:^1.1.1, @oraichain/common@npm:^1.2.0, @oraichain/common@workspace:packages/common":
   version: 0.0.0-use.local
   resolution: "@oraichain/common@workspace:packages/common"
   dependencies:
@@ -1827,7 +1827,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@oraichain/examples@workspace:packages/examples"
   dependencies:
-    "@oraichain/common": "npm:^1.1.1"
+    "@oraichain/common": "npm:^1.2.0"
     bech32: "npm:^1.1.4"
     cosmjs-types: "npm:^0.8.0"
     dotenv: "npm:^16.4.5"
