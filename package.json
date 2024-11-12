@@ -18,17 +18,17 @@
     "node": ">=18.18.0"
   },
   "dependencies": {
-    "@cosmjs/amino": "^0.31.3",
-    "@cosmjs/cosmwasm-stargate": "^0.31.3",
-    "@cosmjs/crypto": "^0.31.3",
-    "@cosmjs/encoding": "^0.31.3",
-    "@cosmjs/proto-signing": "^0.31.3",
-    "@cosmjs/stargate": "^0.31.3",
-    "@cosmjs/tendermint-rpc": "^0.31.3"
+    "@cosmjs/amino": "0.32.4",
+    "@cosmjs/cosmwasm-stargate": "0.32.4",
+    "@cosmjs/crypto": "0.32.4",
+    "@cosmjs/encoding": "0.32.4",
+    "@cosmjs/proto-signing": "0.32.4",
+    "@cosmjs/stargate": "0.32.4",
+    "@cosmjs/tendermint-rpc": "0.32.4"
   },
   "devDependencies": {
     "@eslint/js": "^9.7.0",
-    "@oraichain/cw-simulate": "^2.8.87",
+    "@oraichain/cw-simulate": "^2.8.103",
     "@types/eslint__js": "^8.42.3",
     "@types/lodash": "^4.17.0",
     "@types/node": "^20.11.30",
