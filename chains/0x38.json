@@ -73,6 +73,15 @@
       "coinGeckoId": "binancecoin",
       "bridgeTo": ["Oraichain"],
       "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png"
+    },
+    {
+      "coinDenom": "DOGE",
+      "coinMinimalDenom": "erc20:0xbA2aE424d960c26247Dd6c32edC70B295c744C43:Dogecoin",
+      "contractAddress": "0xbA2aE424d960c26247Dd6c32edC70B295c744C43",
+      "coinDecimals": 8,
+      "coinGeckoId": "dogecoin",
+      "bridgeTo": ["Oraichain"],
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/5/standard/dogecoin.png?1696501409"
     }
   ],
   "txExplorer": {

@@ -265,6 +265,14 @@
       "bridgeTo": ["ton"],
       "coinDecimals": 9,
       "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/32195.png"
+    },
+    {
+      "coinDenom": "DOGE",
+      "coinGeckoId": "dogecoin",
+      "coinMinimalDenom": "factory/orai1wuvhex9xqs3r539mvc6mtm7n20fcj3qr2m0y9khx6n5vtlngfzes3k0rq9/DogeBNB",
+      "bridgeTo": ["0x38"],
+      "coinDecimals": 8,
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/5/standard/dogecoin.png?1696501409"
     }
   ]
 }
