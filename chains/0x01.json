@@ -88,6 +88,16 @@
       "coinGeckoId": "oraidex",
       "prefixToken": "eth-mainnet",
       "coinImageUrl": "https://i.ibb.co/VmMJtf7/oraix.png"
+    },
+    {
+      "coinDenom": "PEPE",
+      "coinMinimalDenom": "erc20:0x6982508145454Ce325dDbE47a25d4ec3d2311933:Pepe",
+      "contractAddress": "0x6982508145454Ce325dDbE47a25d4ec3d2311933",
+      "coinDecimals": 18,
+      "bridgeTo": ["Oraichain"],
+      "coinGeckoId": "pepe",
+      "prefixToken": "eth-mainnet",
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/29850/standard/pepe-token.jpeg?1696528776"
     }
   ],
   "txExplorer": {
