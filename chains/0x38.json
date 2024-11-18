@@ -7,6 +7,18 @@
   "bip44": { "coinType": 60 },
   "coinType": 60,
   "features": ["isEvm"],
+  "feeCurrencies": [
+    {
+      "coinDenom": "BNB",
+      "coinMinimalDenom": "bnb",
+      "contractAddress": "",
+      "coinDecimals": 18,
+      "coinGeckoId": "binancecoin",
+      "bridgeTo": ["Oraichain"],
+      "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png",
+      "gasPriceStep": { "low": 0, "average": 0.025, "high": 0.04 }
+    }
+  ],
   "currencies": [
     {
       "coinDenom": "ORAI",

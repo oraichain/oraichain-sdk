@@ -7,6 +7,18 @@
   "coinType": 60,
   "networkType": "evm",
   "features": ["isEvm"],
+  "feeCurrencies": [
+    {
+      "coinDenom": "ETH",
+      "coinMinimalDenom": "eth",
+      "contractAddress": "",
+      "coinDecimals": 18,
+      "bridgeTo": ["Oraichain"],
+      "coinGeckoId": "ethereum",
+      "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png",
+      "gasPriceStep": { "low": 0, "average": 0.025, "high": 0.04 }
+    }
+  ],
   "currencies": [
     {
       "coinDenom": "ORAI",
