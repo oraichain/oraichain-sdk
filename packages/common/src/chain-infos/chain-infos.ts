@@ -5,8 +5,7 @@ export class ChainInfosImpl implements ChainInfos {
 
   static async create(chainInfoReader: ChainInfoReader) {
     const chainInfos = await chainInfoReader.readChainInfos();
-    const info = new ChainInfosImpl(chainInfos);
-    return info;
+    return new ChainInfosImpl(chainInfos);
   }
 
   get evmChains() {
@@ -15,5 +14,9 @@ export class ChainInfosImpl implements ChainInfos {
 
   get cosmosChains() {
     return this.chainInfos.filter((c) => c.networkType === "cosmos");
+  }
+
+  getSpecificChainInfo(chainId: string) {
+    return this.chainInfos.find((c) => c.chainId === chainId);
   }
 }

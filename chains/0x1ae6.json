@@ -7,6 +7,18 @@
   "bip44": { "coinType": 60 },
   "coinType": 60,
   "features": ["isEvm"],
+  "feeCurrencies": [
+    {
+      "coinDenom": "ERC20 KWT",
+      "bridgeTo": ["Oraichain", "kawaii_6886-1"],
+      "coinMinimalDenom": "erc20:0x80b5a32E4F032B2a058b4F29EC95EEfEEB87aDcd:Kawaii Islands",
+      "contractAddress": "0x80b5a32E4F032B2a058b4F29EC95EEfEEB87aDcd",
+      "coinDecimals": 18,
+      "coinGeckoId": "kawaii-islands",
+      "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/12313.png",
+      "gasPriceStep": { "low": 0, "average": 0.025, "high": 0.04 }
+    }
+  ],
   "currencies": [
     {
       "coinDenom": "ERC20 MILKY",

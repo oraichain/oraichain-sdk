@@ -7,6 +7,18 @@
   "bip44": { "coinType": 60 },
   "coinType": 60,
   "features": ["isEvm"],
+  "feeCurrencies": [
+    {
+      "coinDenom": "BNB",
+      "coinMinimalDenom": "bnb",
+      "contractAddress": "",
+      "coinDecimals": 18,
+      "coinGeckoId": "binancecoin",
+      "bridgeTo": ["Oraichain"],
+      "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png",
+      "gasPriceStep": { "low": 0, "average": 0.025, "high": 0.04 }
+    }
+  ],
   "currencies": [
     {
       "coinDenom": "ORAI",
@@ -73,6 +85,25 @@
       "coinGeckoId": "binancecoin",
       "bridgeTo": ["Oraichain"],
       "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png"
+    },
+    {
+      "coinDenom": "DOGE",
+      "coinMinimalDenom": "erc20:0xbA2aE424d960c26247Dd6c32edC70B295c744C43:Dogecoin",
+      "contractAddress": "0xbA2aE424d960c26247Dd6c32edC70B295c744C43",
+      "coinDecimals": 8,
+      "coinGeckoId": "dogecoin",
+      "bridgeTo": ["Oraichain"],
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/5/standard/dogecoin.png?1696501409"
+    },
+    {
+      "coinDenom": "PEPE",
+      "coinMinimalDenom": "erc20:0x25d887Ce7a35172C62FeBFD67a1856F20FaEbB00:Pepe",
+      "contractAddress": "0x25d887Ce7a35172C62FeBFD67a1856F20FaEbB00",
+      "coinDecimals": 18,
+      "coinGeckoId": "pepe",
+      "bridgeTo": ["Oraichain"],
+      "prefixToken": "oraib",
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/29850/standard/pepe-token.jpeg?1696528776"
     }
   ],
   "txExplorer": {

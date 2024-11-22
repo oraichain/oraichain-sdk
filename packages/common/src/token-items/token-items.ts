@@ -2,8 +2,8 @@ import { flatten, uniqBy } from "lodash";
 import { ChainInfoReader, CustomChainInfo } from "../chain-infos";
 import { COSMOS_CHAIN_IDS } from "../constants/chain-ids";
 import { IBC_DENOMS } from "../constants/denoms";
-import { TokenItemType } from "./types";
 import { NETWORK_TYPES } from "../constants/network";
+import { TokenItemType } from "./types";
 
 export interface TokenItems {
   otherChainTokens: TokenItemType[];
@@ -17,6 +17,7 @@ export interface TokenItems {
   cw20TokenMap: { [k: string]: TokenItemType };
   evmTokens: TokenItemType[];
   kawaiiTokens: TokenItemType[];
+  getSpecificChainTokens: (chainId: string) => TokenItemType[];
 }
 
 export class TokenItemsImpl implements TokenItems {
@@ -28,9 +29,7 @@ export class TokenItemsImpl implements TokenItems {
     return tokenItems;
   }
 
-  private getTokensFromNetwork = (
-    network: CustomChainInfo
-  ): TokenItemType[] => {
+  private getTokensFromNetwork = (network: CustomChainInfo): TokenItemType[] => {
     if (!network) return [];
     const evmDenomsMap = {
       kwt: [IBC_DENOMS.KWTBSC],
@@ -47,8 +46,7 @@ export class TokenItemsImpl implements TokenItems {
         org: network.chainName,
         coinType: network.bip44.coinType,
         contractAddress: currency.contractAddress,
-        prefix:
-          currency?.prefixToken ?? network.bech32Config?.bech32PrefixAccAddr,
+        prefix: currency?.prefixToken ?? network.bech32Config?.bech32PrefixAccAddr,
         coinGeckoId: currency.coinGeckoId,
         denom: currency.coinMinimalDenom,
         bridgeNetworkIdentifier: currency.bridgeNetworkIdentifier,
@@ -61,10 +59,15 @@ export class TokenItemsImpl implements TokenItems {
         maxGas: (network.feeCurrencies?.[0].gasPriceStep?.high ?? 0) * 20000,
         gasPriceStep: currency.gasPriceStep,
         feeCurrencies: network.feeCurrencies,
-        evmDenoms
+        evmDenoms,
+        icon: currency.coinImageUrl
       };
     });
   };
+
+  getSpecificChainTokens(chainId: string) {
+    return this.getTokensFromNetwork(this.chainInfos.find((chain) => chain.chainId === chainId));
+  }
 
   get otherChainTokens() {
     return flatten(
@@ -76,9 +79,7 @@ export class TokenItemsImpl implements TokenItems {
 
   get oraichainTokens() {
     return this.getTokensFromNetwork(
-      this.chainInfos.find(
-        (chain) => chain.chainId === COSMOS_CHAIN_IDS.ORAICHAIN
-      )
+      this.chainInfos.find((chain) => chain.chainId === COSMOS_CHAIN_IDS.ORAICHAIN)
     );
   }
 
@@ -95,18 +96,12 @@ export class TokenItemsImpl implements TokenItems {
   }
 
   get assetInfoMap() {
-    return Object.fromEntries(
-      this.flattenTokens.map((c) => [c.contractAddress || c.denom, c])
-    );
+    return Object.fromEntries(this.flattenTokens.map((c) => [c.contractAddress || c.denom, c]));
   }
 
   get cosmosTokens() {
     return uniqBy(
-      this.flattenTokens.filter(
-        (token) =>
-          // !token.contractAddress &&
-          token.denom && token.cosmosBased && token.coinGeckoId
-      ),
+      this.flattenTokens.filter((token) => token.denom && token.cosmosBased && token.coinGeckoId),
       (c) => c.denom
     );
   }
@@ -115,25 +110,20 @@ export class TokenItemsImpl implements TokenItems {
     return uniqBy(
       this.cosmosTokens.filter(
         // filter cosmos based tokens to collect tokens that have contract addresses
-        (token) =>
-          // !token.contractAddress &&
-          token.contractAddress
+        (token) => token.contractAddress
       ),
       (c) => c.denom
     );
   }
 
   get cw20TokenMap() {
-    return Object.fromEntries(
-      this.cw20Tokens.map((c) => [c.contractAddress, c])
-    );
+    return Object.fromEntries(this.cw20Tokens.map((c) => [c.contractAddress, c]));
   }
 
   get evmTokens() {
     return uniqBy(
       this.flattenTokens.filter(
         (token) =>
-          // !token.contractAddress &&
           token.denom &&
           !token.cosmosBased &&
           token.coinGeckoId &&

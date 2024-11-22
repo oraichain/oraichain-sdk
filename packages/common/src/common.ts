@@ -11,10 +11,7 @@ import {
 import { TokenItems, TokenItemsImpl } from "./token-items";
 
 export class OraiCommon {
-  constructor(
-    private _chainInfos?: ChainInfos,
-    private _tokenItems?: TokenItems
-  ) {}
+  constructor(private _chainInfos?: ChainInfos, private _tokenItems?: TokenItems) {}
 
   static initializeFromCustomChainInfos(customChainInfos: CustomChainInfo[]) {
     const common = new OraiCommon(
@@ -39,9 +36,7 @@ export class OraiCommon {
     return OraiCommon.initializeFromChainInfoReader(reader);
   }
 
-  static async initializeFromGitRaw(
-    options?: ChainInfoReaderFromGitRawOptions
-  ) {
+  static async initializeFromGitRaw(options?: ChainInfoReaderFromGitRawOptions) {
     const reader = new ChainInfoReaderFromGitRaw(options);
     return OraiCommon.initializeFromChainInfoReader(reader);
   }
