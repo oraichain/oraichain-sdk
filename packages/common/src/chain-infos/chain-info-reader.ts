@@ -1,25 +1,31 @@
-import { fetchRetry } from "../helpers";
+import path from "path";
 import {
   CHAIN_REGISTRY_BACKEND_ENDPOINTS,
   CHAIN_REGISTRY_GITHUB_API_ENDPOINTS,
   CHAIN_REGISTRY_GITHUB_RAWCONTENT_ENDPOINTS
 } from "../constants";
-import { ChainInfoReader, ChainInfoReaderFromGitRawOptions, CustomChainInfo } from "./types";
-import path from "path";
+import { fetchRetry } from "../helpers";
+import {
+  ChainInfoReader,
+  ChainInfoReaderFromGitRawOptions,
+  CustomChainInfo
+} from "./types";
 
 export class ChainInfoReaderFromBackend implements ChainInfoReader {
-  constructor(private readonly baseUrl?: string, private readonly dex?: string) {}
+  constructor(
+    private readonly baseUrl?: string,
+    private readonly dex?: string
+  ) {}
 
   async readChainInfos() {
-    const chains = (await (
-      await fetchRetry(
-        this.baseUrl ?? CHAIN_REGISTRY_BACKEND_ENDPOINTS.BASE_URL +
-          path.join(
-            CHAIN_REGISTRY_BACKEND_ENDPOINTS.BASE_ENDPOINT,
-            CHAIN_REGISTRY_BACKEND_ENDPOINTS.CHAIN_INFOS
-          ) + "?dex=" + this.dex
-      )
-    ).json()) as CustomChainInfo[];
+    const { BASE_ENDPOINT, BASE_URL, CHAIN_INFOS } =
+      CHAIN_REGISTRY_BACKEND_ENDPOINTS;
+    const url =
+      (this.baseUrl ?? BASE_URL) +
+      path.join(BASE_ENDPOINT, CHAIN_INFOS) +
+      "?dex=" +
+      this.dex;
+    const chains = (await (await fetchRetry(url)).json()) as CustomChainInfo[];
     return chains;
   }
 }
@@ -28,7 +34,9 @@ export class ChainInfoReaderFromOraiCommon implements ChainInfoReader {
   constructor(private readonly sourceUrl: string) {}
 
   async readChainInfos() {
-    const chains = (await (await fetchRetry(this.sourceUrl)).json()) as CustomChainInfo[];
+    const chains = (await (
+      await fetchRetry(this.sourceUrl)
+    ).json()) as CustomChainInfo[];
     return chains;
   }
 }
@@ -55,12 +63,16 @@ export class ChainInfoReaderFromGit implements ChainInfoReader {
     ).json();
 
     const responses = (
-      await Promise.allSettled(response.map((chain) => fetchRetry(chain.download_url)))
+      await Promise.allSettled(
+        response.map((chain) => fetchRetry(chain.download_url))
+      )
     )
       .filter((chain) => chain.status === "fulfilled")
       .map((chain) => chain.value);
 
-    const chains: CustomChainInfo[] = await Promise.all(responses.map((data) => data.json()));
+    const chains: CustomChainInfo[] = await Promise.all(
+      responses.map((data) => data.json())
+    );
     return chains;
   }
 }
@@ -77,7 +89,8 @@ export class ChainInfoReaderFromGitRaw implements ChainInfoReader {
     }
   ) {
     if (!this.options.baseUrl)
-      this.options.baseUrl = CHAIN_REGISTRY_GITHUB_RAWCONTENT_ENDPOINTS.BASE_URL;
+      this.options.baseUrl =
+        CHAIN_REGISTRY_GITHUB_RAWCONTENT_ENDPOINTS.BASE_URL;
     this.generateUrls();
   }
 
