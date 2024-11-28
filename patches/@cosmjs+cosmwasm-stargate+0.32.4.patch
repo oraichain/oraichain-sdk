@@ -62,3 +62,19 @@ index e5bf448..878f7e4 100644
      // Use this service to get easy typed access to query methods
      // This cannot be used for proof verification
      const queryService = new query_1.QueryClientImpl(rpc);
+diff --git a/node_modules/@cosmjs/cosmwasm-stargate/build/signingcosmwasmclient.js b/node_modules/@cosmjs/cosmwasm-stargate/build/signingcosmwasmclient.js
+index 6eb95bb..24d3038 100644
+--- a/node_modules/@cosmjs/cosmwasm-stargate/build/signingcosmwasmclient.js
++++ b/node_modules/@cosmjs/cosmwasm-stargate/build/signingcosmwasmclient.js
+@@ -397,7 +397,10 @@ class SigningCosmWasmClient extends cosmwasmclient_1.CosmWasmClient {
+             throw new Error("Failed to retrieve account from signer");
+         }
+         const pubkey = (0, proto_signing_1.encodePubkey)((0, amino_1.encodeSecp256k1Pubkey)(accountFromSigner.pubkey));
+-        const signMode = signing_1.SignMode.SIGN_MODE_LEGACY_AMINO_JSON;
++        let signMode = signing_1.SignMode.SIGN_MODE_LEGACY_AMINO_JSON;
++        if (this.signer.signEip191) {
++            signMode = signing_1.SignMode.SIGN_MODE_EIP_191;
++        }
+         const msgs = messages.map((msg) => this.aminoTypes.toAmino(msg));
+         const signDoc = (0, amino_1.makeSignDoc)(msgs, fee, chainId, memo, accountNumber, sequence, timeoutHeight);
+         const { signature, signed } = await this.signer.signAmino(signerAddress, signDoc);

@@ -8,14 +8,16 @@ import { ChainInfoReader, ChainInfoReaderFromGitRawOptions, CustomChainInfo } fr
 import path from "path";
 
 export class ChainInfoReaderFromBackend implements ChainInfoReader {
+  constructor(private readonly baseUrl?: string, private readonly dex?: string) {}
+
   async readChainInfos() {
     const chains = (await (
       await fetchRetry(
-        CHAIN_REGISTRY_BACKEND_ENDPOINTS.BASE_URL +
+        this.baseUrl ?? CHAIN_REGISTRY_BACKEND_ENDPOINTS.BASE_URL +
           path.join(
             CHAIN_REGISTRY_BACKEND_ENDPOINTS.BASE_ENDPOINT,
             CHAIN_REGISTRY_BACKEND_ENDPOINTS.CHAIN_INFOS
-          )
+          ) + "?dex=" + this.dex
       )
     ).json()) as CustomChainInfo[];
     return chains;
