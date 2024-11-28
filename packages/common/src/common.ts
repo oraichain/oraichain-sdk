@@ -29,8 +29,8 @@ export class OraiCommon {
     return OraiCommon.initializeFromCustomChainInfos(customChainInfos);
   }
 
-  static async initializeFromBackend() {
-    const reader = new ChainInfoReaderFromBackend();
+  static async initializeFromBackend(baseUrl?: string, dex?: string) {
+    const reader = new ChainInfoReaderFromBackend(baseUrl, dex);
     return OraiCommon.initializeFromChainInfoReader(reader);
   }
 
