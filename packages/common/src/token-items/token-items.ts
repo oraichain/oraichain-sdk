@@ -37,10 +37,6 @@ export class TokenItemsImpl implements TokenItems {
       injective: [IBC_DENOMS.INJECTIVE]
     };
     return network.currencies.map((currency) => {
-      const evmDenoms =
-        network.chainId === COSMOS_CHAIN_IDS.ORAICHAIN
-          ? evmDenomsMap[currency.coinMinimalDenom]
-          : undefined;
       return {
         name: currency.coinDenom,
         org: network.chainName,
@@ -59,7 +55,7 @@ export class TokenItemsImpl implements TokenItems {
         maxGas: (network.feeCurrencies?.[0].gasPriceStep?.high ?? 0) * 20000,
         gasPriceStep: currency.gasPriceStep,
         feeCurrencies: network.feeCurrencies,
-        evmDenoms,
+        evmDenoms: evmDenomsMap[currency.coinMinimalDenom],
         icon: currency.coinImageUrl
       };
     });
