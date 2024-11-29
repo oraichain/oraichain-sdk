@@ -1,6 +1,6 @@
 {
   "name": "@oraichain/common",
-  "version": "1.1.5-beta.1",
+  "version": "1.2.1-beta3",
   "main": "build/index.js",
   "license": "MIT",
   "scripts": {
