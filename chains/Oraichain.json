@@ -273,6 +273,14 @@
       "bridgeTo": ["0x38"],
       "coinDecimals": 8,
       "coinImageUrl": "https://assets.coingecko.com/coins/images/5/standard/dogecoin.png?1696501409"
+    },
+    {
+      "coinDenom": "SOL",
+      "coinGeckoId": "solana",
+      "coinMinimalDenom": "factory/orai1wuvhex9xqs3r539mvc6mtm7n20fcj3qr2m0y9khx6n5vtlngfzes3k0rq9/SolBNB",
+      "bridgeTo": ["0x38"],
+      "coinDecimals": 6,
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/4128/standard/solana.png?1718769756"
     }
   ]
 }
