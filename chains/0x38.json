@@ -84,10 +84,10 @@
       "coinImageUrl": "https://assets.coingecko.com/coins/images/5/standard/dogecoin.png?1696501409"
     },
     {
-      "coinDenom": "SOL",
-      "coinMinimalDenom": "erc20:0x570A5D26f7765Ecb712C0924E4De545B89fD43dF:Solana",
-      "contractAddress": "0x570A5D26f7765Ecb712C0924E4De545B89fD43dF",
-      "coinDecimals": 18,
+      "coinDenom": "WSOL",
+      "coinMinimalDenom": "erc20:0xfA54fF1a158B5189Ebba6ae130CEd6bbd3aEA76e:Solana",
+      "contractAddress": "0xfA54fF1a158B5189Ebba6ae130CEd6bbd3aEA76e",
+      "coinDecimals": 9,
       "coinGeckoId": "solana",
       "bridgeTo": ["Oraichain"],
       "coinImageUrl": "https://assets.coingecko.com/coins/images/4128/standard/solana.png?1718769756"
