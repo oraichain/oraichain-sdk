@@ -1,4 +1,5 @@
 import { FeeCurrency } from "@keplr-wallet/types";
+import { NetworkChainId } from "src/constants";
 
 export type TokenItemType = {
   name: string;
@@ -9,7 +10,7 @@ export type TokenItemType = {
   evmDenoms?: string[];
   bridgeNetworkIdentifier?: string;
   bridgeTo?: string[];
-  chainId: string;
+  chainId: NetworkChainId;
   coinType?: number;
   rpc: string;
   decimals: number;
