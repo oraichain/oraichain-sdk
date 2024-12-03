@@ -26,6 +26,7 @@ export interface CustomChainInfo
     | "rest"
     | "bech32Config"
   > {
+  readonly chainId: NetworkChainId;
   readonly networkType: NetworkType;
   readonly coinType: CoinType;
   readonly bech32Config?: Bech32Config;
