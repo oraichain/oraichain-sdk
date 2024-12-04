@@ -156,7 +156,8 @@
       "type": "cw20",
       "contractAddress": "orai1065qe48g7aemju045aeyprflytemx7kecxkf5m7u5h5mphd0qlcs47pclp",
       "coinGeckoId": "scorai",
-      "coinDecimals": 6
+      "coinDecimals": 6,
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/28897/standard/Orchai_LOGO.png?1696527873"
     },
     {
       "coinDenom": "wTRX",
