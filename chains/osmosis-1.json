@@ -3,7 +3,7 @@
   "rpc": "https://osmosis.rpc.orai.io/",
   "rest": "https://osmosis.lcd.orai.io/",
   "chainId": "osmosis-1",
-  "chainName": "Osmosis",
+  "chainName": "osmosis",
   "networkType": "cosmos",
   "bip44": { "coinType": 118 },
   "coinType": 118,
@@ -16,13 +16,12 @@
     "bech32PrefixConsPub": "osmovalconspub"
   },
   "features": ["stargate", "ibc-transfer", "no-legacy-stdTx", "ibc-go", "cosmwasm"],
-  "chainSymbolImageUrl": "https://assets.coingecko.com/coins/images/16724/small/osmo.png?1632763885",
   "stakeCurrency": {
     "coinDenom": "OSMO",
     "coinMinimalDenom": "uosmo",
     "coinDecimals": 6,
     "coinGeckoId": "osmosis",
-    "coinImageUrl": "https://assets.coingecko.com/coins/images/16724/small/osmo.png?1632763885",
+    "coinImageUrl": "https://dhj8dql1kzq2v.cloudfront.net/white/osmo.png",
     "gasPriceStep": { "low": 0, "average": 0.025, "high": 0.04 }
   },
   "feeCurrencies": [
@@ -31,7 +30,7 @@
       "coinMinimalDenom": "uosmo",
       "coinDecimals": 6,
       "coinGeckoId": "osmosis",
-      "coinImageUrl": "https://assets.coingecko.com/coins/images/16724/small/osmo.png?1632763885",
+      "coinImageUrl": "https://dhj8dql1kzq2v.cloudfront.net/white/osmo.png",
       "gasPriceStep": { "low": 0, "average": 0.025, "high": 0.04 }
     }
   ],
@@ -41,7 +40,7 @@
       "coinMinimalDenom": "uosmo",
       "coinDecimals": 6,
       "coinGeckoId": "osmosis",
-      "coinImageUrl": "https://assets.coingecko.com/coins/images/16724/small/osmo.png?1632763885",
+      "coinImageUrl": "https://dhj8dql1kzq2v.cloudfront.net/white/osmo.png",
       "gasPriceStep": { "low": 0, "average": 0.025, "high": 0.04 },
       "bridgeTo": ["Oraichain"]
     },
@@ -58,7 +57,7 @@
       "coinMinimalDenom": "ibc/161D7D62BAB3B9C39003334F1671208F43C06B643CC9EDBBE82B64793C857F1D",
       "coinDecimals": 6,
       "coinGeckoId": "oraichain-token",
-      "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/7533.png",
+      "coinImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/oraichain/images/orai-token.png",
       "gasPriceStep": { "low": 0, "average": 0.025, "high": 0.04 }
     },
     {
