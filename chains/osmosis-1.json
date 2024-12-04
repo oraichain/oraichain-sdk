@@ -16,13 +16,13 @@
     "bech32PrefixConsPub": "osmovalconspub"
   },
   "features": ["stargate", "ibc-transfer", "no-legacy-stdTx", "ibc-go", "cosmwasm"],
-  "chainSymbolImageUrl": "https://dhj8dql1kzq2v.cloudfront.net/white/osmo.png",
+  "chainSymbolImageUrl": "https://assets.coingecko.com/coins/images/16724/small/osmo.png?1632763885",
   "stakeCurrency": {
     "coinDenom": "OSMO",
     "coinMinimalDenom": "uosmo",
     "coinDecimals": 6,
     "coinGeckoId": "osmosis",
-    "coinImageUrl": "https://dhj8dql1kzq2v.cloudfront.net/white/osmo.png",
+    "coinImageUrl": "https://assets.coingecko.com/coins/images/16724/small/osmo.png?1632763885",
     "gasPriceStep": { "low": 0, "average": 0.025, "high": 0.04 }
   },
   "feeCurrencies": [
@@ -31,7 +31,7 @@
       "coinMinimalDenom": "uosmo",
       "coinDecimals": 6,
       "coinGeckoId": "osmosis",
-      "coinImageUrl": "https://dhj8dql1kzq2v.cloudfront.net/white/osmo.png",
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/16724/small/osmo.png?1632763885",
       "gasPriceStep": { "low": 0, "average": 0.025, "high": 0.04 }
     }
   ],
@@ -41,7 +41,7 @@
       "coinMinimalDenom": "uosmo",
       "coinDecimals": 6,
       "coinGeckoId": "osmosis",
-      "coinImageUrl": "https://dhj8dql1kzq2v.cloudfront.net/white/osmo.png",
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/16724/small/osmo.png?1632763885",
       "gasPriceStep": { "low": 0, "average": 0.025, "high": 0.04 },
       "bridgeTo": ["Oraichain"]
     },
