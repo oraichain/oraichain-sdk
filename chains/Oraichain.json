@@ -175,7 +175,8 @@
       "type": "cw20",
       "contractAddress": "orai19q4qak2g3cj2xc2y3060t0quzn3gfhzx08rjlrdd3vqxhjtat0cq668phq",
       "coinGeckoId": "scatom",
-      "coinDecimals": 6
+      "coinDecimals": 6,
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/33050/standard/orchai_logo_white_copy_4x-8_%281%29.png?1700473937"
     },
     {
       "coinDenom": "IBC INJ",
