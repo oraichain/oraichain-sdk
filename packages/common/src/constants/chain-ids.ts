@@ -15,7 +15,8 @@ export const COSMOS_CHAIN_IDS = {
   KAWAII_COSMOS: "kawaii_6886-1",
   NOBLE: "noble-1",
   NEUTARO: "Neutaro-1",
-  CELESTIA: "celestia"
+  CELESTIA: "celestia",
+  ORAIBTC: "oraibtc-mainnet-1"
 } as const;
 
 export const TON_CHAIN_ID = {
