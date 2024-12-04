@@ -5,6 +5,7 @@
   "chainId": "kawaii_6886-1",
   "chainName": "kawaiiverse",
   "networkType": "cosmos",
+  "chainSymbolImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/12313.png",
   "stakeCurrency": {
     "coinDenom": "ORAIE",
     "coinMinimalDenom": "oraie",

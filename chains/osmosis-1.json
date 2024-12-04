@@ -15,13 +15,8 @@
     "bech32PrefixConsAddr": "osmovalcons",
     "bech32PrefixConsPub": "osmovalconspub"
   },
-  "features": [
-    "stargate",
-    "ibc-transfer",
-    "no-legacy-stdTx",
-    "ibc-go",
-    "cosmwasm"
-  ],
+  "features": ["stargate", "ibc-transfer", "no-legacy-stdTx", "ibc-go", "cosmwasm"],
+  "chainSymbolImageUrl": "https://dhj8dql1kzq2v.cloudfront.net/white/osmo.png",
   "stakeCurrency": {
     "coinDenom": "OSMO",
     "coinMinimalDenom": "uosmo",

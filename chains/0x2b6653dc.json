@@ -6,6 +6,7 @@
   "networkType": "evm",
   "chainName": "tronnetwork",
   "features": ["isEvm"],
+  "chainSymbolImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/1958.png",
   "feeCurrencies": [
     {
       "coinDenom": "wTRX",

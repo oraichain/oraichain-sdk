@@ -7,6 +7,7 @@
   "bip44": { "coinType": 60 },
   "coinType": 60,
   "features": ["isEvm"],
+  "chainSymbolImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/12313.png",
   "feeCurrencies": [
     {
       "coinDenom": "ERC20 KWT",

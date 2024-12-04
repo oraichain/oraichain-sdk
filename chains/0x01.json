@@ -7,6 +7,7 @@
   "coinType": 60,
   "networkType": "evm",
   "features": ["isEvm"],
+  "chainSymbolImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png",
   "feeCurrencies": [
     {
       "coinDenom": "ETH",

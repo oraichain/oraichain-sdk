@@ -24,4 +24,5 @@ export type TokenItemType = {
   };
   feeCurrencies?: FeeCurrency[];
   icon: string;
+  iconLight?: string;
 };

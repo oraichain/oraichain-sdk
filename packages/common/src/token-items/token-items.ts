@@ -56,7 +56,8 @@ export class TokenItemsImpl implements TokenItems {
         gasPriceStep: currency.gasPriceStep,
         feeCurrencies: network.feeCurrencies,
         evmDenoms: evmDenomsMap[currency.coinMinimalDenom],
-        icon: currency.coinImageUrl
+        icon: currency.coinImageUrl,
+        iconLight: currency.coinImageUrl
       };
     });
   };
