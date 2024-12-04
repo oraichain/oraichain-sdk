@@ -3,7 +3,7 @@
   "rpc": "https://rpc.orai.io",
   "rest": "https://lcd.orai.io",
   "chainId": "Oraichain",
-  "chainName": "oraichain",
+  "chainName": "Oraichain",
   "networkType": "cosmos",
   "stakeCurrency": {
     "coinDenom": "ORAI",
@@ -41,7 +41,7 @@
     "txUrl": "https://scan.orai.io/txs/{txHash}",
     "accountUrl": "https://scan.orai.io/account/{address}"
   },
-  "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/celestia/chain.png",
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/oraichain/images/orai-token.png",
   "currencies": [
     {
       "coinDenom": "ORAI",

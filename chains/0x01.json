@@ -2,7 +2,7 @@
   "$schema": "../chain.schema.json",
   "rpc": "https://rpc.ankr.com/eth",
   "chainId": "0x01",
-  "chainName": "ethereum",
+  "chainName": "Ethereum",
   "bip44": { "coinType": 60 },
   "coinType": 60,
   "networkType": "evm",
