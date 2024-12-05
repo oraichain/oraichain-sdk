@@ -1,7 +1,7 @@
 {
   "rpc": "https://swr.xnftdata.com/rpc-proxy/",
   "rest": "https://swr.xnftdata.com/rpc-proxy/",
-  "chainId": "solChainId",
+  "chainId": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
   "chainName": "Solana",
   "bip44": {
     "coinType": 501
