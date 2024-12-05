@@ -48,7 +48,7 @@
       "coinMinimalDenom": "orai",
       "coinDecimals": 6,
       "coinGeckoId": "oraichain-token",
-      "bridgeTo": ["0x38", "0x01", "injective-1"],
+      "bridgeTo": ["0x38", "0x01", "injective-1", "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"],
       "coinImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/oraichain/images/orai-token.png",
       "gasPriceStep": { "low": 0.003, "average": 0.005, "high": 0.007 }
     },
@@ -260,6 +260,14 @@
       "bridgeTo": ["0x38"],
       "coinDecimals": 8,
       "coinImageUrl": "https://assets.coingecko.com/coins/images/5/standard/dogecoin.png?1696501409"
+    },
+    {
+      "coinDenom": "MAX",
+      "coinGeckoId": "max-2",
+      "coinMinimalDenom": "factory/orai1wuvhex9xqs3r539mvc6mtm7n20fcj3qr2m0y9khx6n5vtlngfzes3k0rq9/oraim8c9d1nkfuQk9EzGYEUGxqL3MHQYndRw1huVo5h",
+      "bridgeTo": ["solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"],
+      "coinDecimals": 6,
+      "coinImageUrl": "https://pump.mypinata.cloud/ipfs/QmcGwYebsQfYbNSM9QDAMS2wKZ8fZNEiMbezJah1zgEWWS?img-width=256&img-dpr=2"
     }
   ]
 }

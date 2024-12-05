@@ -86,4 +86,5 @@ export type EvmChainId = (typeof EVM_CHAIN_IDS)[keyof typeof EVM_CHAIN_IDS];
 export type CosmosChainId = (typeof COSMOS_CHAIN_IDS)[keyof typeof COSMOS_CHAIN_IDS];
 export type TonChainId = (typeof TON_CHAIN_ID)[keyof typeof TON_CHAIN_ID];
 export type BitcoinChainId = (typeof BITCOIN_CHAIN_ID)[keyof typeof BITCOIN_CHAIN_ID];
-export type NetworkChainId = CosmosChainId | EvmChainId | TonChainId | BitcoinChainId;
+export type SolChainId = "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp";
+export type NetworkChainId = CosmosChainId | EvmChainId | TonChainId | BitcoinChainId | SolChainId;

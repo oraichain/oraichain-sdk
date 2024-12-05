@@ -105,6 +105,16 @@
       "bridgeTo": ["Oraichain"],
       "prefixToken": "oraib",
       "coinImageUrl": "https://assets.coingecko.com/coins/images/29850/standard/pepe-token.jpeg?1696528776"
+    },
+    {
+      "coinDenom": "WSOL",
+      "coinMinimalDenom": "bep20_wsol",
+      "contractAddress": "0xfA54fF1a158B5189Ebba6ae130CEd6bbd3aEA76e",
+      "coinDecimals": 9,
+      "coinGeckoId": "solana",
+      "bridgeTo": ["Oraichain"],
+      "prefixToken": "oraib",
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/4128/standard/solana.png?1718769756"
     }
   ],
   "txExplorer": {
