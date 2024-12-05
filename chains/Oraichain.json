@@ -66,7 +66,7 @@
       "coinMinimalDenom": "ibc/576B1D63E401B6A9A071C78A1D1316D016EC9333D2FEB14AD503FAC4B8731CD1",
       "bridgeTo": ["Neutaro-1"],
       "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/Neutaro/chain.png"
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/36277/standard/Neutaro_logo.jpg?1711371142"
     },
     {
       "coinDenom": "AIRI",
