@@ -212,6 +212,7 @@
       "type": "cw20",
       "contractAddress": "orai10g6frpysmdgw5tdqke47als6f97aqmr8s3cljsvjce4n5enjftcqtamzsd",
       "coinDecimals": 6,
+      "bridgeTo": ["bitcoin"],
       "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"
     },
     {
