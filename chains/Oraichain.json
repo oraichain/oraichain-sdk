@@ -236,7 +236,6 @@
       "coinMinimalDenom": "factory/orai1wuvhex9xqs3r539mvc6mtm7n20fcj3qr2m0y9khx6n5vtlngfzes3k0rq9/ton",
       "coinDecimals": 9,
       "coinGeckoId": "the-open-network",
-      "bridgeTo": ["ton"],
       "coinImageUrl": "https://assets.coingecko.com/coins/images/17980/standard/ton_symbol.png?1696517498"
     },
     {
@@ -248,18 +247,9 @@
       "coinImageUrl": "https://assets.coingecko.com/coins/images/29850/standard/pepe-token.jpeg?1696528776"
     },
     {
-      "coinDenom": "CAT",
-      "coinGeckoId": "simon-s-cat",
-      "coinMinimalDenom": "factory/orai1wuvhex9xqs3r539mvc6mtm7n20fcj3qr2m0y9khx6n5vtlngfzes3k0rq9/extCAT",
-      "bridgeTo": ["0x38"],
-      "coinDecimals": 6,
-      "coinImageUrl": "https://assets.coingecko.com/coins/images/39765/standard/Simon's_Cat_Logo.png?1724017505"
-    },
-    {
       "coinDenom": "HMSTR",
       "coinGeckoId": "hamster-kombat",
       "coinMinimalDenom": "factory/orai1wuvhex9xqs3r539mvc6mtm7n20fcj3qr2m0y9khx6n5vtlngfzes3k0rq9/HMSTR",
-      "bridgeTo": ["ton"],
       "coinDecimals": 9,
       "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/32195.png"
     },
