@@ -278,6 +278,15 @@
       "coinDecimals": 6,
       "type": "cw20",
       "coinImageUrl": "https://i.imgur.com/JEUjDal.jpeg"
+    },
+    {
+      "coinDenom": "THT",
+      "coinGeckoId": "polkadot",
+      "coinMinimalDenom": "cw20:orai1fkz48mkvw9cs848kjmr69gn7znj9flyc3vd2xvzud7h2x36xaj7q6p48re:THT",
+      "contractAddress": "orai1fkz48mkvw9cs848kjmr69gn7znj9flyc3vd2xvzud7h2x36xaj7q6p48re",
+      "coinDecimals": 6,
+      "type": "cw20",
+      "coinImageUrl": "https://i.imgur.com/28ZtBo3.jpeg"
     }
   ]
 }
