@@ -278,6 +278,15 @@
       "coinDecimals": 6,
       "type": "cw20",
       "coinImageUrl": "https://i.imgur.com/28ZtBo3.jpeg"
+    },
+    {
+      "coinDenom": "VHT",
+      "coinGeckoId": "fantom",
+      "coinMinimalDenom": "cw20:orai1c0vcgm9ck3sh3sjafs6sh4essy466sjwvd36em2c8mvneltaqg7qp4wk5h:VHT",
+      "contractAddress": "orai1c0vcgm9ck3sh3sjafs6sh4essy466sjwvd36em2c8mvneltaqg7qp4wk5h",
+      "coinDecimals": 6,
+      "type": "cw20",
+      "coinImageUrl": "https://i.imgur.com/28ZtBo3.jpeg"
     }
   ]
 }
