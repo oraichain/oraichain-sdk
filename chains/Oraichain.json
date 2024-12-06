@@ -270,14 +270,5 @@
       "coinDecimals": 6,
       "coinImageUrl": "https://pump.mypinata.cloud/ipfs/QmcGwYebsQfYbNSM9QDAMS2wKZ8fZNEiMbezJah1zgEWWS?img-width=256&img-dpr=2"
     },
-    {
-      "coinDenom": "HTT",
-      "coinGeckoId": "osmosis",
-      "coinMinimalDenom": "cw20:orai1k5d5cgekt8kkzcrnxrx860wadvz5esjwtyv299g0ht75a92yfn6qvgu0ml:OCH",
-      "contractAddress": "orai1k5d5cgekt8kkzcrnxrx860wadvz5esjwtyv299g0ht75a92yfn6qvgu0ml",
-      "coinDecimals": 6,
-      "type": "cw20",
-      "coinImageUrl": "https://i.imgur.com/JEUjDal.jpeg"
-    }
   ]
 }
