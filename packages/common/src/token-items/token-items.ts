@@ -22,6 +22,10 @@ export interface TokenItems {
   evmTokens: TokenItemType[];
   kawaiiTokens: TokenItemType[];
   getSpecificChainTokens: (chainId: string) => TokenItemType[];
+  addExtendedTokenItemsOnChain: (
+    tokenItems: BridgeAppCurrency[],
+    chain: CustomChainInfo
+  ) => void;
 }
 
 const evmDenomsMap = {
