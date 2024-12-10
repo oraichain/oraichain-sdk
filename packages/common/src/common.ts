@@ -46,14 +46,7 @@ export class OraiCommon {
     const reader = new ChainInfoReaderFromGitRaw(options);
     return OraiCommon.initializeFromChainInfoReader(reader);
   }
-
-  addExtendedTokenItemsOnChain(
-    tokenItems: BridgeAppCurrency[],
-    chain: CustomChainInfo
-  ) {
-    this._tokenItems.addExtendedTokenItemsOnChain(tokenItems, chain);
-  }
-
+  
   withChainInfos(chainInfos: ChainInfos) {
     this._chainInfos = chainInfos;
     return this;

@@ -22,10 +22,6 @@ export interface TokenItems {
   evmTokens: TokenItemType[];
   kawaiiTokens: TokenItemType[];
   getSpecificChainTokens: (chainId: string) => TokenItemType[];
-  addExtendedTokenItemsOnChain: (
-    tokenItems: BridgeAppCurrency[],
-    chain: CustomChainInfo
-  ) => void;
 }
 
 const evmDenomsMap = {
@@ -79,22 +75,6 @@ export class TokenItemsImpl implements TokenItems {
     return this.getTokensFromNetwork(
       this.chainInfos.find((chain) => chain.chainId === chainId)
     );
-  }
-
-  addExtendedTokenItemsOnChain(
-    tokenItems: BridgeAppCurrency[],
-    chain: CustomChainInfo
-  ) {
-    const chainTarget = this.chainInfos.find(
-      (chainInfo) => chainInfo.chainId === chain.chainId
-    );
-
-    if (chainTarget) {
-      chainTarget.currencies.push(...tokenItems);
-      this.chainInfos = this.chainInfos.map((chainInfo) =>
-        chainInfo.chainId === chain.chainId ? chainTarget : chainInfo
-      );
-    }
   }
 
   get otherChainTokens() {
