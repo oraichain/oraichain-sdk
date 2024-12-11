@@ -1,0 +1,72 @@
+diff --git a/node_modules/@cosmjs/stargate/build/queryclient/queryclient.js b/node_modules/@cosmjs/stargate/build/queryclient/queryclient.js
+index 634b2e5..c2daa9c 100644
+--- a/node_modules/@cosmjs/stargate/build/queryclient/queryclient.js
++++ b/node_modules/@cosmjs/stargate/build/queryclient/queryclient.js
+@@ -32,6 +32,24 @@ class QueryClient {
+         }
+         return client;
+     }
++
++    static withExtensionsWithHeight(cometClient, height, ...extensionSetups) {
++        const client = new QueryClient(cometClient, height);
++        const extensions = extensionSetups.map((setupExtension) => setupExtension(client, height));
++        for (const extension of extensions) {
++            (0, utils_1.assert)((0, utils_1.isNonNullObject)(extension), `Extension must be a non-null object`);
++            for (const [moduleKey, moduleValue] of Object.entries(extension)) {
++                (0, utils_1.assert)((0, utils_1.isNonNullObject)(moduleValue), `Module must be a non-null object. Found type ${typeof moduleValue} for module "${moduleKey}".`);
++                const current = client[moduleKey] || {};
++                client[moduleKey] = {
++                    ...current,
++                    ...moduleValue,
++                };
++            }
++        }
++        return client;
++    }
++
+     constructor(cometClient) {
+         this.cometClient = cometClient;
+     }
+diff --git a/node_modules/@cosmjs/stargate/build/queryclient/utils.d.ts b/node_modules/@cosmjs/stargate/build/queryclient/utils.d.ts
+index ec5b471..92d5737 100644
+--- a/node_modules/@cosmjs/stargate/build/queryclient/utils.d.ts
++++ b/node_modules/@cosmjs/stargate/build/queryclient/utils.d.ts
+@@ -18,7 +18,7 @@ export declare function createPagination(paginationKey?: Uint8Array): PageReques
+ export interface ProtobufRpcClient {
+     request(service: string, method: string, data: Uint8Array): Promise<Uint8Array>;
+ }
+-export declare function createProtobufRpcClient(base: QueryClient): ProtobufRpcClient;
++export declare function createProtobufRpcClient(base: QueryClient, height?: number): ProtobufRpcClient;
+ /**
+  * Takes a uint64 value as string, number, BigInt or Uint64 and returns a BigInt
+  * of it.
+diff --git a/node_modules/@cosmjs/stargate/build/queryclient/utils.js b/node_modules/@cosmjs/stargate/build/queryclient/utils.js
+index ea25080..a0cb539 100644
+--- a/node_modules/@cosmjs/stargate/build/queryclient/utils.js
++++ b/node_modules/@cosmjs/stargate/build/queryclient/utils.js
+@@ -24,11 +24,11 @@ function createPagination(paginationKey) {
+     return paginationKey ? pagination_1.PageRequest.fromPartial({ key: paginationKey }) : pagination_1.PageRequest.fromPartial({});
+ }
+ exports.createPagination = createPagination;
+-function createProtobufRpcClient(base) {
++function createProtobufRpcClient(base, height = undefined) {
+     return {
+         request: async (service, method, data) => {
+             const path = `/${service}/${method}`;
+-            const response = await base.queryAbci(path, data, undefined);
++            const response = await base.queryAbci(path, data, height);
+             return response.value;
+         },
+     };
+diff --git a/node_modules/@cosmjs/stargate/build/stargateclient.js b/node_modules/@cosmjs/stargate/build/stargateclient.js
+index a6da130..0918f14 100644
+--- a/node_modules/@cosmjs/stargate/build/stargateclient.js
++++ b/node_modules/@cosmjs/stargate/build/stargateclient.js
+@@ -297,6 +297,7 @@ class StargateClient {
+         return results.txs.map((tx) => {
+             const txMsgData = abci_1.TxMsgData.decode(tx.result.data ?? new Uint8Array());
+             return {
++                ...tx,
+                 height: tx.height,
+                 txIndex: tx.index,
+                 hash: (0, encoding_1.toHex)(tx.hash).toUpperCase(),
