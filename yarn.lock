@@ -1615,7 +1615,7 @@ __metadata:
     axios: "npm:0.21.4"
     axios-extensions: "npm:3.1.6"
     bech32: "npm:^1.1.4"
-    cosmjs-types: "npm:^0.8.0"
+    cosmjs-types: "npm:^0.9.0"
     ethers: "npm:^5.5.1"
     lodash: "npm:^4.17.21"
   languageName: unknown
@@ -3221,7 +3221,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cosmjs-types@npm:0.8.0, cosmjs-types@npm:^0.8.0":
+"cosmjs-types@npm:^0.8.0":
   version: 0.8.0
   resolution: "cosmjs-types@npm:0.8.0"
   dependencies:
@@ -7363,7 +7363,7 @@ __metadata:
     "@types/lodash": "npm:^4.17.0"
     "@types/node": "npm:^20.11.30"
     "@vitest/coverage-v8": "npm:^2.0.3"
-    cosmjs-types: "npm:0.8.0"
+    cosmjs-types: "npm:^0.9.0"
     cz-conventional-changelog: "npm:^3.3.0"
     dotenv: "npm:^16.4.5"
     lerna: "npm:^8.1.6"
