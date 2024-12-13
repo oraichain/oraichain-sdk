@@ -35,13 +35,7 @@
     "bech32PrefixConsAddr": "oraivalcons",
     "bech32PrefixConsPub": "oraivalconspub"
   },
-  "features": [
-    "stargate",
-    "ibc-transfer",
-    "cosmwasm",
-    "wasmd_0.24+",
-    "no-legacy-stdTx"
-  ],
+  "features": ["stargate", "ibc-transfer", "cosmwasm", "wasmd_0.24+", "no-legacy-stdTx"],
   "txExplorer": {
     "name": "Oraiscan",
     "txUrl": "https://scan.orai.io/txs/{txHash}",
@@ -281,6 +275,14 @@
       "bridgeTo": ["0x38"],
       "coinDecimals": 9,
       "coinImageUrl": "https://assets.coingecko.com/coins/images/4128/standard/solana.png?1718769756"
+    },
+    {
+      "coinDenom": "MAX",
+      "coinGeckoId": "max-2",
+      "coinMinimalDenom": "factory/orai1wuvhex9xqs3r539mvc6mtm7n20fcj3qr2m0y9khx6n5vtlngfzes3k0rq9/oraim8c9d1nkfuQk9EzGYEUGxqL3MHQYndRw1huVo5h",
+      "bridgeTo": ["solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"],
+      "coinDecimals": 6,
+      "coinImageUrl": "https://pump.mypinata.cloud/ipfs/QmcGwYebsQfYbNSM9QDAMS2wKZ8fZNEiMbezJah1zgEWWS?img-width=256&img-dpr=2"
     }
   ]
 }
