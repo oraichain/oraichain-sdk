@@ -263,21 +263,20 @@
       "coinImageUrl": "https://assets.coingecko.com/coins/images/5/standard/dogecoin.png?1696501409"
     },
     {
+      "coinDenom": "WSOL",
+      "coinGeckoId": "solana",
+      "coinMinimalDenom": "factory/orai1wuvhex9xqs3r539mvc6mtm7n20fcj3qr2m0y9khx6n5vtlngfzes3k0rq9/oraib0x4VH72cCsNwZwLtHtBnXuCxHWf4mB",
+      "bridgeTo": ["0x38"],
+      "coinDecimals": 9,
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/4128/standard/solana.png?1718769756"
+    },
+    {
       "coinDenom": "MAX",
       "coinGeckoId": "max-2",
       "coinMinimalDenom": "factory/orai1wuvhex9xqs3r539mvc6mtm7n20fcj3qr2m0y9khx6n5vtlngfzes3k0rq9/oraim8c9d1nkfuQk9EzGYEUGxqL3MHQYndRw1huVo5h",
       "bridgeTo": ["solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"],
       "coinDecimals": 6,
       "coinImageUrl": "https://pump.mypinata.cloud/ipfs/QmcGwYebsQfYbNSM9QDAMS2wKZ8fZNEiMbezJah1zgEWWS?img-width=256&img-dpr=2"
-    },
-    {
-      "coinDenom": "THT",
-      "coinGeckoId": "polkadot",
-      "coinMinimalDenom": "cw20:orai1fkz48mkvw9cs848kjmr69gn7znj9flyc3vd2xvzud7h2x36xaj7q6p48re:THT",
-      "contractAddress": "orai1fkz48mkvw9cs848kjmr69gn7znj9flyc3vd2xvzud7h2x36xaj7q6p48re",
-      "coinDecimals": 6,
-      "type": "cw20",
-      "coinImageUrl": "https://i.imgur.com/28ZtBo3.jpeg"
     }
   ]
 }
