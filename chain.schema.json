@@ -352,17 +352,11 @@
           "type": "string"
         }
       },
-      "required": [
-        "coinDecimals",
-        "coinDenom",
-        "coinMinimalDenom",
-        "contractAddress",
-        "type"
-      ],
+      "required": ["coinDecimals", "coinDenom", "coinMinimalDenom", "contractAddress", "type"],
       "type": "object"
     },
     "CoinType": {
-      "enum": [0, 118, 195, 60],
+      "enum": [0, 118, 195, 60, 607],
       "type": "number"
     },
     "Currency": {
@@ -415,13 +409,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "coinDecimals",
-        "coinDenom",
-        "coinMinimalDenom",
-        "contractAddress",
-        "type"
-      ],
+      "required": ["coinDecimals", "coinDenom", "coinMinimalDenom", "contractAddress", "type"],
       "type": "object"
     },
     "EVMInfo": {
@@ -652,7 +640,7 @@
       "type": "object"
     },
     "NetworkType": {
-      "enum": ["bitcoin", "bsc", "cosmos", "evm", "tron"],
+      "enum": ["bitcoin", "bsc", "cosmos", "evm", "tron", "ton"],
       "type": "string"
     },
     "Secret20Currency": {
@@ -805,14 +793,6 @@
       "type": "string"
     }
   },
-  "required": [
-    "bip44",
-    "chainId",
-    "chainName",
-    "coinType",
-    "currencies",
-    "networkType",
-    "rpc"
-  ],
+  "required": ["bip44", "chainId", "chainName", "coinType", "currencies", "networkType", "rpc"],
   "type": "object"
 }
