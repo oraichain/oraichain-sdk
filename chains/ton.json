@@ -1,0 +1,84 @@
+{
+  "$schema": "../chain.schema.json",
+  "rpc": "https://toncenter.com/api/v2/jsonRPC",
+  "rest": "https://toncenter.com/api/v2/jsonRPC",
+  "chainId": "ton",
+  "chainName": "TON",
+  "bip44": {
+    "coinType": 607
+  },
+  "coinType": 607,
+  "stakeCurrency": {
+    "coinDenom": "TON",
+    "coinMinimalDenom": "ton",
+    "coinDecimals": 9,
+    "coinGeckoId": "the-open-network",
+    "coinImageUrl": "https://assets.coingecko.com/coins/images/17980/standard/ton_symbol.png"
+  },
+  "bech32Config": {
+    "bech32PrefixAccAddr": "ton",
+    "bech32PrefixAccPub": "tonpub",
+    "bech32PrefixValAddr": "tonvaloper",
+    "bech32PrefixValPub": "tonvaloperpub",
+    "bech32PrefixConsAddr": "tonvalcons",
+    "bech32PrefixConsPub": "tonvalconspub"
+  },
+  "networkType": "ton",
+  "currencies": [
+    {
+      "coinDenom": "TON",
+      "coinMinimalDenom": "ton",
+      "coinDecimals": 9,
+      "bridgeTo": ["Oraichain"],
+      "prefixToken": "ton20_",
+      "contractAddress": "EQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM9c",
+      "coinGeckoId": "the-open-network",
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/17980/standard/ton_symbol.png"
+    },
+    {
+      "coinDenom": "USDT",
+      "coinMinimalDenom": "ton20_usdt",
+      "coinDecimals": 6,
+      "bridgeTo": ["Oraichain"],
+      "contractAddress": "EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs",
+      "prefixToken": "ton20_",
+      "coinGeckoId": "tether",
+      "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/825.png"
+    },
+    {
+      "coinDenom": "HMSTR",
+      "coinMinimalDenom": "ton20_hamster_kombat",
+      "coinDecimals": 9,
+      "bridgeTo": ["Oraichain"],
+      "contractAddress": "EQAJ8uWd7EBqsmpSWaRdf_I-8R8-XHwh3gsNKhy-UrdrPcUo",
+      "prefixToken": "ton20_",
+      "coinGeckoId": "hamster-kombat",
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/39102/standard/hamster-removebg-preview.png?1720514486"
+    },
+    {
+      "coinDenom": "jUSDC",
+      "coinMinimalDenom": "ton20_usdc",
+      "coinDecimals": 6,
+      "bridgeTo": ["Oraichain"],
+      "contractAddress": "EQB-MPwrd1G6WKNkLz_VnV6WqBDd142KMQv-g1O-8QUA3728",
+      "prefixToken": "ton20_",
+      "coinGeckoId": "usd-coin",
+      "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png"
+    }
+  ],
+  "feeCurrencies": [
+    {
+      "coinDenom": "BTC",
+      "coinMinimalDenom": "btc",
+      "coinDecimals": 8,
+      "coinGeckoId": "bitcoin",
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/1/small/bitcoin.png"
+    }
+  ],
+  "features": ["isTon"],
+  "txExplorer": {
+    "name": "BlockStream",
+    "txUrl": "https://tonviewer.com/transaction/{txHash}",
+    "accountUrl": "https://tonviewer.com/transaction/{address}"
+  }
+}
