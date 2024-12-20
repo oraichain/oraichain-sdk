@@ -3,10 +3,11 @@
   "rpc": "https://injective.rpc.orai.io",
   "rest": "https://injective.lcd.orai.io",
   "chainId": "injective-1",
-  "chainName": "injective",
+  "chainName": "Injective",
   "networkType": "cosmos",
   "bip44": { "coinType": 60 },
   "coinType": 60,
+  "chainSymbolImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/7226.png",
   "bech32Config": {
     "bech32PrefixAccAddr": "inj",
     "bech32PrefixAccPub": "injpub",
@@ -15,18 +16,12 @@
     "bech32PrefixConsAddr": "injvalcons",
     "bech32PrefixConsPub": "injvalconspub"
   },
-  "features": [
-    "stargate",
-    "no-legacy-stdTx",
-    "ibc-transfer",
-    "ibc-go",
-    "eth-key-sign",
-    "cosmwasm"
-  ],
+  "features": ["stargate", "no-legacy-stdTx", "ibc-transfer", "ibc-go", "eth-key-sign", "cosmwasm"],
   "stakeCurrency": {
     "coinDenom": "INJ",
     "coinMinimalDenom": "inj",
     "coinDecimals": 18,
+    "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/7226.png",
     "coinGeckoId": "injective-protocol",
     "gasPriceStep": {
       "low": 5000000000,
@@ -40,6 +35,7 @@
       "coinMinimalDenom": "inj",
       "coinDecimals": 18,
       "coinGeckoId": "injective-protocol",
+      "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/7226.png",
       "gasPriceStep": {
         "low": 5000000000,
         "average": 25000000000,
@@ -58,14 +54,15 @@
         "average": 25000000000,
         "high": 50000000000
       },
-      "bridgeTo": ["Oraichain"]
+      "bridgeTo": ["Oraichain"],
+      "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/7226.png"
     },
     {
       "coinDenom": "ORAI",
       "coinMinimalDenom": "ibc/C20C0A822BD22B2CEF0D067400FCCFB6FAEEE9E91D360B4E0725BD522302D565",
       "coinDecimals": 6,
       "coinGeckoId": "oraichain-token",
-      "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/7533.png",
+      "coinImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/oraichain/images/orai-token.png",
       "bridgeTo": ["Oraichain"]
     }
   ],

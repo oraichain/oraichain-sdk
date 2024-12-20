@@ -4,9 +4,8 @@ import { CustomChainInfo } from "../src/chain-infos/types";
 import { ChainInfoReader } from "../src";
 
 export class ChainInfoReaderImpl implements ChainInfoReader {
-  constructor(
-    private readonly directory: string = path.join(process.cwd(), "chains")
-  ) {}
+  constructor(private readonly directory: string = path.join(process.cwd(), "chains")) {}
+
   async readChainInfos(): Promise<CustomChainInfo[]> {
     const files = await promises.readdir(this.directory);
     const jsonFiles = files.filter((file) => path.extname(file) === ".json");

@@ -1,0 +1,66 @@
+{
+  "rpc": "https://swr.xnftdata.com/rpc-proxy/",
+  "rest": "https://swr.xnftdata.com/rpc-proxy/",
+  "chainId": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+  "chainName": "Solana",
+  "bip44": {
+    "coinType": 501
+  },
+  "bech32Config": {
+    "bech32PrefixAccAddr": "sol",
+    "bech32PrefixAccPub": "solpub",
+    "bech32PrefixValAddr": "solvaloper",
+    "bech32PrefixValPub": "solvaloperpub",
+    "bech32PrefixConsAddr": "solvalcons",
+    "bech32PrefixConsPub": "solvalconspub"
+  },
+  "stakeCurrency": {
+    "coinDenom": "SOL",
+    "coinMinimalDenom": "sol",
+    "coinDecimals": 9,
+    "coinGeckoId": "solana",
+    "coinImageUrl": "https://assets.coingecko.com/coins/images/4128/standard/solana.png?1718769756"
+  },
+  "chainSymbolImageUrl": "https://upload.wikimedia.org/wikipedia/en/b/b9/Solana_logo.png",
+  "networkType": "svm",
+  "currencies": [
+    {
+      "coinDenom": "MAX",
+      "coinMinimalDenom": "max",
+      "coinDecimals": 6,
+      "bridgeTo": ["Oraichain"],
+      "contractAddress": "oraim8c9d1nkfuQk9EzGYEUGxqL3MHQYndRw1huVo5h",
+      "coinGeckoId": "max-2",
+      "coinImageUrl": "https://pump.mypinata.cloud/ipfs/QmcGwYebsQfYbNSM9QDAMS2wKZ8fZNEiMbezJah1zgEWWS?img-width=256&img-dpr=2"
+    },
+    {
+      "coinDenom": "ORAI",
+      "coinMinimalDenom": "s20_orai",
+      "coinDecimals": 8,
+      "bridgeTo": ["Oraichain"],
+      "contractAddress": "2hZWncnmsSMdbkdwzSHJfrnDVkL66g63gncdRWqjTbBB",
+      "coinGeckoId": "oraichain-token",
+      "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/7533.png"
+    }
+  ],
+  "feeCurrencies": [
+    {
+      "coinDenom": "SOL",
+      "coinMinimalDenom": "sol",
+      "coinDecimals": 9,
+      "coinGeckoId": "solana",
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/4128/standard/solana.png?1718769756",
+      "gasPriceStep": {
+        "low": 1,
+        "average": 1.25,
+        "high": 1.5
+      }
+    }
+  ],
+  "features": [],
+  "txExplorer": {
+    "name": "Sol Scan",
+    "txUrl": "https://solscan.io/tx/{txHash}",
+    "accountUrl": "https://solscan.io/address/{address}"
+  }
+}

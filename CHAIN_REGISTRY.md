@@ -53,7 +53,7 @@ A sample `Oraichain.json` includes the following information.
     "coinDecimals": 6,
     "coinGeckoId": "oraichain-token",
     "bridgeTo": ["0x38", "0x01", "injective-1"],
-    "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/7533.png",
+    "coinImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/oraichain/images/orai-token.png",
     "gasPriceStep": { "low": 0.003, "average": 0.005, "high": 0.007 }
   },
   "feeCurrencies": [
@@ -63,7 +63,7 @@ A sample `Oraichain.json` includes the following information.
       "coinDecimals": 6,
       "coinGeckoId": "oraichain-token",
       "bridgeTo": ["0x38", "0x01", "injective-1"],
-      "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/7533.png",
+      "coinImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/oraichain/images/orai-token.png",
       "gasPriceStep": { "low": 0.003, "average": 0.005, "high": 0.007 }
     }
   ],
@@ -76,13 +76,7 @@ A sample `Oraichain.json` includes the following information.
     "bech32PrefixConsAddr": "oraivalcons",
     "bech32PrefixConsPub": "oraivalconspub"
   },
-  "features": [
-    "stargate",
-    "ibc-transfer",
-    "cosmwasm",
-    "wasmd_0.24+",
-    "no-legacy-stdTx"
-  ],
+  "features": ["stargate", "ibc-transfer", "cosmwasm", "wasmd_0.24+", "no-legacy-stdTx"],
   "txExplorer": {
     "name": "Oraiscan",
     "txUrl": "https://scan.orai.io/txs/{txHash}",
@@ -95,7 +89,7 @@ A sample `Oraichain.json` includes the following information.
       "coinDecimals": 6,
       "coinGeckoId": "oraichain-token",
       "bridgeTo": ["0x38", "0x01", "injective-1"],
-      "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/7533.png",
+      "coinImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/oraichain/images/orai-token.png",
       "gasPriceStep": { "low": 0.003, "average": 0.005, "high": 0.007 }
     },
     {

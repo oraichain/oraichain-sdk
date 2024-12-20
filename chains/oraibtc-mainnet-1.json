@@ -4,6 +4,7 @@
   "rpc": "https://btc.rpc.orai.io",
   "rest": "https://btc.lcd.orai.io",
   "networkType": "cosmos",
+  "chainSymbolImageUrl": "https://assets.coingecko.com/coins/images/1/small/bitcoin.png",
   "stakeCurrency": {
     "coinDenom": "ORAIBTC",
     "coinMinimalDenom": "uoraibtc",

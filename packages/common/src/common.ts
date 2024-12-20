@@ -1,4 +1,5 @@
 import {
+  BridgeAppCurrency,
   ChainInfoReader,
   ChainInfoReaderFromBackend,
   ChainInfoReaderFromGit,
@@ -29,8 +30,8 @@ export class OraiCommon {
     return OraiCommon.initializeFromCustomChainInfos(customChainInfos);
   }
 
-  static async initializeFromBackend() {
-    const reader = new ChainInfoReaderFromBackend();
+  static async initializeFromBackend(baseUrl?: string, dex?: string) {
+    const reader = new ChainInfoReaderFromBackend(baseUrl, dex);
     return OraiCommon.initializeFromChainInfoReader(reader);
   }
 
@@ -45,7 +46,7 @@ export class OraiCommon {
     const reader = new ChainInfoReaderFromGitRaw(options);
     return OraiCommon.initializeFromChainInfoReader(reader);
   }
-
+  
   withChainInfos(chainInfos: ChainInfos) {
     this._chainInfos = chainInfos;
     return this;

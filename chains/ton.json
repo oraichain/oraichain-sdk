@@ -8,6 +8,7 @@
     "coinType": 607
   },
   "coinType": 607,
+  "chainSymbolImageUrl": "https://assets.coingecko.com/coins/images/17980/standard/ton_symbol.png",
   "stakeCurrency": {
     "coinDenom": "TON",
     "coinMinimalDenom": "ton",

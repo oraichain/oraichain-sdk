@@ -3,7 +3,7 @@
   "rpc": "https://noble-rpc.polkachu.com",
   "rest": "https://noble-api.polkachu.com",
   "chainId": "noble-1",
-  "chainName": "noble",
+  "chainName": "Noble",
   "networkType": "cosmos",
   "bip44": { "coinType": 118 },
   "coinType": 118,
@@ -15,13 +15,7 @@
     "bech32PrefixConsAddr": "noblevalcons",
     "bech32PrefixConsPub": "noblevalconspub"
   },
-  "features": [
-    "stargate",
-    "ibc-transfer",
-    "no-legacy-stdTx",
-    "ibc-go",
-    "cosmwasm"
-  ],
+  "features": ["stargate", "ibc-transfer", "no-legacy-stdTx", "ibc-go", "cosmwasm"],
   "currencies": [
     {
       "coinDenom": "USDC",

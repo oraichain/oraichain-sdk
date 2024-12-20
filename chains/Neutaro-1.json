@@ -3,10 +3,11 @@
   "rpc": "https://neutaro.rpc.orai.io",
   "rest": "https://neutaro.lcd.orai.io",
   "chainId": "Neutaro-1",
-  "chainName": "neutaro",
+  "chainName": "Neutaro",
   "networkType": "cosmos",
   "bip44": { "coinType": 118 },
   "coinType": 118,
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/Neutaro/chain.png",
   "bech32Config": {
     "bech32PrefixAccAddr": "neutaro",
     "bech32PrefixAccPub": "neutaropub",

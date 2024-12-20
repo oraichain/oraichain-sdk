@@ -1,9 +1,4 @@
-import {
-  FeeCurrency,
-  ChainInfo,
-  Bech32Config,
-  Currency
-} from "@keplr-wallet/types";
+import { FeeCurrency, ChainInfo, Bech32Config, Currency } from "@keplr-wallet/types";
 import { NetworkType, CoinType } from "../constants/network";
 import { NetworkChainId } from "../constants";
 
@@ -11,7 +6,7 @@ export type BridgeAppCurrency = FeeCurrency & {
   readonly bridgeTo?: string[];
   readonly coinGeckoId?: string;
   readonly bridgeNetworkIdentifier?: string;
-  readonly coinDecimals: 6 | 8 | 14 | 18; // 6 for cosmos, 8 for bitcoin, 18 for evm
+  readonly coinDecimals: 6 | 8 | 9 | 14 | 18; // 6 for cosmos, 8 for bitcoin, 18 for evm
   readonly contractAddress?: string;
   readonly prefixToken?: string;
 };
@@ -31,6 +26,7 @@ export interface CustomChainInfo
     | "rest"
     | "bech32Config"
   > {
+  readonly chainId: NetworkChainId;
   readonly networkType: NetworkType;
   readonly coinType: CoinType;
   readonly bech32Config?: Bech32Config;
@@ -43,12 +39,15 @@ export interface CustomChainInfo
     readonly txUrl: string;
     readonly accountUrl?: string;
   };
+  readonly chainLogoPng?: string;
+  readonly chainLogoSvg?: string;
 }
 
 export interface ChainInfos {
   chainInfos: CustomChainInfo[];
   evmChains: CustomChainInfo[];
   cosmosChains: CustomChainInfo[];
+  getSpecificChainInfo: (chainId: string) => CustomChainInfo;
 }
 
 export interface ChainInfoReader {

@@ -3,11 +3,12 @@
   "rpc": "https://rpc.ankr.com/btc",
   "rest": "https://blockstream.info/api",
   "chainId": "bitcoin",
-  "chainName": "bitcoin",
+  "chainName": "Bitcoin",
   "bip44": {
     "coinType": 0
   },
   "coinType": 0,
+  "chainSymbolImageUrl": "https://assets.coingecko.com/coins/images/1/small/bitcoin.png",
   "stakeCurrency": {
     "coinDenom": "BTC",
     "coinMinimalDenom": "btc",

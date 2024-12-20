@@ -2,11 +2,24 @@
   "$schema": "../chain.schema.json",
   "rpc": "https://rpc.ankr.com/eth",
   "chainId": "0x01",
-  "chainName": "ethereum",
+  "chainName": "Ethereum",
   "bip44": { "coinType": 60 },
   "coinType": 60,
   "networkType": "evm",
   "features": ["isEvm"],
+  "chainSymbolImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png",
+  "feeCurrencies": [
+    {
+      "coinDenom": "ETH",
+      "coinMinimalDenom": "eth",
+      "contractAddress": "",
+      "coinDecimals": 18,
+      "bridgeTo": ["Oraichain"],
+      "coinGeckoId": "ethereum",
+      "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png",
+      "gasPriceStep": { "low": 0, "average": 0.025, "high": 0.04 }
+    }
+  ],
   "currencies": [
     {
       "coinDenom": "ORAI",
@@ -16,7 +29,7 @@
       "bridgeTo": ["Oraichain"],
       "coinGeckoId": "oraichain-token",
       "prefixToken": "eth-mainnet",
-      "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/7533.png"
+      "coinImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/oraichain/images/orai-token.png"
     },
     {
       "coinDenom": "USDC",
@@ -76,6 +89,16 @@
       "coinGeckoId": "oraidex",
       "prefixToken": "eth-mainnet",
       "coinImageUrl": "https://i.ibb.co/VmMJtf7/oraix.png"
+    },
+    {
+      "coinDenom": "PEPE",
+      "coinMinimalDenom": "erc20:0x6982508145454Ce325dDbE47a25d4ec3d2311933:Pepe",
+      "contractAddress": "0x6982508145454Ce325dDbE47a25d4ec3d2311933",
+      "coinDecimals": 18,
+      "bridgeTo": ["Oraichain"],
+      "coinGeckoId": "pepe",
+      "prefixToken": "eth-mainnet",
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/29850/standard/pepe-token.jpeg?1696528776"
     }
   ],
   "txExplorer": {

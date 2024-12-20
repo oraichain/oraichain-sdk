@@ -14,7 +14,9 @@ export const COSMOS_CHAIN_IDS = {
   INJECTVE: "injective-1",
   KAWAII_COSMOS: "kawaii_6886-1",
   NOBLE: "noble-1",
-  NEUTARO: "Neutaro-1"
+  NEUTARO: "Neutaro-1",
+  CELESTIA: "celestia",
+  ORAIBTC: "oraibtc-mainnet-1"
 } as const;
 
 export const TON_CHAIN_ID = {
@@ -81,13 +83,8 @@ export const EVM_CHAIN_IDS_DECIMAL = {
 };
 
 export type EvmChainId = (typeof EVM_CHAIN_IDS)[keyof typeof EVM_CHAIN_IDS];
-export type CosmosChainId =
-  (typeof COSMOS_CHAIN_IDS)[keyof typeof COSMOS_CHAIN_IDS];
+export type CosmosChainId = (typeof COSMOS_CHAIN_IDS)[keyof typeof COSMOS_CHAIN_IDS];
 export type TonChainId = (typeof TON_CHAIN_ID)[keyof typeof TON_CHAIN_ID];
-export type BitcoinChainId =
-  (typeof BITCOIN_CHAIN_ID)[keyof typeof BITCOIN_CHAIN_ID];
-export type NetworkChainId =
-  | CosmosChainId
-  | EvmChainId
-  | TonChainId
-  | BitcoinChainId;
+export type BitcoinChainId = (typeof BITCOIN_CHAIN_ID)[keyof typeof BITCOIN_CHAIN_ID];
+export type SolChainId = "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp";
+export type NetworkChainId = CosmosChainId | EvmChainId | TonChainId | BitcoinChainId | SolChainId;

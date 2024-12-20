@@ -3,7 +3,7 @@
   "rpc": "https://rpc.orai.io",
   "rest": "https://lcd.orai.io",
   "chainId": "Oraichain",
-  "chainName": "oraichain",
+  "chainName": "Oraichain",
   "networkType": "cosmos",
   "stakeCurrency": {
     "coinDenom": "ORAI",
@@ -11,7 +11,7 @@
     "coinDecimals": 6,
     "coinGeckoId": "oraichain-token",
     "bridgeTo": ["0x38", "0x01", "injective-1"],
-    "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/7533.png",
+    "coinImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/oraichain/images/orai-token.png",
     "gasPriceStep": { "low": 0.003, "average": 0.005, "high": 0.007 }
   },
   "feeCurrencies": [
@@ -21,7 +21,7 @@
       "coinDecimals": 6,
       "coinGeckoId": "oraichain-token",
       "bridgeTo": ["0x38", "0x01", "injective-1"],
-      "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/7533.png",
+      "coinImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/oraichain/images/orai-token.png",
       "gasPriceStep": { "low": 0.003, "average": 0.005, "high": 0.007 }
     }
   ],
@@ -41,14 +41,15 @@
     "txUrl": "https://scan.orai.io/txs/{txHash}",
     "accountUrl": "https://scan.orai.io/account/{address}"
   },
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/oraichain/images/orai-token.png",
   "currencies": [
     {
       "coinDenom": "ORAI",
       "coinMinimalDenom": "orai",
       "coinDecimals": 6,
       "coinGeckoId": "oraichain-token",
-      "bridgeTo": ["0x38", "0x01", "injective-1"],
-      "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/7533.png",
+      "bridgeTo": ["0x38", "0x01", "injective-1", "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"],
+      "coinImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/oraichain/images/orai-token.png",
       "gasPriceStep": { "low": 0.003, "average": 0.005, "high": 0.007 }
     },
     {
@@ -57,7 +58,7 @@
       "coinMinimalDenom": "ibc/A2E2EEC9057A4A1C2C0A6A4C78B0239118DF5F278830F50B4A6BDD7A66506B78",
       "bridgeTo": ["cosmoshub-4"],
       "coinDecimals": 6,
-      "coinImageUrl": "https://dhj8dql1kzq2v.cloudfront.net/white/atom.png"
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/1481/standard/cosmos_hub.png"
     },
     {
       "coinDenom": "NTMPI",
@@ -65,22 +66,22 @@
       "coinMinimalDenom": "ibc/576B1D63E401B6A9A071C78A1D1316D016EC9333D2FEB14AD503FAC4B8731CD1",
       "bridgeTo": ["Neutaro-1"],
       "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/Neutaro/chain.png"
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/36277/standard/Neutaro_logo.jpg?1711371142"
     },
     {
       "coinDenom": "AIRI",
       "coinGeckoId": "airight",
-      "coinMinimalDenom": "cw20:orai10ldgzued6zjp0mkqwsv2mux3ml50l97c74x8sg:aiRight Token",
+      "coinMinimalDenom": "airi",
       "type": "cw20",
       "contractAddress": "orai10ldgzued6zjp0mkqwsv2mux3ml50l97c74x8sg",
       "bridgeTo": ["0x38"],
       "coinDecimals": 6,
-      "coinImageUrl": "https://i.ibb.co/m8mCyMr/airi.png"
+      "coinImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/oraichain/images/airi.png"
     },
     {
       "coinDenom": "USDT",
       "coinGeckoId": "tether",
-      "coinMinimalDenom": "cw20:orai12hzjxfh77wl572gdzct2fxv2arxcwh6gykc7qh:Tether",
+      "coinMinimalDenom": "usdt",
       "type": "cw20",
       "contractAddress": "orai12hzjxfh77wl572gdzct2fxv2arxcwh6gykc7qh",
       "bridgeTo": ["0x38", "0x2b6653dc", "0x01"],
@@ -103,7 +104,7 @@
       "coinDecimals": 6,
       "coinGeckoId": "osmosis",
       "bridgeTo": ["osmosis-1"],
-      "coinImageUrl": "https://dhj8dql1kzq2v.cloudfront.net/white/osmo.png"
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/16724/standard/osmo.png?1696516298"
     },
     {
       "coinDenom": "BEP20 KWT",
@@ -115,7 +116,7 @@
     {
       "coinDenom": "KWT",
       "coinGeckoId": "kawaii-islands",
-      "coinMinimalDenom": "cw20:orai1nd4r053e3kgedgld2ymen8l9yrw8xpjyaal7j5:KWT",
+      "coinMinimalDenom": "kwt",
       "type": "cw20",
       "contractAddress": "orai1nd4r053e3kgedgld2ymen8l9yrw8xpjyaal7j5",
       "bridgeTo": ["kawaii_6886-1", "0x38"],
@@ -132,7 +133,7 @@
     {
       "coinDenom": "MILKY",
       "coinGeckoId": "milky-token",
-      "coinMinimalDenom": "cw20:orai1gzvndtzceqwfymu2kqhta2jn6gmzxvzqwdgvjw:MILKY",
+      "coinMinimalDenom": "milky",
       "type": "cw20",
       "contractAddress": "orai1gzvndtzceqwfymu2kqhta2jn6gmzxvzqwdgvjw",
       "bridgeTo": ["kawaii_6886-1", "0x38"],
@@ -147,7 +148,7 @@
       "bridgeTo": ["0x01"],
       "coinGeckoId": "oraidex",
       "coinDecimals": 6,
-      "coinImageUrl": "https://i.ibb.co/VmMJtf7/oraix.png"
+      "coinImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/oraichain/images/oraix.png"
     },
     {
       "coinDenom": "scORAI",
@@ -155,7 +156,8 @@
       "type": "cw20",
       "contractAddress": "orai1065qe48g7aemju045aeyprflytemx7kecxkf5m7u5h5mphd0qlcs47pclp",
       "coinGeckoId": "scorai",
-      "coinDecimals": 6
+      "coinDecimals": 6,
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/28897/standard/Orchai_LOGO.png?1696527873"
     },
     {
       "coinDenom": "wTRX",
@@ -173,7 +175,8 @@
       "type": "cw20",
       "contractAddress": "orai19q4qak2g3cj2xc2y3060t0quzn3gfhzx08rjlrdd3vqxhjtat0cq668phq",
       "coinGeckoId": "scatom",
-      "coinDecimals": 6
+      "coinDecimals": 6,
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/33050/standard/orchai_logo_white_copy_4x-8_%281%29.png?1700473937"
     },
     {
       "coinDenom": "IBC INJ",
@@ -185,7 +188,7 @@
     {
       "coinDenom": "INJ",
       "coinGeckoId": "injective-protocol",
-      "coinMinimalDenom": "cw20:orai19rtmkk6sn4tppvjmp5d5zj6gfsdykrl5rw2euu5gwur3luheuuusesqn49:INJ",
+      "coinMinimalDenom": "injective",
       "contractAddress": "orai19rtmkk6sn4tppvjmp5d5zj6gfsdykrl5rw2euu5gwur3luheuuusesqn49",
       "bridgeTo": ["injective-1"],
       "type": "cw20",
@@ -209,6 +212,7 @@
       "type": "cw20",
       "contractAddress": "orai10g6frpysmdgw5tdqke47als6f97aqmr8s3cljsvjce4n5enjftcqtamzsd",
       "coinDecimals": 6,
+      "bridgeTo": ["bitcoin"],
       "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"
     },
     {
@@ -233,7 +237,6 @@
       "coinMinimalDenom": "factory/orai1wuvhex9xqs3r539mvc6mtm7n20fcj3qr2m0y9khx6n5vtlngfzes3k0rq9/ton",
       "coinDecimals": 9,
       "coinGeckoId": "the-open-network",
-      "bridgeTo": ["ton"],
       "coinImageUrl": "https://assets.coingecko.com/coins/images/17980/standard/ton_symbol.png?1696517498"
     },
     {
@@ -245,18 +248,9 @@
       "coinImageUrl": "https://assets.coingecko.com/coins/images/29850/standard/pepe-token.jpeg?1696528776"
     },
     {
-      "coinDenom": "CAT",
-      "coinGeckoId": "simon-s-cat",
-      "coinMinimalDenom": "factory/orai1wuvhex9xqs3r539mvc6mtm7n20fcj3qr2m0y9khx6n5vtlngfzes3k0rq9/extCAT",
-      "bridgeTo": ["0x38"],
-      "coinDecimals": 6,
-      "coinImageUrl": "https://assets.coingecko.com/coins/images/39765/standard/Simon's_Cat_Logo.png?1724017505"
-    },
-    {
       "coinDenom": "HMSTR",
       "coinGeckoId": "hamster-kombat",
       "coinMinimalDenom": "factory/orai1wuvhex9xqs3r539mvc6mtm7n20fcj3qr2m0y9khx6n5vtlngfzes3k0rq9/HMSTR",
-      "bridgeTo": ["ton"],
       "coinDecimals": 9,
       "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/32195.png"
     },
