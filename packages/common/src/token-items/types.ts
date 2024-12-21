@@ -25,4 +25,5 @@ export type TokenItemType = {
   feeCurrencies?: FeeCurrency[];
   icon: string;
   iconLight?: string;
+  isVerified?: boolean;
 };
