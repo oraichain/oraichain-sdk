@@ -1,9 +1,5 @@
 import { flatten, uniqBy } from "lodash";
-import {
-  BridgeAppCurrency,
-  ChainInfoReader,
-  CustomChainInfo
-} from "../chain-infos";
+import { BridgeAppCurrency, ChainInfoReader, CustomChainInfo } from "../chain-infos";
 import { COSMOS_CHAIN_IDS } from "../constants/chain-ids";
 import { IBC_DENOMS } from "../constants/denoms";
 import { NETWORK_TYPES } from "../constants/network";
@@ -39,9 +35,7 @@ export class TokenItemsImpl implements TokenItems {
     return tokenItems;
   }
 
-  private getTokensFromNetwork = (
-    network: CustomChainInfo
-  ): TokenItemType[] => {
+  private getTokensFromNetwork = (network: CustomChainInfo): TokenItemType[] => {
     if (!network) return [];
 
     return network.currencies.map((currency) => {
@@ -50,8 +44,7 @@ export class TokenItemsImpl implements TokenItems {
         org: network.chainName,
         coinType: network.bip44.coinType,
         contractAddress: currency.contractAddress,
-        prefix:
-          currency?.prefixToken ?? network.bech32Config?.bech32PrefixAccAddr,
+        prefix: currency?.prefixToken ?? network.bech32Config?.bech32PrefixAccAddr,
         coinGeckoId: currency.coinGeckoId,
         denom: currency.coinMinimalDenom,
         bridgeNetworkIdentifier: currency.bridgeNetworkIdentifier,
@@ -66,15 +59,14 @@ export class TokenItemsImpl implements TokenItems {
         feeCurrencies: network.feeCurrencies,
         evmDenoms: evmDenomsMap[currency.coinMinimalDenom],
         icon: currency.coinImageUrl,
-        iconLight: currency.coinImageUrl
+        iconLight: currency.coinImageUrl,
+        isVerified: true
       };
     });
   };
 
   getSpecificChainTokens(chainId: string) {
-    return this.getTokensFromNetwork(
-      this.chainInfos.find((chain) => chain.chainId === chainId)
-    );
+    return this.getTokensFromNetwork(this.chainInfos.find((chain) => chain.chainId === chainId));
   }
 
   get otherChainTokens() {
@@ -87,9 +79,7 @@ export class TokenItemsImpl implements TokenItems {
 
   get oraichainTokens() {
     return this.getTokensFromNetwork(
-      this.chainInfos.find(
-        (chain) => chain.chainId === COSMOS_CHAIN_IDS.ORAICHAIN
-      )
+      this.chainInfos.find((chain) => chain.chainId === COSMOS_CHAIN_IDS.ORAICHAIN)
     );
   }
 
@@ -106,16 +96,12 @@ export class TokenItemsImpl implements TokenItems {
   }
 
   get assetInfoMap() {
-    return Object.fromEntries(
-      this.flattenTokens.map((c) => [c.contractAddress || c.denom, c])
-    );
+    return Object.fromEntries(this.flattenTokens.map((c) => [c.contractAddress || c.denom, c]));
   }
 
   get cosmosTokens() {
     return uniqBy(
-      this.flattenTokens.filter(
-        (token) => token.denom && token.cosmosBased && token.coinGeckoId
-      ),
+      this.flattenTokens.filter((token) => token.denom && token.cosmosBased && token.coinGeckoId),
       (c) => c.denom
     );
   }
@@ -131,9 +117,7 @@ export class TokenItemsImpl implements TokenItems {
   }
 
   get cw20TokenMap() {
-    return Object.fromEntries(
-      this.cw20Tokens.map((c) => [c.contractAddress, c])
-    );
+    return Object.fromEntries(this.cw20Tokens.map((c) => [c.contractAddress, c]));
   }
 
   get evmTokens() {
