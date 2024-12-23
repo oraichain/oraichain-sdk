@@ -60,7 +60,8 @@ export class TokenItemsImpl implements TokenItems {
         evmDenoms: evmDenomsMap[currency.coinMinimalDenom],
         icon: currency.coinImageUrl,
         iconLight: currency.coinImageUrl,
-        isVerified: true
+        isVerified: true,
+        isDisabledSwap: currency.isDisabledSwap
       };
     });
   };
