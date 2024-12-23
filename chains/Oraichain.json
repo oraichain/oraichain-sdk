@@ -183,7 +183,8 @@
       "coinGeckoId": "injective-protocol",
       "coinMinimalDenom": "ibc/49D820DFDE9F885D7081725A58202ABA2F465CAEE4AFBC683DFB79A8E013E83E",
       "coinDecimals": 18,
-      "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/7226.png"
+      "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/7226.png",
+      "isDisableddSwap": true
     },
     {
       "coinDenom": "INJ",
@@ -206,10 +207,22 @@
       "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png"
     },
     {
+      "coinDenom": "BTC.legacy",
+      "coinGeckoId": "bitcoin",
+      "coinMinimalDenom": "usat",
+      "type": "cw20",
+      "contractAddress": "orai10g6frpysmdgw5tdqke47als6f97aqmr8s3cljsvjce4n5enjftcqtamzsd",
+      "coinDecimals": 6,
+      "bridgeTo": ["bitcoin"],
+      "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png",
+      "isDisableddSwap": true
+    },
+    {
       "coinDenom": "BTC",
       "coinMinimalDenom": "factory/orai1wuvhex9xqs3r539mvc6mtm7n20fcj3qr2m0y9khx6n5vtlngfzes3k0rq9/obtc",
       "coinDecimals": 14,
       "coinGeckoId": "bitcoin",
+      "bridgeTo": ["bitcoin"],
       "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"
     },
     {
@@ -242,7 +255,8 @@
       "coinGeckoId": "hamster-kombat",
       "coinMinimalDenom": "factory/orai1wuvhex9xqs3r539mvc6mtm7n20fcj3qr2m0y9khx6n5vtlngfzes3k0rq9/HMSTR",
       "coinDecimals": 9,
-      "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/32195.png"
+      "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/32195.png",
+      "bridgeTo": ["ton"]
     },
     {
       "coinDenom": "DOGE",
@@ -267,6 +281,14 @@
       "bridgeTo": ["solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"],
       "coinDecimals": 6,
       "coinImageUrl": "https://pump.mypinata.cloud/ipfs/QmcGwYebsQfYbNSM9QDAMS2wKZ8fZNEiMbezJah1zgEWWS?img-width=256&img-dpr=2"
+    },
+    {
+      "coinDenom": "TON",
+      "coinMinimalDenom": "factory/orai1wuvhex9xqs3r539mvc6mtm7n20fcj3qr2m0y9khx6n5vtlngfzes3k0rq9/ton",
+      "coinDecimals": 9,
+      "bridgeTo": ["ton", "osmosis-1"],
+      "coinGeckoId": "the-open-network",
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/17980/standard/ton_symbol.png?1696517498"
     }
   ]
 }
