@@ -9,6 +9,7 @@ export type BridgeAppCurrency = FeeCurrency & {
   readonly coinDecimals: 6 | 8 | 9 | 14 | 18; // 6 for cosmos, 8 for bitcoin, 18 for evm
   readonly contractAddress?: string;
   readonly prefixToken?: string;
+  readonly isDisabledSwap?: boolean;
 };
 
 /**

@@ -26,4 +26,5 @@ export type TokenItemType = {
   icon: string;
   iconLight?: string;
   isVerified?: boolean;
+  isDisabledSwap?: boolean;
 };
