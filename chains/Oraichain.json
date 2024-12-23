@@ -84,7 +84,7 @@
       "coinMinimalDenom": "usdt",
       "type": "cw20",
       "contractAddress": "orai12hzjxfh77wl572gdzct2fxv2arxcwh6gykc7qh",
-      "bridgeTo": ["0x38", "0x2b6653dc", "0x01"],
+      "bridgeTo": ["0x38", "0x2b6653dc", "0x01", "ton"],
       "coinDecimals": 6,
       "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/825.png"
     },
@@ -94,7 +94,7 @@
       "coinMinimalDenom": "cw20:orai15un8msx3n5zf9ahlxmfeqd2kwa5wm0nrpxer304m9nd5q6qq0g6sku5pdd:USDC",
       "type": "cw20",
       "contractAddress": "orai15un8msx3n5zf9ahlxmfeqd2kwa5wm0nrpxer304m9nd5q6qq0g6sku5pdd",
-      "bridgeTo": ["0x01", "noble-1"],
+      "bridgeTo": ["0x01", "noble-1", "ton"],
       "coinDecimals": 6,
       "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png"
     },
@@ -236,13 +236,6 @@
       "bridgeTo": ["0x01"],
       "coinDecimals": 6,
       "coinImageUrl": "https://assets.coingecko.com/coins/images/34236/standard/orchai_logo_white_copy_4x-8_%281%29.png?1704307670"
-    },
-    {
-      "coinDenom": "TON",
-      "coinMinimalDenom": "factory/orai1wuvhex9xqs3r539mvc6mtm7n20fcj3qr2m0y9khx6n5vtlngfzes3k0rq9/ton",
-      "coinDecimals": 9,
-      "coinGeckoId": "the-open-network",
-      "coinImageUrl": "https://assets.coingecko.com/coins/images/17980/standard/ton_symbol.png?1696517498"
     },
     {
       "coinDenom": "PEPE",
