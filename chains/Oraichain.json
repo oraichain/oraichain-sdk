@@ -179,6 +179,13 @@
       "coinImageUrl": "https://assets.coingecko.com/coins/images/33050/standard/orchai_logo_white_copy_4x-8_%281%29.png?1700473937"
     },
     {
+      "coinDenom": "IBC INJ",
+      "coinGeckoId": "injective-protocol",
+      "coinMinimalDenom": "ibc/49D820DFDE9F885D7081725A58202ABA2F465CAEE4AFBC683DFB79A8E013E83E",
+      "coinDecimals": 18,
+      "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/7226.png"
+    },
+    {
       "coinDenom": "INJ",
       "coinGeckoId": "injective-protocol",
       "coinMinimalDenom": "injective",
