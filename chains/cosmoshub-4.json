@@ -22,7 +22,7 @@
       "coinMinimalDenom": "uatom",
       "coinDecimals": 6,
       "coinGeckoId": "cosmos",
-      "coinImageUrl": "https://dhj8dql1kzq2v.cloudfront.net/white/atom.png",
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/1481/standard/cosmos_hub.png",
       "gasPriceStep": { "low": 0, "average": 0.025, "high": 0.04 },
       "bridgeTo": ["Oraichain"]
     }
@@ -33,7 +33,7 @@
       "coinMinimalDenom": "uatom",
       "coinDecimals": 6,
       "coinGeckoId": "cosmos",
-      "coinImageUrl": "https://dhj8dql1kzq2v.cloudfront.net/white/atom.png",
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/1481/standard/cosmos_hub.png",
       "gasPriceStep": { "low": 0, "average": 0.025, "high": 0.04 }
     }
   ],
@@ -42,10 +42,10 @@
     "coinMinimalDenom": "uatom",
     "coinDecimals": 6,
     "coinGeckoId": "cosmos",
-    "coinImageUrl": "https://dhj8dql1kzq2v.cloudfront.net/white/atom.png",
+    "coinImageUrl": "https://assets.coingecko.com/coins/images/1481/standard/cosmos_hub.png",
     "gasPriceStep": { "low": 0, "average": 0.025, "high": 0.04 }
   },
-  "chainSymbolImageUrl": "https://dhj8dql1kzq2v.cloudfront.net/white/atom.png",
+  "chainSymbolImageUrl": "https://assets.coingecko.com/coins/images/1481/standard/cosmos_hub.png",
   "txExplorer": {
     "name": "Mintscan",
     "txUrl": "https://www.mintscan.io/cosmos/txs/{txHash}"

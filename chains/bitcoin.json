@@ -36,7 +36,17 @@
       "coinMinimalDenom": "btc",
       "coinDecimals": 8,
       "coinGeckoId": "bitcoin",
-      "coinImageUrl": "https://assets.coingecko.com/coins/images/1/small/bitcoin.png"
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/1/small/bitcoin.png",
+      "bridgeTo": ["Oraichain"]
+    },
+    {
+      "coinDenom": "BTC (Legacy)",
+      "coinMinimalDenom": "btc",
+      "coinDecimals": 8,
+      "coinGeckoId": "bitcoin",
+      "prefixToken": "oraibtc",
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/1/small/bitcoin.png",
+      "bridgeTo": ["Oraichain"]
     }
   ],
   "feeCurrencies": [
