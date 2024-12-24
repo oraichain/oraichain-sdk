@@ -41,7 +41,7 @@
     },
     {
       "coinDenom": "BTC (Legacy)",
-      "coinMinimalDenom": "btc",
+      "coinMinimalDenom": "btc-v2",
       "coinDecimals": 8,
       "coinGeckoId": "bitcoin",
       "prefixToken": "oraibtc",
