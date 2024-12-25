@@ -36,11 +36,11 @@
     {
       "coinDenom": "ORAI",
       "coinMinimalDenom": "s20_orai",
-      "coinDecimals": 8,
+      "coinDecimals": 6,
       "bridgeTo": ["Oraichain"],
-      "contractAddress": "2hZWncnmsSMdbkdwzSHJfrnDVkL66g63gncdRWqjTbBB",
+      "contractAddress": "oraiyuR7hz6h7ApC56mb52CJjPZBB34USTjzaELoaPk",
       "coinGeckoId": "oraichain-token",
-      "coinImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/oraichain/images/orai-token.png"
+      "coinImageUrl": "https://images.orai.io/logo/orai-token.png"
     }
   ],
   "feeCurrencies": [

@@ -43,7 +43,7 @@
       "bridgeNetworkIdentifier": "0x38",
       "coinDecimals": 18,
       "coinGeckoId": "oraichain-token",
-      "coinImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/oraichain/images/orai-token.png"
+      "coinImageUrl": "https://images.orai.io/logo/orai-token.png"
     },
     {
       "coinDenom": "ORAI",
@@ -52,7 +52,7 @@
       "coinDecimals": 18,
       "coinGeckoId": "oraichain-token",
       "prefixToken": "eth-mainnet",
-      "coinImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/oraichain/images/orai-token.png"
+      "coinImageUrl": "https://images.orai.io/logo/orai-token.png"
     },
     {
       "coinDenom": "USDC",
@@ -69,7 +69,7 @@
       "bridgeNetworkIdentifier": "0x38",
       "coinDecimals": 18,
       "coinGeckoId": "airight",
-      "coinImageUrl": "https://i.ibb.co/m8mCyMr/airi.png"
+      "coinImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/oraichain/images/airi.png"
     },
     {
       "coinDenom": "USDT",

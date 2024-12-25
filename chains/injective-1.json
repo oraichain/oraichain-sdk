@@ -16,7 +16,14 @@
     "bech32PrefixConsAddr": "injvalcons",
     "bech32PrefixConsPub": "injvalconspub"
   },
-  "features": ["stargate", "no-legacy-stdTx", "ibc-transfer", "ibc-go", "eth-key-sign", "cosmwasm"],
+  "features": [
+    "stargate",
+    "no-legacy-stdTx",
+    "ibc-transfer",
+    "ibc-go",
+    "eth-key-sign",
+    "cosmwasm"
+  ],
   "stakeCurrency": {
     "coinDenom": "INJ",
     "coinMinimalDenom": "inj",
@@ -62,7 +69,7 @@
       "coinMinimalDenom": "ibc/C20C0A822BD22B2CEF0D067400FCCFB6FAEEE9E91D360B4E0725BD522302D565",
       "coinDecimals": 6,
       "coinGeckoId": "oraichain-token",
-      "coinImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/oraichain/images/orai-token.png",
+      "coinImageUrl": "https://images.orai.io/logo/orai-token.png",
       "bridgeTo": ["Oraichain"]
     }
   ],

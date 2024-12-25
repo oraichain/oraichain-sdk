@@ -64,7 +64,7 @@
       "coinMinimalDenom": "ibc/161D7D62BAB3B9C39003334F1671208F43C06B643CC9EDBBE82B64793C857F1D",
       "coinDecimals": 6,
       "coinGeckoId": "oraichain-token",
-      "coinImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/oraichain/images/orai-token.png",
+      "coinImageUrl": "https://images.orai.io/logo/orai-token.png",
       "gasPriceStep": { "low": 0, "average": 0.025, "high": 0.04 }
     },
     {
