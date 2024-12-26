@@ -295,6 +295,12 @@
       "bridgeTo": ["ton", "osmosis-1"],
       "coinGeckoId": "the-open-network",
       "coinImageUrl": "https://assets.coingecko.com/coins/images/17980/standard/ton_symbol.png?1696517498"
+    },
+    {
+      "coinDenom": "ATT1",
+      "coinMinimalDenom": "factory/orai1ytjgzxvtsq3ukhzmt39cp85j27zzqf5y706y9qrffrnpn3vd3uds957ydu/ATT1",
+      "coinDecimals": 6,
+      "coinImageUrl": "https://i.ibb.co/wRZ6qNV/10336142-18514984.jpg"
     }
   ]
 }
