@@ -41,6 +41,15 @@
       "contractAddress": "oraiyuR7hz6h7ApC56mb52CJjPZBB34USTjzaELoaPk",
       "coinGeckoId": "oraichain-token",
       "coinImageUrl": "https://images.orai.io/logo/orai-token.png"
+    },
+    {
+      "coinDenom": "RACKS",
+      "coinMinimalDenom": "s20_racks",
+      "coinDecimals": 6,
+      "bridgeTo": ["Oraichain"],
+      "contractAddress": "D7yP4ycfsRWUGYionGpi64sLF2ddZ2JXxuRAti2M7uck",
+      "coinGeckoId": "black-rack",
+      "coinImageUrl": "https://ipfs.io/ipfs/QmVRPsBSHpamDzcDzVL9wsbB9gr4frtNrrFF7g44Xa9FuS"
     }
   ],
   "feeCurrencies": [
