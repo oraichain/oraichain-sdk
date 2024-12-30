@@ -29,7 +29,7 @@
       "bridgeTo": ["Oraichain"],
       "coinGeckoId": "oraichain-token",
       "prefixToken": "eth-mainnet",
-      "coinImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/oraichain/images/orai-token.png"
+      "coinImageUrl": "https://images.orai.io/logo/orai-token.png"
     },
     {
       "coinDenom": "USDC",
