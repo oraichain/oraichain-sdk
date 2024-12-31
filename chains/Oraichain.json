@@ -82,7 +82,7 @@
     {
       "coinDenom": "AIRI",
       "coinGeckoId": "airight",
-      "coinMinimalDenom": "airi",
+      "coinMinimalDenom": "cw20:orai10ldgzued6zjp0mkqwsv2mux3ml50l97c74x8sg:AIRI",
       "type": "cw20",
       "contractAddress": "orai10ldgzued6zjp0mkqwsv2mux3ml50l97c74x8sg",
       "bridgeTo": ["0x38"],
@@ -92,7 +92,7 @@
     {
       "coinDenom": "USDT",
       "coinGeckoId": "tether",
-      "coinMinimalDenom": "usdt",
+      "coinMinimalDenom": "cw20:orai12hzjxfh77wl572gdzct2fxv2arxcwh6gykc7qh:USDT",
       "type": "cw20",
       "contractAddress": "orai12hzjxfh77wl572gdzct2fxv2arxcwh6gykc7qh",
       "bridgeTo": ["0x38", "0x2b6653dc", "0x01", "ton"],
@@ -128,7 +128,7 @@
     {
       "coinDenom": "KWT",
       "coinGeckoId": "kawaii-islands",
-      "coinMinimalDenom": "kwt",
+      "coinMinimalDenom": "cw20:orai1nd4r053e3kgedgld2ymen8l9yrw8xpjyaal7j5:KWT",
       "type": "cw20",
       "contractAddress": "orai1nd4r053e3kgedgld2ymen8l9yrw8xpjyaal7j5",
       "bridgeTo": ["0x38"],
@@ -146,7 +146,7 @@
     {
       "coinDenom": "MILKY",
       "coinGeckoId": "milky-token",
-      "coinMinimalDenom": "milky",
+      "coinMinimalDenom": "cw20:orai1gzvndtzceqwfymu2kqhta2jn6gmzxvzqwdgvjw:MILKY",
       "type": "cw20",
       "contractAddress": "orai1gzvndtzceqwfymu2kqhta2jn6gmzxvzqwdgvjw",
       "bridgeTo": ["0x38"],
@@ -202,7 +202,7 @@
     {
       "coinDenom": "INJ",
       "coinGeckoId": "injective-protocol",
-      "coinMinimalDenom": "injective",
+      "coinMinimalDenom": "cw20:orai19rtmkk6sn4tppvjmp5d5zj6gfsdykrl5rw2euu5gwur3luheuuusesqn49:INJ",
       "contractAddress": "orai19rtmkk6sn4tppvjmp5d5zj6gfsdykrl5rw2euu5gwur3luheuuusesqn49",
       "bridgeTo": ["injective-1"],
       "type": "cw20",
@@ -222,7 +222,7 @@
     {
       "coinDenom": "BTC.legacy",
       "coinGeckoId": "bitcoin",
-      "coinMinimalDenom": "usat",
+      "coinMinimalDenom": "cw20:orai10g6frpysmdgw5tdqke47als6f97aqmr8s3cljsvjce4n5enjftcqtamzsd:USAT",
       "type": "cw20",
       "contractAddress": "orai10g6frpysmdgw5tdqke47als6f97aqmr8s3cljsvjce4n5enjftcqtamzsd",
       "coinDecimals": 6,
