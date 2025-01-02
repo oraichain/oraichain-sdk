@@ -48,7 +48,7 @@
       "coinDecimals": 6,
       "bridgeTo": ["Oraichain"],
       "contractAddress": "D7yP4ycfsRWUGYionGpi64sLF2ddZ2JXxuRAti2M7uck",
-      "coinGeckoId": "black-rack",
+      "coinGeckoId": "blackrack",
       "coinImageUrl": "https://ipfs.io/ipfs/QmVRPsBSHpamDzcDzVL9wsbB9gr4frtNrrFF7g44Xa9FuS"
     }
   ],
