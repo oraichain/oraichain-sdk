@@ -50,6 +50,15 @@
       "contractAddress": "D7yP4ycfsRWUGYionGpi64sLF2ddZ2JXxuRAti2M7uck",
       "coinGeckoId": "blackrack",
       "coinImageUrl": "https://ipfs.io/ipfs/QmVRPsBSHpamDzcDzVL9wsbB9gr4frtNrrFF7g44Xa9FuS"
+    },
+    {
+      "coinDenom": "GNRT",
+      "coinMinimalDenom": "s20_gnrt",
+      "coinDecimals": 6,
+      "bridgeTo": ["Oraichain"],
+      "contractAddress": "oraiJP7H3LAt57DkFXNLDbLdBFNRRPvS8jg2j5AZkd9",
+      "coinGeckoId": "gnrt",
+      "coinImageUrl": "https://ipfs.io/ipfs/QmNu1YU842i2imMX9bTV5kFK8ndUpUwxHD9ipRRXoBakD6"
     }
   ],
   "feeCurrencies": [

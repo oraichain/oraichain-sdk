@@ -35,7 +35,13 @@
     "bech32PrefixConsAddr": "oraivalcons",
     "bech32PrefixConsPub": "oraivalconspub"
   },
-  "features": ["stargate", "ibc-transfer", "cosmwasm", "wasmd_0.24+", "no-legacy-stdTx"],
+  "features": [
+    "stargate",
+    "ibc-transfer",
+    "cosmwasm",
+    "wasmd_0.24+",
+    "no-legacy-stdTx"
+  ],
   "txExplorer": {
     "name": "Oraiscan",
     "txUrl": "https://scan.orai.io/txs/{txHash}",
@@ -48,7 +54,12 @@
       "coinMinimalDenom": "orai",
       "coinDecimals": 6,
       "coinGeckoId": "oraichain-token",
-      "bridgeTo": ["0x38", "0x01", "injective-1", "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"],
+      "bridgeTo": [
+        "0x38",
+        "0x01",
+        "injective-1",
+        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
+      ],
       "coinImageUrl": "https://images.orai.io/logo/orai-token.png",
       "gasPriceStep": { "low": 0.003, "average": 0.005, "high": 0.007 }
     },
@@ -292,6 +303,14 @@
       "bridgeTo": ["solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"],
       "coinGeckoId": "blackrack",
       "coinImageUrl": "https://ipfs.io/ipfs/QmVRPsBSHpamDzcDzVL9wsbB9gr4frtNrrFF7g44Xa9FuS"
+    },
+    {
+      "coinDenom": "GNRT",
+      "coinMinimalDenom": "factory/orai1wuvhex9xqs3r539mvc6mtm7n20fcj3qr2m0y9khx6n5vtlngfzes3k0rq9/oraiJP7H3LAt57DkFXNLDbLdBFNRRPvS8jg2j5AZkd9",
+      "coinDecimals": 6,
+      "bridgeTo": ["solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"],
+      "coinGeckoId": "gnrt",
+      "coinImageUrl": "https://ipfs.io/ipfs/QmNu1YU842i2imMX9bTV5kFK8ndUpUwxHD9ipRRXoBakD6"
     }
   ]
 }
