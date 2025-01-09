@@ -57,7 +57,7 @@
       "coinDecimals": 6,
       "bridgeTo": ["Oraichain"],
       "contractAddress": "oraiJP7H3LAt57DkFXNLDbLdBFNRRPvS8jg2j5AZkd9",
-      "coinGeckoId": "gnrt",
+      "coinGeckoId": "degenerator-project",
       "coinImageUrl": "https://ipfs.io/ipfs/QmNu1YU842i2imMX9bTV5kFK8ndUpUwxHD9ipRRXoBakD6"
     }
   ],
