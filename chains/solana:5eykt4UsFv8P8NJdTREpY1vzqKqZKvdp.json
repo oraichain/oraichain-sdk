@@ -59,6 +59,15 @@
       "contractAddress": "oraiJP7H3LAt57DkFXNLDbLdBFNRRPvS8jg2j5AZkd9",
       "coinGeckoId": "degenerator-project",
       "coinImageUrl": "https://ipfs.io/ipfs/QmNu1YU842i2imMX9bTV5kFK8ndUpUwxHD9ipRRXoBakD6"
+    },
+    {
+      "coinDenom": "Lee",
+      "coinMinimalDenom": "s20_lee",
+      "coinDecimals": 6,
+      "bridgeTo": ["Oraichain"],
+      "contractAddress": "oraix39mVDGnusyjag97Tz5H8GvGriSZmhVvkvXRoc4",
+      "coinGeckoId": "lee-quid",
+      "coinImageUrl": "https://ipfs.io/ipfs/QmWh89Xh8bVMD1vP4VLtkazQjM7TyYxfoufMn5SZHuEJY1"
     }
   ],
   "feeCurrencies": [
