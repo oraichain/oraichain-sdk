@@ -85,8 +85,8 @@ A sample `Oraichain.json` includes the following information.
   ],
   "txExplorer": {
     "name": "Oraiscan",
-    "txUrl": "https://scan.orai.io/txs/{txHash}",
-    "accountUrl": "https://scan.orai.io/account/{address}"
+    "txUrl": "https://scanium.io/Oraichain/tx/{txHash}",
+    "accountUrl": "https://scanium.io/Oraichain/account/{address}"
   },
   "currencies": [
     {
