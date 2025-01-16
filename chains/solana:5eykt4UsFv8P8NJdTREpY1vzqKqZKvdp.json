@@ -25,13 +25,6 @@
   "networkType": "svm",
   "currencies": [
     {
-      "coinDenom": "SOL",
-      "coinMinimalDenom": "sol",
-      "coinDecimals": 9,
-      "coinGeckoId": "solana",
-      "coinImageUrl": "https://assets.coingecko.com/coins/images/4128/standard/solana.png?1718769756"
-    },
-    {
       "coinDenom": "MAX",
       "coinMinimalDenom": "max",
       "coinDecimals": 6,
