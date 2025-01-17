@@ -50,6 +50,14 @@
   "chainSymbolImageUrl": "https://images.orai.io/logo/orai-token.png",
   "currencies": [
     {
+      "coinDenom": "SOL",
+      "coinMinimalDenom": "factory/orai1wuvhex9xqs3r539mvc6mtm7n20fcj3qr2m0y9khx6n5vtlngfzes3k0rq9/So11111111111111111111111111111111111111112",
+      "coinDecimals": 9,
+      "bridgeTo": ["solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"],
+      "coinGeckoId": "solana",
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/4128/standard/solana.png?1718769756"
+    },
+    {
       "coinDenom": "ORAI",
       "coinMinimalDenom": "orai",
       "coinDecimals": 6,
