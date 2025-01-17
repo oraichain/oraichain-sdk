@@ -28,6 +28,7 @@
       "coinDenom": "SOL",
       "coinMinimalDenom": "sol",
       "coinDecimals": 9,
+      "bridgeTo": ["Oraichain"],
       "coinGeckoId": "solana",
       "coinImageUrl": "https://assets.coingecko.com/coins/images/4128/standard/solana.png?1718769756"
     },
