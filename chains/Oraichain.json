@@ -327,6 +327,14 @@
       "bridgeTo": ["solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"],
       "coinGeckoId": "lee-quid",
       "coinImageUrl": "https://ipfs.io/ipfs/QmWh89Xh8bVMD1vP4VLtkazQjM7TyYxfoufMn5SZHuEJY1"
+    },
+    {
+      "coinDenom": "TRUMP",
+      "coinMinimalDenom": "factory/orai1wuvhex9xqs3r539mvc6mtm7n20fcj3qr2m0y9khx6n5vtlngfzes3k0rq9/6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN",
+      "coinDecimals": 6,
+      "bridgeTo": ["solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"],
+      "coinGeckoId": "official-trump",
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/53746/standard/trump.png?1737171561"
     }
   ]
 }
