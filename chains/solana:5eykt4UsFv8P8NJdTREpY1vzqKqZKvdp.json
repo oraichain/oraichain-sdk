@@ -76,6 +76,15 @@
       "contractAddress": "oraix39mVDGnusyjag97Tz5H8GvGriSZmhVvkvXRoc4",
       "coinGeckoId": "lee-quid",
       "coinImageUrl": "https://ipfs.io/ipfs/QmWh89Xh8bVMD1vP4VLtkazQjM7TyYxfoufMn5SZHuEJY1"
+    },
+    {
+      "coinDenom": "TRUMP",
+      "coinMinimalDenom": "s20_trump",
+      "coinDecimals": 6,
+      "bridgeTo": ["Oraichain"],
+      "contractAddress": "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN",
+      "coinGeckoId": "official-trump",
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/53746/standard/trump.png?1737171561"
     }
   ],
   "feeCurrencies": [
