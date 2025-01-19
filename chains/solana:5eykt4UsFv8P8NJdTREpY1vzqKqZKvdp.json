@@ -85,6 +85,15 @@
       "contractAddress": "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN",
       "coinGeckoId": "official-trump",
       "coinImageUrl": "https://assets.coingecko.com/coins/images/53746/standard/trump.png?1737171561"
+    },
+    {
+      "coinDenom": "JPOW",
+      "coinMinimalDenom": "s20_jpow",
+      "coinDecimals": 6,
+      "bridgeTo": ["Oraichain"],
+      "contractAddress": "orairHM3Yw2PbTfCty1PXy7tEUx3uBMfjouNbm4KnRJ",
+      "coinGeckoId": "jpow",
+      "coinImageUrl": "https://ipfs.io/ipfs/QmTNx93FdeSwBxsqbZF5NuhVU9AWwodpwqjuHtGEMRTV38"
     }
   ],
   "feeCurrencies": [

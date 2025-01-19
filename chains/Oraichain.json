@@ -335,6 +335,14 @@
       "bridgeTo": ["solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"],
       "coinGeckoId": "official-trump",
       "coinImageUrl": "https://assets.coingecko.com/coins/images/53746/standard/trump.png?1737171561"
+    },
+    {
+      "coinDenom": "JPOW",
+      "coinMinimalDenom": "factory/orai1wuvhex9xqs3r539mvc6mtm7n20fcj3qr2m0y9khx6n5vtlngfzes3k0rq9/orairHM3Yw2PbTfCty1PXy7tEUx3uBMfjouNbm4KnRJ",
+      "coinDecimals": 6,
+      "bridgeTo": ["solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"],
+      "coinGeckoId": "jpow",
+      "coinImageUrl": "https://ipfs.io/ipfs/QmTNx93FdeSwBxsqbZF5NuhVU9AWwodpwqjuHtGEMRTV38"
     }
   ]
 }
