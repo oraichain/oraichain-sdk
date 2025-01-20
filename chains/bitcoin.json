@@ -1,6 +1,6 @@
 {
   "$schema": "../chain.schema.json",
-  "rpc": "https://rpc.ankr.com/btc",
+  "rpc": "https://blockstream.info/api",
   "rest": "https://blockstream.info/api",
   "chainId": "bitcoin",
   "chainName": "Bitcoin",
