@@ -94,6 +94,24 @@
       "contractAddress": "orairHM3Yw2PbTfCty1PXy7tEUx3uBMfjouNbm4KnRJ",
       "coinGeckoId": "jpow",
       "coinImageUrl": "https://ipfs.io/ipfs/QmTNx93FdeSwBxsqbZF5NuhVU9AWwodpwqjuHtGEMRTV38"
+    },
+    {
+      "coinDenom": "CRISIS",
+      "coinMinimalDenom": "s20_crisis",
+      "coinDecimals": 6,
+      "bridgeTo": ["Oraichain"],
+      "contractAddress": "moonznxqtXdzA81shGf6EQ8Rw36hgaoqRUeWREDYiVe",
+      "coinGeckoId": "crisis",
+      "coinImageUrl": "https://ipfs.io/ipfs/QmcJAjUjP4ruDBx4hgc1DG5BZVzSUQ13JGFSEFtibwwdcJ"
+    },
+    {
+      "coinDenom": "MOOBS",
+      "coinMinimalDenom": "s20_moobs",
+      "coinDecimals": 6,
+      "bridgeTo": ["Oraichain"],
+      "contractAddress": "moonGvQw19jXedkQFf5qgdzSRCZvNv2eNbmvR6ZwSkk",
+      "coinGeckoId": "moobs",
+      "coinImageUrl": "https://ipfs.io/ipfs/QmQgDDuxwG5Ds5EfWbP7YgYi1BGFcGDv3c3D5NRU3wExes"
     }
   ],
   "feeCurrencies": [
