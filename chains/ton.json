@@ -69,11 +69,11 @@
   ],
   "feeCurrencies": [
     {
-      "coinDenom": "BTC",
-      "coinMinimalDenom": "btc",
-      "coinDecimals": 8,
-      "coinGeckoId": "bitcoin",
-      "coinImageUrl": "https://assets.coingecko.com/coins/images/1/small/bitcoin.png"
+      "coinDenom": "TON",
+      "coinMinimalDenom": "ton",
+      "coinDecimals": 9,
+      "coinGeckoId": "the-open-network",
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/17980/standard/ton_symbol.png"
     }
   ],
   "features": ["isTon"],

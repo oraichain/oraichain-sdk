@@ -14,12 +14,7 @@
     "coinMinimalDenom": "btc",
     "coinDecimals": 8,
     "coinGeckoId": "bitcoin",
-    "coinImageUrl": "https://assets.coingecko.com/coins/images/1/small/bitcoin.png",
-    "gasPriceStep": {
-      "low": 144,
-      "average": 18,
-      "high": 1
-    }
+    "coinImageUrl": "https://assets.coingecko.com/coins/images/1/small/bitcoin.png"
   },
   "bech32Config": {
     "bech32PrefixAccAddr": "bc",
@@ -46,7 +41,12 @@
       "coinMinimalDenom": "btc",
       "coinDecimals": 8,
       "coinGeckoId": "bitcoin",
-      "coinImageUrl": "https://assets.coingecko.com/coins/images/1/small/bitcoin.png"
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/1/small/bitcoin.png",
+      "gasPriceStep": {
+        "low": 144,
+        "average": 18,
+        "high": 1
+      }
     }
   ],
   "features": ["isBtc"],
