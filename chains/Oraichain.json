@@ -356,6 +356,12 @@
       "bridgeTo": ["solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"],
       "coinGeckoId": "moobs",
       "coinImageUrl": "https://ipfs.io/ipfs/QmQgDDuxwG5Ds5EfWbP7YgYi1BGFcGDv3c3D5NRU3wExes"
+    },
+    {
+      "coinDenom": "SAM",
+      "coinMinimalDenom": "factory/orai15rmny3cxv33rnzdr2lfdhjtslyzmrr0vdd28kp/SAM",
+      "coinDecimals": 6,
+      "coinImageUrl": "https://host.lastsamorais.com/samlogo.png"
     }
   ]
 }
