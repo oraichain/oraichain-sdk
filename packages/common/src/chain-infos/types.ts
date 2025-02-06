@@ -1,4 +1,9 @@
-import { FeeCurrency, ChainInfo, Bech32Config, Currency } from "@keplr-wallet/types";
+import {
+  FeeCurrency,
+  ChainInfo,
+  Bech32Config,
+  Currency
+} from "@keplr-wallet/types";
 import { NetworkType, CoinType } from "../constants/network";
 import { NetworkChainId } from "../constants";
 
@@ -10,6 +15,7 @@ export type BridgeAppCurrency = FeeCurrency & {
   readonly contractAddress?: string;
   readonly prefixToken?: string;
   readonly isDisabledSwap?: boolean;
+  readonly tag?: string;
 };
 
 /**

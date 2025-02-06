@@ -45,6 +45,7 @@
       "coinDenom": "GUARD",
       "coinMinimalDenom": "s20_guard",
       "coinDecimals": 6,
+      "tag": "defai",
       "bridgeTo": ["Oraichain"],
       "contractAddress": "oraiUNrTQmeuc13JoMFSyNcJCnXYpqErfp9v5diy64b",
       "coinGeckoId": "guard",
