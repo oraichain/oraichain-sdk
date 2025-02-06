@@ -42,6 +42,16 @@
       "coinImageUrl": "https://pump.mypinata.cloud/ipfs/QmcGwYebsQfYbNSM9QDAMS2wKZ8fZNEiMbezJah1zgEWWS?img-width=256&img-dpr=2"
     },
     {
+      "coinDenom": "GUARD",
+      "coinMinimalDenom": "s20_guard",
+      "coinDecimals": 6,
+      "tag": "defai",
+      "bridgeTo": ["Oraichain"],
+      "contractAddress": "oraiUNrTQmeuc13JoMFSyNcJCnXYpqErfp9v5diy64b",
+      "coinGeckoId": "guard",
+      "coinImageUrl": "https://ipfs.io/ipfs/QmVdNmY42JJF8HcSDUf8RHuJFkbbTuMi96YufsEeAXA7DJ"
+    },
+    {
       "coinDenom": "ORAI",
       "coinMinimalDenom": "s20_orai",
       "coinDecimals": 6,

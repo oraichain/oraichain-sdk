@@ -58,6 +58,15 @@
       "coinImageUrl": "https://assets.coingecko.com/coins/images/4128/standard/solana.png?1718769756"
     },
     {
+      "coinDenom": "GUARD",
+      "coinMinimalDenom": "factory/orai1wuvhex9xqs3r539mvc6mtm7n20fcj3qr2m0y9khx6n5vtlngfzes3k0rq9/oraiUNrTQmeuc13JoMFSyNcJCnXYpqErfp9v5diy64b",
+      "coinDecimals": 6,
+      "bridgeTo": ["solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"],
+      "coinGeckoId": "guard",
+      "tag": "defai",
+      "coinImageUrl": "https://ipfs.io/ipfs/QmVdNmY42JJF8HcSDUf8RHuJFkbbTuMi96YufsEeAXA7DJ"
+    },
+    {
       "coinDenom": "ORAI",
       "coinMinimalDenom": "orai",
       "coinDecimals": 6,
@@ -353,6 +362,7 @@
       "coinDenom": "SAM",
       "coinMinimalDenom": "factory/orai15rmny3cxv33rnzdr2lfdhjtslyzmrr0vdd28kp/SAM",
       "coinDecimals": 6,
+      "coinGeckoId": "sam-2",
       "coinImageUrl": "https://host.lastsamorais.com/samlogo.png"
     }
   ]
