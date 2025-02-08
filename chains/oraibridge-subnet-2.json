@@ -148,6 +148,33 @@
       "coinGeckoId": "oraidex",
       "prefixToken": "eth-mainnet",
       "coinImageUrl": "https://i.ibb.co/VmMJtf7/oraix.png"
+    },
+    {
+      "coinDenom": "PEPE",
+      "coinMinimalDenom": "oraib0x25d887Ce7a35172C62FeBFD67a1856F20FaEbB00",
+      "bridgeNetworkIdentifier": "0x38",
+      "coinDecimals": 18,
+      "coinGeckoId": "pepe",
+      "prefixToken": "oraib",
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/29850/standard/pepe-token.jpeg?1696528776"
+    },
+    {
+      "coinDenom": "PEPE",
+      "coinMinimalDenom": "eth-mainnet0x6982508145454Ce325dDbE47a25d4ec3d2311933",
+      "bridgeNetworkIdentifier": "0x01",
+      "coinDecimals": 18,
+      "coinGeckoId": "pepe",
+      "prefixToken": "eth-mainnet",
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/29850/standard/pepe-token.jpeg?1696528776"
+    },
+    {
+      "coinDenom": "WSOL",
+      "coinMinimalDenom": "oraib0xfA54fF1a158B5189Ebba6ae130CEd6bbd3aEA76e",
+      "bridgeNetworkIdentifier": "0x38",
+      "coinDecimals": 9,
+      "coinGeckoId": "solana",
+      "prefixToken": "oraib",
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/4128/standard/solana.png?1718769756"
     }
   ],
   "txExplorer": {
