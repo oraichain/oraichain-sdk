@@ -172,7 +172,7 @@
       "coinMinimalDenom": "oraib0xfA54fF1a158B5189Ebba6ae130CEd6bbd3aEA76e",
       "bridgeNetworkIdentifier": "0x38",
       "coinDecimals": 9,
-      "coinGeckoId": "solana",
+      "coinGeckoId": "wrapped-solana",
       "prefixToken": "oraib",
       "coinImageUrl": "https://assets.coingecko.com/coins/images/4128/standard/solana.png?1718769756"
     }

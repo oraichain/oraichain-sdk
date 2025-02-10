@@ -289,7 +289,7 @@
     },
     {
       "coinDenom": "WSOL",
-      "coinGeckoId": "solana",
+      "coinGeckoId": "wrapped-solana",
       "coinMinimalDenom": "factory/orai1wuvhex9xqs3r539mvc6mtm7n20fcj3qr2m0y9khx6n5vtlngfzes3k0rq9/oraib0x4VH72cCsNwZwLtHtBnXuCxHWf4mB",
       "bridgeTo": ["0x38"],
       "coinDecimals": 9,
