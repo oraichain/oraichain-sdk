@@ -67,6 +67,15 @@
       "coinImageUrl": "https://ipfs.io/ipfs/QmVdNmY42JJF8HcSDUf8RHuJFkbbTuMi96YufsEeAXA7DJ"
     },
     {
+      "coinDenom": "BANKER",
+      "coinDecimals": 6,
+      "tag": "defai",
+      "bridgeTo": ["solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"],
+      "coinMinimalDenom": "factory/orai1wuvhex9xqs3r539mvc6mtm7n20fcj3qr2m0y9khx6n5vtlngfzes3k0rq9/oraiBbhuMd7MeVxyBjtnK8sggprf2NpHkeJaeHzpBFK",
+      "coinGeckoId": "banker",
+      "coinImageUrl": "https://ipfs.io/ipfs/QmXPbVpdytLBnQHy5vTJPaetnvvGMDZpBRcWB3XVCnbiBK"
+    },
+    {
       "coinDenom": "ORAI",
       "coinMinimalDenom": "orai",
       "coinDecimals": 6,

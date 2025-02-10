@@ -52,6 +52,16 @@
       "coinImageUrl": "https://ipfs.io/ipfs/QmVdNmY42JJF8HcSDUf8RHuJFkbbTuMi96YufsEeAXA7DJ"
     },
     {
+      "coinDenom": "BANKER",
+      "coinMinimalDenom": "s20_banker",
+      "coinDecimals": 6,
+      "tag": "defai",
+      "bridgeTo": ["Oraichain"],
+      "contractAddress": "oraiBbhuMd7MeVxyBjtnK8sggprf2NpHkeJaeHzpBFK",
+      "coinGeckoId": "banker",
+      "coinImageUrl": "https://ipfs.io/ipfs/QmXPbVpdytLBnQHy5vTJPaetnvvGMDZpBRcWB3XVCnbiBK"
+    },
+    {
       "coinDenom": "ORAI",
       "coinMinimalDenom": "s20_orai",
       "coinDecimals": 6,
