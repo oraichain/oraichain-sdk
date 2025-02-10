@@ -111,7 +111,7 @@
       "coinMinimalDenom": "erc20:0xfA54fF1a158B5189Ebba6ae130CEd6bbd3aEA76e:Solana",
       "contractAddress": "0xfA54fF1a158B5189Ebba6ae130CEd6bbd3aEA76e",
       "coinDecimals": 9,
-      "coinGeckoId": "solana",
+      "coinGeckoId": "wrapped-solana",
       "bridgeTo": ["Oraichain"],
       "prefixToken": "oraib",
       "coinImageUrl": "https://assets.coingecko.com/coins/images/4128/standard/solana.png?1718769756"
