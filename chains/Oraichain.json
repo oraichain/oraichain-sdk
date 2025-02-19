@@ -139,7 +139,12 @@
       "coinMinimalDenom": "cw20:orai15un8msx3n5zf9ahlxmfeqd2kwa5wm0nrpxer304m9nd5q6qq0g6sku5pdd:USDC",
       "type": "cw20",
       "contractAddress": "orai15un8msx3n5zf9ahlxmfeqd2kwa5wm0nrpxer304m9nd5q6qq0g6sku5pdd",
-      "bridgeTo": ["0x01", "noble-1", "ton"],
+      "bridgeTo": [
+        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+        "0x01",
+        "noble-1",
+        "ton"
+      ],
       "coinDecimals": 6,
       "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png"
     },
