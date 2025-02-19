@@ -42,6 +42,15 @@
       "coinImageUrl": "https://api.jpow.ai/images/USDAI_logo_black.svg"
     },
     {
+      "coinDenom": "USDC",
+      "coinMinimalDenom": "s20_usdc",
+      "coinDecimals": 6,
+      "bridgeTo": ["Oraichain"],
+      "contractAddress": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "coinGeckoId": "usd-coin",
+      "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png"
+    },
+    {
       "coinDenom": "MAX",
       "coinMinimalDenom": "max",
       "coinDecimals": 6,
