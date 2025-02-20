@@ -386,6 +386,15 @@
       "coinDecimals": 6,
       "coinGeckoId": "sam-2",
       "coinImageUrl": "https://host.lastsamorais.com/samlogo.png"
+    },
+    {
+      "coinDenom": "HONOR",
+      "coinGeckoId": "honor",
+      "coinMinimalDenom": "cw20:orai1ty9dgugt0swra7k0nu2kdp35tf7q7d60jy29u9n6vt5lfff2jj0qs4p6r7:HONOR",
+      "type": "cw20",
+      "contractAddress": "orai1ty9dgugt0swra7k0nu2kdp35tf7q7d60jy29u9n6vt5lfff2jj0qs4p6r7",
+      "coinDecimals": 6,
+      "coinImageUrl": "https://honorais-datalake.s3.eu-north-1.amazonaws.com/cosmoway/honor_logo_v2.svg"
     }
   ]
 }
