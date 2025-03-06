@@ -157,42 +157,6 @@
       "coinImageUrl": "https://assets.coingecko.com/coins/images/16724/standard/osmo.png?1696516298"
     },
     {
-      "coinDenom": "BEP20 KWT",
-      "coinGeckoId": "kawaii-islands",
-      "coinMinimalDenom": "ibc/4F7464EEE736CCFB6B444EB72DE60B3B43C0DD509FFA2B87E05D584467AAE8C8",
-      "coinDecimals": 18,
-      "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/12313.png",
-      "isDisabledSwap": true
-    },
-    {
-      "coinDenom": "KWT",
-      "coinGeckoId": "kawaii-islands",
-      "coinMinimalDenom": "cw20:orai1nd4r053e3kgedgld2ymen8l9yrw8xpjyaal7j5:KWT",
-      "type": "cw20",
-      "contractAddress": "orai1nd4r053e3kgedgld2ymen8l9yrw8xpjyaal7j5",
-      "bridgeTo": ["0x38"],
-      "coinDecimals": 6,
-      "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/12313.png"
-    },
-    {
-      "coinDenom": "BEP20 MILKY",
-      "coinGeckoId": "milky-token",
-      "coinMinimalDenom": "ibc/E12A2298AC40011C79F02F26C324BD54DF20F4B2904CB9028BFDEDCFAA89B906",
-      "coinDecimals": 18,
-      "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/14418.png",
-      "isDisabledSwap": true
-    },
-    {
-      "coinDenom": "MILKY",
-      "coinGeckoId": "milky-token",
-      "coinMinimalDenom": "cw20:orai1gzvndtzceqwfymu2kqhta2jn6gmzxvzqwdgvjw:MILKY",
-      "type": "cw20",
-      "contractAddress": "orai1gzvndtzceqwfymu2kqhta2jn6gmzxvzqwdgvjw",
-      "bridgeTo": ["0x38"],
-      "coinDecimals": 6,
-      "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/14418.png"
-    },
-    {
       "coinDenom": "ORAIX",
       "coinMinimalDenom": "cw20:orai1lus0f0rhx8s03gdllx2n6vhkmf0536dv57wfge:ORAIX",
       "type": "cw20",
