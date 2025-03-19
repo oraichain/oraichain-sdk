@@ -95,7 +95,11 @@
         "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
       ],
       "coinImageUrl": "https://images.orai.io/logo/orai-token.png",
-      "gasPriceStep": { "low": 0.003, "average": 0.005, "high": 0.007 }
+      "gasPriceStep": { "low": 0.003, "average": 0.005, "high": 0.007 },
+      "evmExtendInfo": {
+        "address": "orai",
+        "decimals": 18
+      }
     },
     {
       "coinDenom": "ATOM",
@@ -131,7 +135,11 @@
       "contractAddress": "orai12hzjxfh77wl572gdzct2fxv2arxcwh6gykc7qh",
       "bridgeTo": ["0x38", "0x2b6653dc", "0x01", "ton"],
       "coinDecimals": 6,
-      "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/825.png"
+      "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/825.png",
+      "evmExtendInfo": {
+        "address": "0xFE7394f22465EB1ae0843acEef270C377CB43567",
+        "decimals": 6
+      }
     },
     {
       "coinDenom": "USDC",
@@ -146,7 +154,11 @@
         "ton"
       ],
       "coinDecimals": 6,
-      "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png"
+      "coinImageUrl": "https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png",
+      "evmExtendInfo": {
+        "address": "0xE99f09A4A4D791fdEb845aA6370e08E8b9DC7966",
+        "decimals": 6
+      }
     },
     {
       "coinDenom": "OSMO",
@@ -278,7 +290,11 @@
       "coinMinimalDenom": "factory/orai1wuvhex9xqs3r539mvc6mtm7n20fcj3qr2m0y9khx6n5vtlngfzes3k0rq9/oraim8c9d1nkfuQk9EzGYEUGxqL3MHQYndRw1huVo5h",
       "bridgeTo": ["solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"],
       "coinDecimals": 6,
-      "coinImageUrl": "https://pump.mypinata.cloud/ipfs/QmcGwYebsQfYbNSM9QDAMS2wKZ8fZNEiMbezJah1zgEWWS?img-width=256&img-dpr=2"
+      "coinImageUrl": "https://pump.mypinata.cloud/ipfs/QmcGwYebsQfYbNSM9QDAMS2wKZ8fZNEiMbezJah1zgEWWS?img-width=256&img-dpr=2",
+      "evmExtendInfo": {
+        "address": "0x519d9D63437e1111c6b84B6796dd500F800805ED",
+        "decimals": 6
+      }
     },
     {
       "coinDenom": "TON",
@@ -294,7 +310,11 @@
       "coinDecimals": 6,
       "bridgeTo": ["solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"],
       "coinGeckoId": "blackrack",
-      "coinImageUrl": "https://ipfs.io/ipfs/QmVRPsBSHpamDzcDzVL9wsbB9gr4frtNrrFF7g44Xa9FuS"
+      "coinImageUrl": "https://ipfs.io/ipfs/QmVRPsBSHpamDzcDzVL9wsbB9gr4frtNrrFF7g44Xa9FuS",
+      "evmExtendInfo": {
+        "address": "0x02249E7C7371d78492A04b80937129709cD21609",
+        "decimals": 6
+      }
     },
     {
       "coinDenom": "GNRT",
@@ -310,7 +330,11 @@
       "coinDecimals": 6,
       "bridgeTo": ["solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"],
       "coinGeckoId": "lee-quid",
-      "coinImageUrl": "https://ipfs.io/ipfs/QmWh89Xh8bVMD1vP4VLtkazQjM7TyYxfoufMn5SZHuEJY1"
+      "coinImageUrl": "https://ipfs.io/ipfs/QmWh89Xh8bVMD1vP4VLtkazQjM7TyYxfoufMn5SZHuEJY1",
+      "evmExtendInfo": {
+        "address": "0x2AD16a6d000a338f2e59EA4636d633d7b46a4cc4",
+        "decimals": 6
+      }
     },
     {
       "coinDenom": "TRUMP",
@@ -326,7 +350,11 @@
       "coinDecimals": 6,
       "bridgeTo": ["solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"],
       "coinGeckoId": "jpow",
-      "coinImageUrl": "https://ipfs.io/ipfs/QmTNx93FdeSwBxsqbZF5NuhVU9AWwodpwqjuHtGEMRTV38"
+      "coinImageUrl": "https://ipfs.io/ipfs/QmTNx93FdeSwBxsqbZF5NuhVU9AWwodpwqjuHtGEMRTV38",
+      "evmExtendInfo": {
+        "address": "0xF8b2dE81C69479396fb56820afa176a0415b6C49",
+        "decimals": 6
+      }
     },
     {
       "coinDenom": "CRISIS",
