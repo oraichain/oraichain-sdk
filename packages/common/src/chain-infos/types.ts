@@ -16,6 +16,10 @@ export type BridgeAppCurrency = FeeCurrency & {
   readonly prefixToken?: string;
   readonly isDisabledSwap?: boolean;
   readonly tag?: string;
+  readonly evmExtendInfo?: {
+    readonly address: string;
+    readonly decimals: number;
+  };
 };
 
 /**

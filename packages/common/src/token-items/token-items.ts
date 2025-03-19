@@ -73,7 +73,8 @@ export class TokenItemsImpl implements TokenItems {
         iconLight: currency.coinImageUrl,
         isVerified: true,
         isDisabledSwap: currency.isDisabledSwap,
-        tag: currency?.tag
+        tag: currency?.tag,
+        evmExtendInfo: currency?.evmExtendInfo
       };
     });
   };
