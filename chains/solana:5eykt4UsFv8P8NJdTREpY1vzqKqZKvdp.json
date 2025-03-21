@@ -42,6 +42,15 @@
       "coinImageUrl": "https://api.jpow.ai/images/USDAI_logo_black.svg"
     },
     {
+      "coinDenom": "scORAI",
+      "coinMinimalDenom": "s20_scorai",
+      "coinDecimals": 6,
+      "bridgeTo": ["Oraichain"],
+      "contractAddress": "oraiHES5kVRKK62M8T3KkTpFeKg8UBJz1RJ3d69MSAC",
+      "coinGeckoId": "scorai",
+       "coinImageUrl": "https://assets.coingecko.com/coins/images/28897/standard/Orchai_LOGO.png?1696527873"
+    },
+    {
       "coinDenom": "USDC",
       "coinMinimalDenom": "s20_usdc",
       "coinDecimals": 6,
