@@ -184,6 +184,7 @@
       "type": "cw20",
       "contractAddress": "orai1065qe48g7aemju045aeyprflytemx7kecxkf5m7u5h5mphd0qlcs47pclp",
       "coinGeckoId": "scorai",
+      "bridgeTo": ["solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"],
       "coinDecimals": 6,
       "coinImageUrl": "https://assets.coingecko.com/coins/images/28897/standard/Orchai_LOGO.png?1696527873"
     },
