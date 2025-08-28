@@ -1,6 +1,6 @@
 {
   "$schema": "../chain.schema.json",
-  "rpc": "https://1rpc.io/eth",
+  "rpc": "https://eth.llamarpc.com",
   "chainId": "0x01",
   "chainName": "Ethereum",
   "bip44": { "coinType": 60 },
