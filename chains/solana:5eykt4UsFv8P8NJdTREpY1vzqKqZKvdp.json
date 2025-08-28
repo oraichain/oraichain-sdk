@@ -48,7 +48,7 @@
       "bridgeTo": ["Oraichain"],
       "contractAddress": "oraiHES5kVRKK62M8T3KkTpFeKg8UBJz1RJ3d69MSAC",
       "coinGeckoId": "scorai",
-       "coinImageUrl": "https://assets.coingecko.com/coins/images/28897/standard/Orchai_LOGO.png?1696527873"
+      "coinImageUrl": "https://assets.coingecko.com/coins/images/28897/standard/Orchai_LOGO.png?1696527873"
     },
     {
       "coinDenom": "USDC",
@@ -159,6 +159,15 @@
       "contractAddress": "moonGvQw19jXedkQFf5qgdzSRCZvNv2eNbmvR6ZwSkk",
       "coinGeckoId": "moobs",
       "coinImageUrl": "https://ipfs.io/ipfs/QmQgDDuxwG5Ds5EfWbP7YgYi1BGFcGDv3c3D5NRU3wExes"
+    },
+    {
+      "coinDenom": "GALAC",
+      "coinMinimalDenom": "s20_galac",
+      "coinDecimals": 6,
+      "bridgeTo": ["Oraichain"],
+      "contractAddress": "oraitjKWjTS2YWrS2HRRAuNh65MgKQxHXc4zbG8RSYj",
+      "coinGeckoId": "galac",
+      "coinImageUrl": "https://openhand-app-thesis.s3.us-east-2.amazonaws.com/spaces/150/images/1462_rocket_1755773507463.gif"
     }
   ],
   "feeCurrencies": [
