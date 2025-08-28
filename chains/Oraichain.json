@@ -379,7 +379,7 @@
       "coinDecimals": 6,
       "bridgeTo": ["solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"],
       "coinGeckoId": "galac",
-      "coinImageUrl": " https://openhand-app-thesis.s3.us-east-2.amazonaws.com/spaces/150/images/1462_rocket_1755773507463.gif"
+      "coinImageUrl": "https://openhand-app-thesis.s3.us-east-2.amazonaws.com/spaces/150/images/1462_rocket_1755773507463.gif"
     },
     {
       "coinDenom": "SAM",
