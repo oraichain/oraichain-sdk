@@ -377,6 +377,7 @@
       "coinDenom": "GALAC",
       "coinMinimalDenom": "factory/orai1wuvhex9xqs3r539mvc6mtm7n20fcj3qr2m0y9khx6n5vtlngfzes3k0rq9/oraitjKWjTS2YWrS2HRRAuNh65MgKQxHXc4zbG8RSYj",
       "coinDecimals": 6,
+      "tag": "defai",
       "bridgeTo": ["solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"],
       "coinGeckoId": "galac",
       "coinImageUrl": "https://openhand-app-thesis.s3.us-east-2.amazonaws.com/spaces/150/images/1462_rocket_1755773507463.gif"
