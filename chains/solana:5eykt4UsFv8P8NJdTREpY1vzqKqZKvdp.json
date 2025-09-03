@@ -164,6 +164,7 @@
       "coinDenom": "GALAC",
       "coinMinimalDenom": "s20_galac",
       "coinDecimals": 6,
+      "tag": "defai",
       "bridgeTo": ["Oraichain"],
       "contractAddress": "oraitjKWjTS2YWrS2HRRAuNh65MgKQxHXc4zbG8RSYj",
       "coinGeckoId": "galac",
