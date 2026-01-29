@@ -189,6 +189,15 @@
       "coinImageUrl": "https://assets.coingecko.com/coins/images/28897/standard/Orchai_LOGO.png?1696527873"
     },
     {
+      "coinDenom": "sORAI",
+      "coinMinimalDenom": "cw20:orai1w9ee6szd3fgatyz7v78rktekuqjntfeszh9azuz8drz9nl0yuzwqm26v23:sORAI",
+      "type": "cw20",
+      "contractAddress": "orai1w9ee6szd3fgatyz7v78rktekuqjntfeszh9azuz8drz9nl0yuzwqm26v23",
+      "coinGeckoId": "sorai",
+      "coinDecimals": 6,
+      "coinImageUrl": "https://crypto-images-4545f.web.app/images/token/sORAI.png"
+    },
+    {
       "coinDenom": "wTRX",
       "coinGeckoId": "tron",
       "coinMinimalDenom": "cw20:orai1c7tpjenafvgjtgm9aqwm7afnke6c56hpdms8jc6md40xs3ugd0es5encn0:wTRX",
