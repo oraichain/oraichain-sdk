@@ -1,6 +1,6 @@
 {
   "$schema": "../chain.schema.json",
-  "rpc": "https://eth.llamarpc.com",
+  "rpc": "https://mainnet.infura.io/v3/b6bf7d3508c941499b10025c0776eaf8",
   "chainId": "0x01",
   "chainName": "Ethereum",
   "bip44": { "coinType": 60 },
