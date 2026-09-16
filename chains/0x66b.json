@@ -1,0 +1,34 @@
+{
+  "$schema": "../chain.schema.json",
+  "rpc": "https://rpc.xgr.network",
+  "chainId": "0x66b",
+  "chainName": "XGRChain Mainnet",
+  "bip44": { "coinType": 60 },
+  "coinType": 60,
+  "networkType": "evm",
+  "features": ["isEvm"],
+  "chainSymbolImageUrl": "https://xgr.network/Graphics/xgrnetworkLogo.png",
+  "feeCurrencies": [
+    {
+      "coinDenom": "XGR",
+      "coinMinimalDenom": "xgr",
+      "coinDecimals": 18,
+      "coinGeckoId": "xgr",
+      "coinImageUrl": "https://xgr.network/Graphics/xgrnetworkLogo.png"
+    }
+  ],
+  "currencies": [
+    {
+      "coinDenom": "XGR",
+      "coinMinimalDenom": "xgr",
+      "coinDecimals": 18,
+      "coinGeckoId": "xgr",
+      "coinImageUrl": "https://xgr.network/Graphics/xgrnetworkLogo.png"
+    }
+  ],
+  "txExplorer": {
+    "name": "XGR Explorer",
+    "txUrl": "https://explorer.xgr.network/tx/{txHash}",
+    "accountUrl": "https://explorer.xgr.network/address/{address}"
+  }
+}
