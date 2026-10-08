@@ -1627,7 +1627,7 @@ __metadata:
   dependencies:
     "@keplr-wallet/types": "npm:0.12.141"
     "@types/lodash": "npm:^4"
-    axios: "npm:0.21.4"
+    axios: "npm:1.8.2"
     axios-extensions: "npm:3.1.6"
     bech32: "npm:^1.1.4"
     cosmjs-types: "npm:^0.9.0"
@@ -2573,6 +2573,17 @@ __metadata:
   dependencies:
     follow-redirects: "npm:^1.14.0"
   checksum: 10c0/fbcff55ec68f71f02d3773d467db2fcecdf04e749826c82c2427a232f9eba63242150a05f15af9ef15818352b814257541155de0281f8fb2b7e8a5b79f7f2142
+  languageName: node
+  linkType: hard
+
+"axios@npm:1.8.2":
+  version: 1.8.2
+  resolution: "axios@npm:1.8.2"
+  dependencies:
+    follow-redirects: "npm:^1.15.6"
+    form-data: "npm:^4.0.0"
+    proxy-from-env: "npm:^1.1.0"
+  checksum: 10c0/d8c2969e4642dc6d39555ac58effe06c051ba7aac2bd40cad7a9011c019fb2f16ee011c5a6906cb25b8a4f87258c359314eb981f852e60ad445ecaeb793c7aa2
   languageName: node
   linkType: hard
 
