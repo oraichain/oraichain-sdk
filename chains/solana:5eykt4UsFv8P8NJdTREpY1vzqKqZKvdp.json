@@ -28,7 +28,7 @@
       "coinDenom": "SOL",
       "coinMinimalDenom": "sol",
       "coinDecimals": 9,
-      "bridgeTo": [""],
+      "bridgeTo": ["Oraichain"],
       "coinGeckoId": "solana",
       "coinImageUrl": "https://assets.coingecko.com/coins/images/4128/standard/solana.png?1718769756"
     },
@@ -92,7 +92,7 @@
       "coinDenom": "ORAI",
       "coinMinimalDenom": "s20_orai",
       "coinDecimals": 6,
-      "bridgeTo": ["Oraichain"],
+      "bridgeTo": [""],
       "contractAddress": "oraiyuR7hz6h7ApC56mb52CJjPZBB34USTjzaELoaPk",
       "coinGeckoId": "oraichain-token",
       "coinImageUrl": "https://images.orai.io/logo/orai-token.png"
