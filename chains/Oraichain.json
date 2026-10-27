@@ -88,12 +88,7 @@
       "coinMinimalDenom": "orai",
       "coinDecimals": 6,
       "coinGeckoId": "oraichain-token",
-      "bridgeTo": [
-        "0x38",
-        "0x01",
-        "injective-1",
-        "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp"
-      ],
+      "bridgeTo": ["0x38", "0x01", "injective-1"],
       "coinImageUrl": "https://images.orai.io/logo/orai-token.png",
       "gasPriceStep": { "low": 0.003, "average": 0.005, "high": 0.007 },
       "evmExtendInfo": {
